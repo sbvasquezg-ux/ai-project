@@ -26,3 +26,8 @@ __pycache__/
 # Never commit personal documents to a public repository
 DNI*
 *_DNI*
+
+# Downloaded sources stay local; own paper.pdf remains tracked.
+paper/base/
+paper/ide-*.pdf
+paper/arxiv*.pdf
