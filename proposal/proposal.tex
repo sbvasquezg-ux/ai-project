@@ -1,59 +1,106 @@
-% Topic document -- 2 to 4 pages in THIS format (11pt, 1-inch margins).
-% It accompanies the 20-minute topic presentation.
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb}
-\usepackage{xcolor}
+\usepackage{amsmath,amssymb,booktabs,array,xcolor}
 \usepackage[round]{natbib}
 \usepackage[colorlinks=true,allcolors=blue!50!black]{hyperref}
-
-\newcommand{\replace}[1]{\par\smallskip\noindent
-  \fcolorbox{orange!80!black}{yellow!12}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
-  \small\textbf{Replace.} #1}}\par\smallskip}
-
-\title{Project Topic: Your Working Title}
-\author{Your Name \\ \small\url{https://github.com/your-user/ai-project}}
-\date{Topic presentation, October 2026}
-
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
 \begin{document}
-\maketitle
+\begin{center}
+{\Large\bfseries Verificación heterogénea y acceso a la IA}\par
+Sofía Belén Vásquez García\par
+\small Topic presentation --- Track A \quad Octubre de 2026\par
+\url{https://github.com/sbvasquezg-ux/ai-project}
+\end{center}
+\section{La pregunta y el track}
+¿Puede un costo real de validación que disminuye con el conocimiento desplazar el uso directo de IA no autónoma desde la base hacia tipos intermedios? En el \textbf{Track A}, extenderé la Proposición 6 de \citet{ide2025}. La respuesta no es obvia: los expertos validan a menor costo por supuesto, pero tienen mejores opciones laborales; además, los salarios y las jerarquías se reajustan cuando se adopta IA.
+\section{El baseline y el supuesto que cambio}
+\textbf{Anclaje.} Ide y Talamàs (2025), \emph{JPE} 133(12), 3762--3800, DOI 10.1086/737233; sección 6, \textbf{Proposición 6, p. 27 de arXiv v11}, verificada en el PDF. Con sus supuestos, si $a>w^0(0)$ hay adopción y los usuarios directos están en la base; perciben $w^N(z)=a$ y $r=0$. Si $a\leq w^0(0)$ no se usa IA. Traduzco $z_{\mathrm{AI}}$ del paper como $a$, su $w$ como $w^0$ y su $w^\star$ como $w^N$; con la fricción uso $w^V$.
 
-\section{The question and the track}
-\replace{One paragraph. The question in one sentence, and the track:
-\textbf{Track A} --- you relax an assumption of a course paper and re-derive the
-proposition it affects; or \textbf{Track B} --- you formulate the economic model
-behind your own thesis.}
+Conservo humanos de masa uno, conocimiento observable, distribución $G$ con densidad positiva y continua, problemas uniformes, dos niveles, competencia y libre entrada, $0<h<h_0(G)$ y $a\in(0,1)$. La IA solo asesora. Impongo $\mu>h$: la demanda de cómputo no supera $h\int(1-z)\,dG(z)\leq h$, de modo que hay capacidad ociosa y $r=0$.
 
-\section{The baseline and the assumption you change}
-\replace{Track A: cite the paper, the exact proposition and page, and state the
-assumption you relax, in the paper's notation. Track B: state the model your
-thesis currently lacks or cites as a black box. Write the agent's problem
-formally --- what is maximised, over which variable, under which constraints.}
-
-\section{The result you expect}
-\replace{Write the first-order condition you expect to obtain, and say which
-result of the baseline you expect to change and in which direction. This is a
-conjecture: it is graded on being precise, not on being right.}
-
-\begin{equation}\label{eq:foc}
-  \frac{\partial}{\partial e}\Bigl[\, a e - \tfrac{c}{2} e^{2} \Bigr]
-  \;=\; a - c e \;=\; 0 .
+\textbf{Supuesto que relajo.} En la sección 3.1 (v11, p. 12), la actividad humano--IA tiene beneficio $n(z)[z_{\mathrm{AI}}-w(z)]-r$: no incluye un gasto de validación dependiente de $z$. Agrego $c(z)\geq0$, $c'(z)\leq0$, pagado por la firma \emph{por trabajador y período} en bien final. No consume tiempo ni cambia la probabilidad de éxito, por lo que conservo $n(z)$.
+\begin{center}\small
+\begin{tabular}{@{}p{.18\linewidth}p{.76\linewidth}@{}}\toprule
+Símbolo & Significado \\\midrule
+$z$, $a$ & Conocimiento humano; capacidad fija de la IA (ambos en $[0,1]$).\\
+$h$, $n(z)$ & Tiempo de ayuda por consulta; trabajadores atendidos por unidad de IA: $\frac{1}{h(1-z)}$.\\
+$c(z)$, $\kappa$ & Gasto real de validación; intensidad en $c(z)=\kappa(1-z)$, $\kappa\geq0$.\\
+$w^V(z)$, $w^0(z)$ & Salario con validación heterogénea; salario de equilibrio sin IA.\\
+$r$, $\mu$ & Renta por unidad de cómputo; dotación agregada de cómputo.\\
+$G$, $h_0(G)$ & Distribución del conocimiento humano; umbral del modelo sin IA que separa el régimen sin productores independientes.\\\bottomrule
+\end{tabular}
+\end{center}
+\newpage
+La firma toma los precios como dados y elige el tipo contratado, no su educación:
+\begin{equation}\label{eq:firm}
+\max_{0\leq z\leq a}\ \Pi^V(z)=n(z)[a-w^V(z)-c(z)]-r,
+\qquad n(z)=\frac1{h(1-z)}.
 \end{equation}
+\section{El resultado que espero}
+En un óptimo \textbf{interior y diferenciable}, con $h>0$ y $0<z<a<1$:
+\begin{align}
+n'(z)&=\frac1{h(1-z)^2},&\frac{n'(z)}{n(z)}&=\frac1{1-z},\label{eq:ratio}\\
+0&=n'(z)[a-w^V(z)-c(z)]-n(z)[w^{V\prime}(z)+c'(z)],\label{eq:foc}\\
+w^{V\prime}(z)+c'(z)&=\frac{a-w^V(z)-c(z)}{1-z}.\label{eq:slope}
+\end{align}
+\textbf{La FOC no basta.} En una actividad usada, la libre entrada añade beneficio cero:
+\begin{equation}
+ n(z)[a-w^V(z)-c(z)]=r
+ \ \Longrightarrow\ a-w^V(z)-c(z)=rh(1-z).
+\end{equation}
+Por tanto, la FOC implica $w^{V\prime}(z)+c'(z)=hr$. Con $r=0$, el beneficio cero da
+\begin{equation}\label{eq:wage}
+\boxed{w^V(z)=a-c(z)};\qquad c(z)=\kappa(1-z)\ \Longrightarrow\
+\boxed{w^{V\prime}(z)=\kappa}.
+\end{equation}
+La identidad salarial se aplica a tipos que efectivamente usan IA; la derivada requiere un intervalo activo diferenciable. No caracteriza por sí sola a sus usuarios. En extremos, la FOC se sustituye por desigualdades unilaterales.
 
-\section{Why this is not already solved}
-\replace{Where you looked: the paper's appendices, its working-paper versions,
-and the papers that cite it. Say what you found and why it does not answer your
-question. ``The model did not find it'' is not evidence.}
+\textbf{Conjetura propia.} Para algunos $(G,h,a,\kappa)$ admisibles, el conjunto de usuarios con validación podría excluir un intervalo inferior e incluir tipos intermedios. Cambiaría el ordenamiento desde la base de la Proposición 6. La motivación local es
+\begin{equation}
+\Delta^0(z)=a-c(z)-w^0(z),\qquad
+\Delta^{0\prime}(z)=\kappa-w^{0\prime}(z).
+\end{equation}
+Si $\kappa>w^{0\prime}(z)$, la ventaja de entrada aumenta localmente. \emph{Esto no es una condición suficiente para selección intermedia en equilibrio}. Un costo constante $c(z)=\bar c$ reduce el nivel de la oferta neta sin añadir pendiente; compararé ambos casos, también a igual costo medio en los tipos elegibles.
 
-\section{Plan and risks}
-\replace{What you will prove, what you will simulate, and what you will
-formalize in Lean. Name the step most likely to fail and what you will do if it
-does.}
+\textbf{Ilustración reproducible:} $G(z)=z$, $h=0.5<h_0=0.75$, $a=0.88$, $\kappa=0.53$.
+\begin{center}
+\begin{tabular}{rrrr}\toprule
+$z$ & $w^0(z)$ & $a-c(z)$ & $\Delta^0(z)$\\\midrule
+0.00 & 0.3570 & 0.3500 & $-0.0070$\\
+0.25 & 0.4744 & 0.4825 & $+0.0081$\\
+0.60 & 0.6912 & 0.6680 & $-0.0232$\\\bottomrule
+\end{tabular}
+\end{center}
+La tabla muestra una \textbf{oportunidad de entrada a salarios iniciales}, no un equilibrio ni evidencia empírica. Los tres valores se verifican con tolerancia $5\times10^{-4}$ en \texttt{code/verify.py}. Con $\kappa=0$, se recuperan $c=0$, la oferta $a$ y el criterio de entrada $a-w^0(z)$; recuperar toda la Proposición 6 exige cerrar el equilibrio.
+\newpage
+\section{Por qué no está resuelto}
+\textbf{Búsqueda realizada el 6 de octubre de 2026.} Revisé los PDF de arXiv v1--v12, los pasajes sobre IA no autónoma y el apéndice enlazado por el autor; consulté Google Scholar, ``Citado por'' y la búsqueda interna \texttt{verification}, además de arXiv y Semantic Scholar. El registro de consultas, URLs, versiones y límites está en \texttt{proposal/literature-search.md}. No se afirma una revisión exhaustiva de todas las citas: se examinaron las primeras páginas de resultados y los textos cercanos identificados. La API de Semantic Scholar respondió 429 y no permitió revisar su listado.
 
-\bibliographystyle{plainnat}
-\bibliography{../paper/references}
-\nocite{acemoglu2018race}
+\textbf{Artículo y versiones.} En v1--v6 no se encuentra la sección de IA no autónoma que uso. La v7 sí tiene sección 6, pero otra formulación: la Proposición 8 asigna humanos a resolver problemas de IA; no equivale a la Proposición 6 actual. En v8--v10, sección 6, la Proposición 7 ya presenta copilotos y adopción desde la base. En v11--v12 pasa a ser Proposición 6 (pp. 27 y 28). La numeración común no permite intercambiar versiones. En el apéndice de febrero de 2025, sección 2.6, Lemas 2.7--2.8 (pp. impresas 21--23), la prueba usa salarios iguales para usuarios de IA; el capítulo 5 (pp. 64--74) estudia otras consecuencias y cómputo escaso. No incorpora el gasto por tipo propuesto. El capítulo 1 discute acceso y personalización, una fricción distinta \citep{appendix}.
 
+\textbf{Antecedentes cercanos, con estatus editorial.}
+\begin{itemize}\setlength{\itemsep}{2pt}
+\item \citet{xu2025}, \emph{preprint}, localizado entre los citantes: su sección 5 ya estudia validación humana en jerarquías. La ecuación (3) introduce tiempo gerencial de revisión y la validación elimina alucinaciones. Mi $c(z)$ es gasto en bienes, conserva $n(z)$ y no modifica éxito; la pregunta es el ordenamiento de usuarios en el equilibrio de Ide y Talamàs.
+\item \citet{quispe2026}, \emph{preprint} v2, también localizado entre citantes: incorpora costos de especificación y verificación en la delegación de lenguajes de programación. Su banda de activación está definida sobre lenguajes para un desarrollador, no sobre tipos humanos y salarios competitivos en esta economía.
+\item \citet{catalini}, \emph{preprint}, hallado por búsqueda temática: su sección 3.4.1, ecuación (7), relaciona costo de verificar, experiencia y salario experto. La sección 5.2 toma trayectorias salariales como dadas. No presento ``los expertos verifican más barato'' como idea nueva; de hecho, mayor salario puede contrarrestar mayor eficiencia.
+\item \citet{turing}, documento de trabajo anunciado como \emph{aceptado en Journal of Human Capital} en la web del autor, cita el original e incorpora heterogeneidad humana y sinergias (sección 6). No introduce este costo real por tipo en la Proposición 6.
+\end{itemize}
+\textbf{Novedad provisional.} En los pasajes revisados no encontré la caracterización del conjunto de usuarios de IA para esta fricción en el modelo base. El aporte propuesto es esa caracterización conjunta con salarios, no el concepto general de verificación. Si aparece un resultado equivalente, delimitaré el aporte como una extensión de robustez y lo reconoceré.
+\newpage
+\section{Plan y riesgos}
+\textbf{Probar.} Caracterizar el conjunto de usuarios con $c(z)$ y sus fronteras; recuperar la Proposición 6 al imponer $c=0$; comparar costo constante con $\kappa(1-z)$. Distinguiré identidades de beneficio cero, condiciones locales de optimalidad y resultados globales de asignación. No asumiré que $w^0$ sigue siendo el salario después de la entrada.
+
+\textbf{Simular.} Adaptaré \texttt{equilibrium} de \texttt{ai-05-ide} incorporando producto neto $a-c(z)$ en actividades humano--IA y conservando los recursos humanos y de cómputo. Resolveré mallas de tipos, mediré residuos de factibilidad, beneficios, complementariedad y brecha primal--dual, y evaluaré sensibilidad a 100, 200 y 400 tipos. Compararé $c=0$, costo constante y costo lineal, incluyendo costos medios iguales. El código de esta entrega verifica álgebra y entrada; aún no resuelve el nuevo equilibrio.
+
+\textbf{Formalizar en Lean.} Con AppliedModelingLib, formalizaré la FOC bajo interioridad y diferenciabilidad y la identidad $w^V=a-c$ bajo beneficio cero y $r=0$. Después formalizaré la proposición propia sobre el conjunto de adoptantes, cuando exista una prueba completa. Fijaré el PDF por commit, conservaré la carpeta generada y ejecutaré el chequeo del curso; hoy Lean está pendiente y no hay un teorema de equilibrio certificado.
+
+\textbf{Paso más probable de fallar.} Cerrar el equilibrio continuo: existencia y unicidad con la nueva fricción y supervivencia de la selección intermedia tras la reasignación. Si no logro ese cierre, el \textbf{plan B} será un modelo discreto de dos o tres tipos con hipótesis, asignación y salarios explícitos. Una refutación de la selección intermedia se reportará como tal; no se ocultará escogiendo una malla favorable.
+
+\textbf{Hitos y responsabilidad.} 7--13 de octubre: derivaciones a mano y cierre del modelo; 14--20: simulación y robustez; 21--27: prueba inicial y piloto Lean para la exposición del 28; revisión y formalización antes del 26 de noviembre. Registraré consultas y comprobaciones en \texttt{prompts.md}, y mis derivaciones en \texttt{hand/}. \textbf{Nota de alcance:} la extensión es propia; no atribuyo un error al paper.
+\begingroup\small\setlength{\bibsep}{3pt}
+\bibliographystyle{plainnat}\bibliography{references}
+\endgroup
 \end{document}

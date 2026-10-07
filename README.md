@@ -1,124 +1,33 @@
-# Term project — template
+<p align="center"><img src="assets/header.svg" alt="Verificación heterogénea y acceso a la IA" width="960"></p>
+<p align="center">
+<a href="https://doi.org/10.1086/737233"><img src="https://img.shields.io/badge/JPE-133(12)-6D28D9" alt="JPE 133(12)"></a>
+<a href="https://doi.org/10.1086/737233"><img src="https://img.shields.io/badge/DOI-10.1086%2F737233-0E7490" alt="DOI paper base"></a>
+<a href="https://arxiv.org/abs/2312.05481v11"><img src="https://img.shields.io/badge/arXiv-v11-0E7490" alt="arXiv v11"></a>
+<a href="slides/topic.pdf"><img src="https://img.shields.io/badge/Topic-20_min-6D28D9" alt="Topic 20 min"></a>
+<a href="proposal/proposal.pdf"><img src="https://img.shields.io/badge/Propuesta-PDF-E11D48" alt="Propuesta"></a>
+<a href="lean/"><img src="https://img.shields.io/badge/Lean-pendiente-F59E0B" alt="Lean pendiente"></a>
+<a href="code/verify.py"><img src="https://img.shields.io/badge/Python-SymPy-0E7490" alt="Python SymPy"></a>
+</p>
 
-**Artificial Intelligence and Economic Modeling · UP 2026-II**
+**Sofía Belén Vásquez García · Track A · AI and Economic Modeling · UP 2026-II.**
 
-> **This is the template for the term project.** Press **Use this template**,
-> name your repository **`ai-project`**, and replace the content. Every project
-> in the course has this structure, so that anyone can open any repository and
-> find the paper, the slides, the code and the Lean proofs in the same place.
->
-> Dates, page limits and what is graded are in the
-> [project issue](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7)
-> of the course repository. **Delete this block and the next two sections when
-> you write your own README.**
+**Pregunta.** ¿Puede un costo de validación decreciente con el conocimiento desplazar el uso directo de IA no autónoma desde la base hacia tipos intermedios? Extensión propia de Ide y Talamàs (2025), **Proposición 6, p. 27 de arXiv v11**. No atribuye un error al paper.
 
-## What goes where
+**Modelo.** Humanos de masa uno, tipos observables $z\in[0,1]$, distribución $G$ con densidad positiva y continua, problemas uniformes, dos niveles, competencia y libre entrada. Se mantienen $0<h<h_0(G)$, $a\in(0,1)$ e IA solo asesora. Con $\mu>h$, el cómputo es ocioso y $r=0$. El gasto real $c(z)\geq0$, $c'(z)\leq0$, es por trabajador y período; no consume tiempo ni cambia éxito. Inicialmente $c(z)=\kappa(1-z)$, $\kappa\geq0$.
 
-One repository for the whole project: it grows from the topic presentation to
-the final paper.
+$$\max_{0\leq z\leq a}\Pi^V(z)=n(z)[a-w^V(z)-c(z)]-r,\qquad n(z)=\frac1{h(1-z)}.$$
 
-| Path | What it holds | Needed for |
-|---|---|---|
-| `README.md` | One page: the question, the model, the main result with all its conditions, and the status of the project | always |
-| `proposal/proposal.tex` · `.pdf` | The topic document, **2–4 pages** | topic presentation |
-| `slides/topic.tex` · `.pdf` | Deck for the 20-minute topic presentation | topic presentation |
-| `slides/final.tex` · `.pdf` | Deck for the final presentation | final presentation |
-| `paper/paper.tex` · `references.bib` · `paper.pdf` | The final paper, **8–20 pages**, in LaTeX with its compiled PDF | final paper |
-| `code/` | Simulations and symbolic checks; `code/verify.py` runs them all and **fails** if a claim does not hold | final paper |
-| `lean/` | The Lean formalization of **your** paper, generated with AppliedModelingLib | final paper |
-| `hand/` | The handwritten appendix: every derivation, step by step | final paper |
-| `prompts.md` | Your prompts and the relevant answers, raw | always |
-| `.github/workflows/build.yml` | Compiles the PDFs and runs `code/verify.py` on every push | — leave it as it is |
+**Resultado esperado y alcance.** En un óptimo interior diferenciable, la FOC es $w^{V\prime}+c'=(a-w^V-c)/(1-z)$. **Además**, beneficio cero en actividades usadas implica que ese cociente es $hr$. Con $r=0$, $w^V=a-c$ entre usuarios, y $w^{V\prime}=\kappa$ en un intervalo activo diferenciable. La FOC no determina quién usa IA. La **conjetura** es selección intermedia para algunos parámetros; $\kappa>w^{0\prime}$ solo hace crecer localmente la ventaja de entrada $\Delta^0=a-c-w^0$. El ejemplo $G(z)=z,h=.5,a=.88,\kappa=.53$ reproduce $(-.0070,+.0081,-.0232)$ en $z=(0,.25,.60)$: **entrada a salarios iniciales, no equilibrio**. Se comparará costo constante vs. pendiente y se recuperará el baseline al cerrar el modelo con $c=0$.
 
-Keep the file names. If a script, figure or section needs more files, add them
-inside the folder where they belong.
-
-Work as in the weekly repositories: **branch → pull request → merge**. Nothing
-is written directly to `main`, and what is graded is what is on `main` at the
-deadline.
-
-## Building
-
-```bash
-python3 -m pip install -r code/requirements.txt
-python3 code/verify.py                      # checks + figures
-
-cd paper    && latexmk -pdf paper.tex       # or: tectonic paper.tex
-cd proposal && latexmk -pdf proposal.tex
-cd slides   && latexmk -pdf topic.tex final.tex
-```
-
-**Commit the compiled PDFs** next to their sources. The workflow in
-`.github/workflows/` recompiles everything from source on every push: the
-green check on your repository is the evidence that the PDF you committed is
-the one your LaTeX produces. If the check is red, the Actions tab shows the
-LaTeX error.
-
-Every orange **Replace** box in the PDFs is an instruction to you. A submitted
-document has none left.
-
-## The Lean component
-
-The target is that **every numbered result of your paper is stated and proved
-in Lean**, with no `sorry` and no hypothesis that smuggles in the conclusion.
-It is the same workflow as in the weekly repositories, pointed at your own
-paper instead of a published one.
-
-1. Merge the version of `paper/paper.pdf` you want formalized and copy the
-   commit hash.
-2. From the root of your [AppliedModelingLib](https://gargnikhil.com/AppliedModelingLib/)
-   clone (`git pull` first), with the same agent configuration as in the weekly
-   repositories, give the agent this task:
-
-   ```text
-   Please formalize my own paper, an unpublished manuscript with no arXiv
-   record: https://github.com/<your-user>/ai-project/blob/<commit>/paper/paper.pdf
-   (pinned at commit <commit>), using the paper-formalization skill and
-   workflow in this repository.
-   Use <Surname>26<ShortTitle> as the paper folder.
-   ```
-
-3. Run the paper-scoped check and keep its output:
-
-   ```bash
-   python3 scripts/paper_contribution.py check <Surname>26<ShortTitle> --fast
-   ```
-
-4. Copy the **entire** generated `papers/<Surname>26<ShortTitle>/` folder,
-   exactly as generated, into this repository as `lean/`. Stage it with
-   `git add lean/` and respect the generated `.gitignore` — never `git add -f`.
-5. Fill in the *Lean formalization* appendix of the paper: one row per numbered
-   result, the Lean declaration that proves it, and its status.
-
-If you change a proposition after the run, the Lean folder no longer matches
-the paper: run the workflow again. If a result is still open at the deadline,
-say exactly which one and what blocks it — an honest partial result is graded,
-a hidden gap is not.
-
----
-
-# Your title
-
-**Replace everything below with your own README — one page.**
-
-*Track A (extension of …) or Track B (thesis model).*
-
-## The question
-
-## The model
-
-The agent's problem, written formally: what is maximised, over which variable,
-under which constraints.
-
-## The main result, with all its conditions
-
-## Status
-
-| Component | State |
+| Entregable | Estado |
 |---|---|
-| Topic document and slides | |
-| Final slides | |
-| Paper | |
-| Simulations (`python3 code/verify.py`) | |
-| Lean (`check --fast` result, paper commit formalized) | |
-| Handwritten appendix | |
+| [Propuesta](proposal/proposal.pdf) y [topic](slides/topic.pdf), con `.tex` | ✅ Topic listo; 7-oct, 07:55 |
+| [Código](code/verify.py), CSV y figura | ✅ SymPy y ejemplo; equilibrio nuevo pendiente |
+| [Slides finales](slides/final.tex) | ⏳ 28-oct; plantilla pendiente |
+| [Paper](paper/paper.tex) | ⏳ 26-nov; plantilla pendiente, ejemplo ajeno al topic |
+| [Lean](lean/) | ⏳ AppliedModelingLib; sin formalización propia aún |
+| [Manuscritos](hand/README.md) y [prompts](prompts.md) | Lista de derivaciones; fotos pendientes / registro disponible |
+
+**Reproducir:** `python3 -m pip install -r code/requirements.txt` y `python3 code/verify.py`; después, `latexmk -pdf` sobre `proposal.tex`, `topic.tex`, `final.tex` y `paper.tex` en sus carpetas. El workflow de la plantilla se conserva. [Búsqueda de novedad](proposal/literature-search.md) · [Guion de 20 min](slides/guion-topic.md) · [Atribuciones](code/ATTRIBUTION.md).
+
+**Entrega:** sesión 13; merge antes del 7-oct a las 07:30 (Lima). La autora debe comentar el link del repo en el [issue #7](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7).

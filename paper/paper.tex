@@ -27,10 +27,9 @@
   \fcolorbox{orange!80!black}{yellow!12}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
   \small\textbf{Replace.} #1}}\par\smallskip}
 
-\title{Your Title: State the Result, Not the Topic}
-\author{Your Name\thanks{Universidad del Pac\'ifico. Repository:
-  \url{https://github.com/your-user/ai-project}. Track A (extension of a course
-  paper) or Track B (thesis model): say which.}}
+\title{Verificación heterogénea y acceso a la IA}
+\author{Sofía Belén Vásquez García\thanks{Universidad del Pac\'ifico. Repository:
+  \url{https://github.com/sbvasquezg-ux/ai-project}. Track A: extensión de Ide y Talamàs (2025). Plantilla pendiente, entrega 26 de noviembre de 2026.}}
 \date{\today}
 
 \begin{document}
@@ -54,8 +53,7 @@ mechanics of this template; none of it is yours to keep.}
 work, cite the exact result you depart from (proposition and page), and check
 the editorial status of every preprint you cite.}
 
-The task-based view of automation follows \citet{acemoglu2018race}; the
-decision-theoretic view of AI assistance follows \citet{agrawal2025bicycles}.
+El proyecto extiende la Proposición 6 de \citet{ide2025}, p. 27 de arXiv v11. El modelo de esfuerzo que sigue es únicamente el ejemplo pendiente de la plantilla; no es un resultado de este proyecto.
 
 \section{Model}\label{sec:model}
 \replace{Primitives, timing, information, and the agent's problem written
@@ -98,18 +96,7 @@ $e^{*} = a/c$. Differentiating, $\partial e^{*}/\partial a = 1/c > 0$.
 both), produced by the scripts in \texttt{code/}. Say what the simulation can
 and cannot show: it checks a derivation on a grid, it does not prove it.}
 
-Figure~\ref{fig:check} compares the closed form of
-Proposition~\ref{prop:effort} with a grid search over $e$. The largest
-absolute gap is reported by \texttt{code/verify.py}, which fails if it exceeds
-the grid resolution.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=.72\linewidth]{../code/figures/effort_check.pdf}
-  \caption{Optimal effort: closed form (lines) and grid search (markers).
-  Source: \texttt{code/verify.py}.}
-  \label{fig:check}
-\end{figure}
+\replace{Figura y simulación del paper final pendientes. El ejemplo de esfuerzo de la plantilla fue retirado de code/. Los chequeos actuales del topic están en code/verify.py.}
 
 \section{Discussion and limitations}
 \replace{What the result depends on, which assumption does the work, and what
