@@ -1,0 +1,10 @@
+{
+  "source_commit": "3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd",
+  "reviewed_commit": "450b4d1cda392f6c4326b8b8fae7694bbeab8dc1",
+  "method": "Comparación exacta de bytes UTF-8 desde begin{proposition} hasta end{proof}, para ambas proposiciones; no se atribuye cierre semántico al resto del manuscrito.",
+  "equal": true,
+  "sha256": [
+    "d2d06212b7fada138e262367e68387e28aded9aedd88ce12606e5c9dbfbf198c",
+    "49c1834bc5744d9125d9aa08fc8cbb8659830f869e1a9c543d5c1293ea55a9f4"
+  ]
+}

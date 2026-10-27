@@ -31,6 +31,6 @@ $$\max_{0\leq z\leq a}\Pi^V(z)=\frac{a-w^V(z)-c(z)}{h(1-z)}-r.$$
 | [Guía de derivaciones](hand/guia-derivaciones.pdf) | ✅ 10 páginas para estudiar; **manuscrito y veredicto de la autora pendientes** |
 | [Prompts](prompts.md) | Registro crudo y cambios; no se inventa revisión humana |
 
-**Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
+**Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Revisión independiente](paper/independent-review.md) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
 
 Exposición: **28-oct, 08:20–09:05**. Slides mergeadas antes del **27-oct, 22:00 Lima**. Paper completo: **26-nov, 22:00**. El [enlace de entrega](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7#issuecomment-6028656558) ya fue publicado por la autora; no necesita otro comentario.

@@ -15,4 +15,4 @@ Comprobaciones: `lake build +Vasquez26HeterogeneousVerification` y `python3 scri
 
 Para reproducir fuera de AppliedModelingLib, con elan instalado: `bash check.sh`. La primera ejecución descarga la versión fijada de Mathlib y su caché; `.standalone/` queda fuera de git.
 
-La configuración GPT-5.6 Sol/xhigh de la consigna todavía no se ha acreditado: un intento de revisión por CLI fue rechazado por el control automático de permisos. No se atribuye esta ejecución a ese modelo.
+Una revisión adicional con GPT-5.6 Sol/xhigh se ejecutó sobre el clon público (dictamen en `paper/independent-review.md` del proyecto). No produjo estas pruebas ni completó el protocolo; la configuración de una corrida completa de formalización de la consigna no se acredita con esa revisión. La condición del certificado para H se alineó con la elegibilidad del paper. Las rutas `papers/...` son relativas al repositorio AppliedModelingLib original, conservadas al exportar; los contadores de inventario son informativos y no representan aprobación humana.

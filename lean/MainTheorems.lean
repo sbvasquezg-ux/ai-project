@@ -72,7 +72,7 @@ def MiddleCertificate (h m H a k alpha beta gamma : ℝ) : Prop :=
   let qM := a-k*(1-m)
   let qH := a-k*(1-H)
   0 < gamma-h*alpha ∧
-  vL > 0 ∧ qM > m ∧ vL > qL ∧ H > qH ∧
+  vL > 0 ∧ qM > m ∧ vL > qL ∧ (H ≤ a → H > qH) ∧
   vL+h*qM > m ∧ qM+h*(1-m)*H > H ∧
   vL+h*H = H ∧
   (0:ℝ)+0+0+alpha = alpha ∧
@@ -86,7 +86,7 @@ theorem middle_certificate (h m H a k alpha beta gamma : ℝ)
     (houtside : H*(1-h*(1-m)) > m)
     (hlo : a-k < H*(1-h))
     (hmid : a-k*(1-m) > H*(1-h*(1-m)))
-    (hhi : a-k*(1-H) < H) :
+    (hhi : H ≤ a → a-k*(1-H) < H) :
     MiddleCertificate h m H a k alpha beta gamma := by
   have hH0 : 0 < H := lt_trans hm hmH
   have hm1 : m < 1 := lt_trans hmH hH

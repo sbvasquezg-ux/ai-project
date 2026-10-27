@@ -17,18 +17,19 @@
   "review_entrypoint": "papers/Vasquez26HeterogeneousVerification/FINAL_VALIDATION_REPORT.md",
   "human_review": {
     "reviewed_rows": 0,
-    "total_rows": 0,
+    "total_rows": 1,
     "stale_rows": 0,
     "mismatch_rows": 0,
     "source": "paper-local status.json review_surface; human entries come from dashboard logs"
   },
   "paper_interface": {
     "path": "papers/Vasquez26HeterogeneousVerification/PaperInterface.lean",
-    "line_count": 0,
-    "declaration_rows": 0,
+    "line_count": 23,
+    "declaration_rows": 1,
     "review_rows": 0,
     "oversized": false,
-    "maintainability_issue": null
+    "maintainability_issue": null,
+    "inventory_note": "Una especificación conjuntiva; cero filas con revisión humana. Rutas papers/... relativas a AppliedModelingLib, conservadas al exportar la carpeta."
   },
   "artifacts": {
     "paper_interface": "papers/Vasquez26HeterogeneousVerification/PaperInterface.lean",
@@ -103,5 +104,12 @@
     "pdf_sha256": "f71bcb5f37d389dec3e242bf454f067f0cc90ac6391ab9aca5ca0cacb8b84b74",
     "arxiv": "No arXiv: manuscrito propio no publicado en revista."
   },
-  "coverage_note": "El Spec de Proposición 1 y su endpoint compilan. Proposición 2 tiene cobertura parcial mediante certificado y ganancia; no se declara correspondencia semántica v12 aceptada."
+  "coverage_note": "El Spec de Proposición 1 y su endpoint compilan. Proposición 2 tiene cobertura parcial mediante certificado y ganancia; no se declara correspondencia semántica v12 aceptada.",
+  "independent_review": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "xhigh",
+    "session": "01a17af1-a48f-7291-870a-50457d3b67b2",
+    "source_commit": "450b4d1cda392f6c4326b8b8fae7694bbeab8dc1",
+    "scope": "Revisión de código y matemáticas sobre clon público, sin compilación por el revisor; no es una corrida completa del protocolo ni adjudicación humana."
+  }
 }
