@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[spanish,es-nodecimaldot]{babel}\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,xcolor,hyperref}
+\definecolor{violet}{HTML}{6D28D9}\hypersetup{colorlinks=true,allcolors=violet}
+\setlength{\parindent}{0pt}\setlength{\parskip}{7pt}
+\newcommand{\pregunta}[1]{\medskip\textbf{Compruébalo sin mirar:} #1\par}
+\begin{document}
+\begin{center}{\Large\bfseries Guía para entender y defender cada derivación}\par
+Sofía Belén Vásquez García\par
+Verificación heterogénea y acceso a la IA\par
+26 de octubre de 2026
+\end{center}
+\textbf{Uso de esta guía.} Es una explicación tipográfica preparada con asistencia de IA. No es un manuscrito de la autora ni prueba que ella haya entendido o aprobado los pasos. Lee un bloque, ciérralo, reproduce la derivación a mano y explica por qué el paso es válido. Después compara y corrige con otro color.
+\section*{1. Qué se pregunta y qué se ha resuelto}
+La IA tiene capacidad $a$. Una persona con conocimiento $z$ puede usarla pagando un gasto real $c(z)$. Con $c(z)=\kappa(1-z)$, alguien con más conocimiento cuesta menos de validar. Pero también tiene alternativas laborales mejores. Por eso no puedes concluir que el experto o el principiante adopta sin comparar todas las actividades.
+
+El paper tiene dos resultados. La Proposición 1 deriva una condición local y el salario financiable por una actividad usada. La Proposición 2 caracteriza un régimen de tres tipos con recursos y salarios que se ajustan: solo el tipo intermedio usa IA. Las mallas uniformes son un ejercicio numérico adicional, no una prueba del continuo.
+\begin{center}\begin{tabular}{ll}\toprule
+Símbolo & Cómo explicarlo oralmente\\\midrule
+$z$ & Conocimiento humano.\\
+$a$ & Capacidad fija de la IA.\\
+$h$ & Tiempo que un solver dedica a una consulta.\\
+$b(z)$ & Tiempo de solver que requiere un trabajador.\\
+$n(z)$ & Trabajadores atendidos por una unidad de IA.\\
+$c(z),\kappa$ & Gasto real y su intensidad.\\
+$w^0,w^V$ & Salario sin IA y con la nueva fricción.\\
+$r,\mu$ & Renta y dotación de cómputo.\\\bottomrule
+\end{tabular}\end{center}
+\pregunta{¿Por qué alguien que no usa IA puede conservar o aumentar su salario? Porque puede trabajar con otros humanos y los precios de esas actividades también se ajustan.}
+\newpage
+\section*{2. Derivar $n(z)$, sin saltos}
+\textbf{Paso 1: recurso.} Un trabajador no resuelve una fracción $1-z$ de problemas. Cada consulta consume $h$ de tiempo de solver. Su necesidad es $b(z)=h(1-z)$. Una unidad de tiempo permite atender $n(z)b(z)=1$, de donde
+\[
+n(z)=\frac1{h(1-z)}=\frac1h(1-z)^{-1}.
+\]
+\textbf{Paso 2: qué varía.} Derivas respecto de $z$; $h$ es constante y positivo. Escribes $u(z)=1-z$, por lo que $u'(z)=-1$.
+\textbf{Paso 3: cadena.} La derivada de $u^{-1}$ es $-u^{-2}u'$. Entonces
+\[
+n'(z)=\frac1h[-(1-z)^{-2}(-1)]
+=\frac1{h(1-z)^2}>0.
+\]
+Los dos signos negativos se cancelan. Si obtienes una derivada negativa, revisa este paso.
+\textbf{Paso 4: dividir por $n$.}
+\[
+\frac{n'(z)}{n(z)}=
+\frac{1}{h(1-z)^2}\frac{h(1-z)}1
+=\frac1{1-z}.
+\]
+Cancelas un $h$ y una potencia de $1-z$. Es válido porque $h>0$ y $z<1$, así que ninguno es cero.
+
+\textbf{Intuición.} Con más conocimiento, el trabajador escala menos problemas; una unidad de IA puede atender más trabajadores. Esto solo funciona con el costo de validación definido en bienes. Si validar consumiera tiempo del trabajador o del solver, habría que reescribir los recursos.
+\pregunta{Escribe la regla de la cadena usando $u=1-z$ y explica cada signo. ¿Qué sucede cuando $z$ se acerca a uno? La fórmula crece sin cota; el problema con IA se restringe a $z\leq a<1$.}
+\vfill\textbf{Tu manuscrito:} escribe los cuatro pasos y nombra la regla usada en cada uno.
+\newpage
+\section*{3. FOC: regla del producto y Fermat}
+La firma tiene beneficio
+\[
+\Pi(z)=n(z)[a-w^V(z)-c(z)]-r.
+\]
+Define el margen $M(z)=a-w^V(z)-c(z)$. Al derivar mantienes $a,h,r$ fijos. El salario es una función de precios que la firma toma como dada: cambia con el tipo contratado, pero la firma no elige libremente el salario.
+\[
+M'(z)=0-w^{V\prime}(z)-c'(z).
+\]
+Por regla del producto,
+\[
+\Pi'(z)=n'(z)M(z)+n(z)M'(z)-0
+=n'(z)[a-w^V-c]-n(z)[w^{V\prime}+c'].
+\]
+Si el óptimo es interior y las funciones son diferenciables, Fermat da $\Pi'(z)=0$. Despejas:
+\begin{align*}
+n'(z)[a-w^V-c]&=n(z)[w^{V\prime}+c'],\\
+\frac{n'(z)}{n(z)}[a-w^V-c]&=w^{V\prime}+c',\\
+w^{V\prime}+c'&=\frac{a-w^V-c}{1-z}.
+\end{align*}
+Se divide por $n(z)>0$, no por el margen; el margen podría ser cero.
+
+\textbf{Qué permite concluir.} La ecuación es necesaria en un máximo local interior diferenciable. No garantiza un máximo global, un óptimo único ni el vaciado de mercados. Con beneficio idéntico para muchos tipos puede haber indiferencia.
+
+\textbf{En los extremos.} En $0$, solo puedes moverte hacia la derecha, por lo que un máximo exige $\Pi'(0)\leq0$. En $a$, solo hacia la izquierda, por lo que exige $\Pi'(a)\geq0$, si existen las derivadas unilaterales.
+\pregunta{¿Por qué no divides por $a-w-c$? ¿Qué supuesto permite igualar la derivada a cero? ¿La FOC dice quién usa IA?}
+\newpage
+\section*{4. Beneficio cero y salario: otro argumento}
+Competencia y libre entrada implican que una actividad usada no deja beneficio positivo. Si tiene masa positiva y beneficio cero:
+\begin{align*}
+0&=n(z)[a-w^V(z)-c(z)]-r,\\
+r&=n(z)[a-w^V(z)-c(z)],\\
+\frac r{n(z)}&=a-w^V(z)-c(z),\\
+rh(1-z)&=a-w^V(z)-c(z).
+\end{align*}
+Ahora sí sustituyes el margen en la FOC:
+\[
+w^{V\prime}+c'=\frac{rh(1-z)}{1-z}=hr.
+\]
+Si el cómputo queda ocioso, $r=0$; por la identidad de beneficio cero,
+\begin{align*}
+a-w^V-c&=0,\\
+w^V&=a-c.
+\end{align*}
+Con $c(z)=\kappa(1-z)$,
+\[
+w^V(z)=a-\kappa+\kappa z.
+\]
+Si esa identidad vale en un intervalo abierto, derivar ambos lados da $w^{V\prime}=\kappa$. Una igualdad en un punto aislado no determina la derivada.
+
+\textbf{Por qué $r=0$.} La demanda de cómputo es la suma de $b(z)$ por cada trabajador que usa IA. Como $b(z)\leq h$ y la masa humana es uno, demanda $\leq h<\mu$. Hay capacidad sin utilizar; la renta competitiva es cero bajo el supuesto del modelo.
+\pregunta{Ante ``¿de dónde sale $w=a-c$?'', responde beneficio cero y renta cero. Ante ``¿qué añade la FOC?'', explica la condición local sobre cambiar el tipo.}
+\newpage
+\section*{5. Construir la economía de tres tipos}
+Los tipos son $L=0$, $M=m$, $H$, con masas $\alpha,\beta,\gamma>0$, suma uno. Si hay expertos independientes de tipo $H$, ganan $H$: un independiente produce su propio conocimiento.
+
+Una firma con un trabajador $L$ y $h$ de expertos produce $H$. Beneficio cero:
+\[
+H-w_L-hH=0\quad\Longrightarrow\quad w_L=H(1-h)=v_L.
+\]
+Con un trabajador $M$, la necesidad experta es $b_M=h(1-m)$:
+\[
+H-w_M-b_MH=0\quad\Longrightarrow\quad w_M=H(1-b_M)=v_M.
+\]
+Si ambos tipos inferiores trabajan con expertos, consumen $h\alpha+b_M\beta$ de $H$. La condición $\gamma>h\alpha+b_M\beta$ deja expertos independientes y sostiene su salario en $H$.
+
+\textbf{Con IA, candidato.} Si $q_L<v_L$ y $q_M>v_M$, propones que la base siga con humanos y el medio use IA. Si $H$ es elegible, necesitas además $q_H<H$ para que esos expertos no abandonen su actividad.
+\[
+y_{LH}=\alpha,\quad x_M=\beta,\quad d_H=\gamma-h\alpha.
+\]
+\textbf{Revisa recursos:}
+\begin{align*}
+L:&\quad y_{LH}=\alpha,\\
+M:&\quad x_M=\beta,\\
+H:&\quad h y_{LH}+d_H=h\alpha+\gamma-h\alpha=\gamma.
+\end{align*}
+La demanda de cómputo es $b_M\beta$. No confundas la masa de trabajadores $y_{LH}$ con la masa experta $hy_{LH}$.
+\pregunta{Explica por qué la condición de expertos excedentes aparece antes de fijar $w_H=H$. No debes tomar ese salario como dado sin justificar la actividad independiente.}
+\newpage
+\section*{6. Verificar todas las actividades}
+Un candidato no es un equilibrio hasta descartar actividades más rentables. A salarios $(v_L,q_M,H)$:
+\begin{center}\begin{tabular}{lll}\toprule
+Actividad & Costo salarial menos producto neto & Signo\\\midrule
+$LH$ & $v_L+hH-H$ & $0$\\
+IA de $M$ & $q_M-q_M$ & $0$\\
+Independiente $H$ & $H-H$ & $0$\\
+$MH$ & $q_M+b_MH-H=q_M-v_M$ & $>0$\\
+$LM$ & $v_L+hq_M-m$ & $>0$\\
+IA de $L$ & $v_L-q_L$ & $>0$\\
+IA de $H$, si elegible & $H-q_H$ & $>0$\\
+Independiente $L$ & $v_L-0$ & $>0$\\
+Independiente $M$ & $q_M-m$ & $>0$\\\bottomrule
+\end{tabular}\end{center}
+La holgura positiva significa que el costo supera el producto; la actividad no se utiliza. Demuestra el caso menos inmediato:
+\begin{align*}
+v_L+hv_M-m
+&=H(1-h)+hH[1-h(1-m)]-m\\
+&=H-Hh+hH-h^2H+h^2Hm-m\\
+&=H-h^2H(1-m)-m\\
+&=[H-hH(1-m)-m]+Hh(1-h)(1-m)\\
+&=(v_M-m)+Hh(1-h)(1-m)>0.
+\end{align*}
+El primer término es positivo por supuesto. El segundo lo es porque $H,h,1-h,1-m$ son positivos. Como $q_M>v_M$ y $h>0$,
+\[
+v_L+hq_M-m>v_L+hv_M-m>0.
+\]
+\pregunta{¿Qué desvío estás descartando con la holgura $LM$? ¿Qué desigualdad impediría que los expertos también adopten?}
+\newpage
+\section*{7. Unicidad y producto neto}
+\textbf{Cota de producto.} Cada actividad produce como máximo el valor salarial de los recursos que utiliza. Multiplica cada desigualdad de no beneficio por su masa y suma. Como las masas vacían los mercados:
+\[
+Y(\text{cualquier asignación factible})\leq\alpha w_L+\beta w_M+\gamma w_H.
+\]
+El candidato usa solo actividades con igualdad, así que alcanza la cota. Si otra asignación usara masa positiva de una actividad con holgura estricta, quedaría estrictamente debajo de esa cota. Por ello, toda asignación óptima solo usa $LH$, IA de $M$ e independiente $H$.
+
+Los recursos fijan las masas: $y_{LH}=\alpha$, $x_M=\beta$, $d_H=\gamma-h\alpha$. Como las tres son positivas, sus ecuaciones de beneficio cero fijan $w_H=H$, luego $w_L=v_L$ y $w_M=q_M$. Esta es la razón de la unicidad dentro del régimen estricto. En fronteras de igualdad puede fallar este argumento.
+
+\textbf{Producto.} Sin IA:
+\[
+Y^0=(\alpha+\beta)H+(\gamma-h\alpha-b_M\beta)H.
+\]
+Con IA:
+\[
+Y^V=\alpha H+\beta q_M+(\gamma-h\alpha)H.
+\]
+Al restar se cancelan $\alpha H,\gamma H,h\alpha H$:
+\begin{align*}
+Y^V-Y^0&=\beta q_M-\beta H+b_M\beta H\\
+&=\beta[q_M-H(1-b_M)]\\
+&=\beta(q_M-v_M)>0.
+\end{align*}
+\pregunta{Reconstruye la cota salarial. ¿Por qué las holguras estrictas, y no la FOC, permiten probar unicidad? ¿Qué parte sigue sin estar completamente traducida a Lean?}
+\newpage
+\section*{8. Reproducir el ejemplo con números exactos}
+Usa $h=1/2$, $a=22/25$, $\kappa=53/100$, $m=1/4$, $H=19/25$, y masas $(1/4,2/5,7/20)$.
+\begin{align*}
+b_M&=\tfrac12(1-\tfrac14)=\tfrac38=0.375,\\
+v_L&=0.76(1-0.5)=0.38,\\
+v_M&=0.76(1-0.375)=0.475,\\
+q_L&=0.88-0.53=0.35,\\
+q_M&=0.88-0.53(0.75)=0.4825,\\
+q_H&=0.88-0.53(0.24)=0.7528.
+\end{align*}
+Comprueba $\gamma=0.35>0.5(0.25)+0.375(0.4)=0.275$. Con IA, la base emplea $0.125$ expertos y quedan $0.225$ independientes. El medio usa masa $0.4$ de IA y demanda $0.15$ unidades de cómputo.
+\begin{align*}
+Y^0&=0.65(0.76)+0.075(0.76)=0.551,\\
+Y^V&=0.25(0.76)+0.4(0.4825)+0.225(0.76)=0.554,\\
+Y^V-Y^0&=0.4(0.4825-0.475)=0.003.
+\end{align*}
+El producto bruto es $0.25(0.76)+0.4(0.88)+0.225(0.76)=0.713$. El gasto es $0.4[0.53(0.75)]=0.159$. Producto neto: $0.713-0.159=0.554$.
+
+\textbf{No mezcles distribuciones.} La tabla del topic empleaba uniforme y consultaba $z=0,0.25,0.60$. Este ejemplo emplea tres masas y el tipo superior $0.76$. La tecnología, $h,a,\kappa$ se conservan; la distribución cambia de forma anunciada.
+\pregunta{Obtén las nueve cifras sin calculadora primero y después contrasta. ¿Por qué la base conserva su salario aun sin adoptar?}
+\newpage
+\section*{9. Qué hace el código y qué verifica Lean}
+\texttt{code/equilibrium.py} construye todas las actividades de una población finita y maximiza producto neto. Las restricciones igualan el uso de cada tipo con su masa. Los multiplicadores duales son salarios. La variable $x_i$ es adopción efectiva; $w_i=q_i$ no es suficiente si la actividad queda sin masa.
+
+\texttt{code/verify.py} realiza tres controles distintos: álgebra con SymPy, certificado exacto del ejemplo racional y resolución LP con residuos. Genera CSV y figuras. El estado de éxito del optimizador no basta: se revisan recursos, no beneficio, complementariedad y brecha de objetivos.
+
+En las mallas uniformes de 100, 200 y 400 tipos persiste el intervalo intermedio. La masa adoptante oscila; no debes decir que ya probaste convergencia. Los parámetros son ilustrativos y no identifican efectos causales sobre salarios reales.
+
+\textbf{Lean.} Se comprueban derivadas y álgebra mediante reglas y tácticas verificadas por el kernel. Hay pruebas locales de FOC, beneficio cero, pendiente sobre identidad local, un certificado de recursos/holguras de tres tipos y ganancia neta. La unicidad global de equilibrio de la Proposición 2 no está completamente traducida. Compilar estos lemas no equivale a certificar todas las conclusiones del paper ni la comprensión humana.
+
+\textbf{Restricción de IA que debes adjudicar.} Un borrador anterior exigía $\kappa<1$. Para cualquier $\kappa\geq0$ y $z\in[0,1]$, ambos factores de $c(z)=\kappa(1-z)$ son no negativos. No se necesita una cota superior. Escribe esa prueba a mano y confirma tu propio veredicto.\par\medskip\textbf{Otra afirmación que debes examinar.} ``$\Delta^0>0$ identifica a los adoptantes finales''. Es insuficiente porque utiliza $w^0$, el salario previo. Escribe a mano la comparación, explica la diferencia y después muestra cómo el certificado nuevo incorpora $w^V$ y recursos. Solo tras hacer esa revisión puedes afirmar que tú la comprobaste.
+\pregunta{¿Puedes interpretar cada eje de las figuras? ¿Qué diferencia hay entre un residuo pequeño, un certificado racional y una prueba general?}
+\newpage
+\section*{10. Preparación oral y evidencia manuscrita}
+\textbf{Primera pasada, comprensión.} Reconstruye las páginas 2--8 con papel y lápiz, nombrando las reglas. Marca cada paso que no puedes explicar y vuelve a su supuesto. No memorices una cadena de símbolos sin identificar qué permanece fijo.
+
+\textbf{Segunda pasada, exposición.} Usa el guion de 30 minutos de \texttt{slides/guion-final.md}. Habla despacio en la regla del producto, la holgura $LM$ y la cota de optimalidad. Los apéndices son para preguntas.
+
+\textbf{Tercera pasada, preguntas sin diapositivas.}
+\begin{enumerate}
+\item ¿Qué se relaja del paper base y qué no se modifica?
+\item ¿Por qué la IA solo ayuda a tipos $z\leq a$?
+\item ¿De dónde sale $n(z)$ y por qué crece con $z$?
+\item ¿Qué condiciones permiten aplicar Fermat?
+\item ¿Qué argumento da $w=a-c$?
+\item ¿Por qué necesitas expertos independientes para fijar $w_H$?
+\item ¿Has descartado que un $L$ trabaje con $M$?
+\item ¿Qué desigualdades son estrictas y dónde se usan?
+\item ¿Qué pasa si una de ellas se vuelve igualdad?
+\item ¿Qué demuestra la simulación y qué deja abierto?
+\item ¿Qué prueba exactamente el fragmento de Lean mostrado?
+\item ¿Por qué tu resultado no afirma que la base pierda salario?
+\end{enumerate}
+\textbf{Evidencia que debes producir.} Fotografía páginas reales y legibles de tus derivaciones y guárdalas en \texttt{hand/}. La slide de revisión de IA debe incluir esa fotografía, con tu veredicto propio. La guía no se transforma en evidencia manuscrita cambiando la fuente ni generando una imagen.
+
+Antes de exponer, verifica que entiendes las condiciones del resultado y puedes localizar la prueba y los datos en el repositorio. Si algo sigue abierto, dilo con precisión.
+\end{document}

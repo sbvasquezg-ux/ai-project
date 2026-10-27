@@ -1,1 +1,20 @@
-La formalización está en preparación. Se registrarán declaraciones, compilación, commit fuente y cualquier parte abierta. No se atribuye una certificación a archivos aún no comprobados.
+La fuente formalizada es el manuscrito propio fijado en el commit
+\href{https://github.com/sbvasquezg-ux/ai-project/commit/3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd}{\texttt{3fb4aab}}.
+Las proposiciones del cuerpo se conservan; este apéndice actualiza el estado.
+Se creó la carpeta con AppliedModelingLib, commit \texttt{194edcc}, y se copió completa a \texttt{lean/}, respetando su \texttt{.gitignore}. No se copió la ejecución de otro estudiante.
+\begin{center}\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.36\linewidth}>{\raggedright\arraybackslash}p{.38\linewidth}}\toprule
+Resultado & Declaración / archivo & Estado y alcance\\\midrule
+Prop. 1 & \texttt{proposition\_one} en \texttt{ProofInterface.lean}; lemas en \texttt{MainTheorems.lean} & FOC, renta, identidad salarial y pendiente local compiladas. Revisión semántica completa del protocolo y revisión humana pendientes.\\[5pt]
+Prop. 2 & \texttt{middle\_certificate}, \texttt{exact\_three\_type\_certificate}, \texttt{net\_output\_gain} & Parcial: recursos y holguras del candidato, ejemplo y ganancia. No están formalizadas la definición general de equilibrio, su optimalidad y unicidad global.\\\bottomrule
+\end{tabular}
+\end{center}
+Se ejecutaron:
+\begin{quote}\small\ttfamily
+lake build +Vasquez26HeterogeneousVerification\\
+python3 scripts/paper\_contribution.py check\\
+\hspace*{1em}Vasquez26HeterogeneousVerification --fast
+\end{quote}
+Ambos comandos terminaron con salida exitosa; los registros están en \texttt{lean/check-output.txt}. Este chequeo rápido verifica compilación e aislamiento, no un cierre semántico completo. Las pruebas no usan huecos ni axiomas añadidos; la inspección de axiomas reporta únicamente \texttt{propext}, \texttt{Classical.choice} y \texttt{Quot.sound}. No se declara un recibo de cierre aceptado de AppliedModelingLib.
+
+La configuración GPT-5.6 Sol/xhigh solicitada por la consigna aún no se ha acreditado: el intento por CLI fue rechazado por la revisión automática de permisos. No se atribuye esta formalización a ese modelo. La cobertura parcial y el modelo de ejecución deben revisarse antes de la entrega definitiva.

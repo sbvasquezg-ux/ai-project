@@ -11,7 +11,7 @@
 \date{26 de octubre de 2026}
 \begin{document}\maketitle
 \begin{abstract}\noindent
-Estudio si un gasto real de validación que cae con el conocimiento modifica quién usa una IA no autónoma. Extiendo la actividad humano--IA de Ide y Talamàs (2025), conservando su tecnología de ayuda y agregando $c(z)=\kappa(1-z)$. Con cómputo ocioso, la libre entrada determina $w^V=a-c$ entre usuarios. El resultado principal caracteriza un equilibrio de tres tipos: bajo desigualdades explícitas sobre ofertas netas y suficiente masa experta, solo el tipo intermedio adopta, mientras la base trabaja con expertos humanos. Una prueba por factibilidad, beneficios y complementariedad establece asignación y salarios únicos en ese régimen. Un ejemplo racional y programas lineales verifican el resultado. Mallas de una distribución uniforme también presentan adopción intermedia, pero no prueban existencia, unicidad ni convergencia del equilibrio continuo. La formalización Lean y sus límites se documentan por separado; la revisión manuscrita de la autora sigue pendiente.
+Estudio si un gasto real de validación que cae con el conocimiento modifica quién usa una IA no autónoma. Extiendo la actividad humano--IA de Ide y Talamàs (2025), conservando su tecnología de ayuda y agregando $c(z)=\kappa(1-z)$. Con cómputo ocioso, la libre entrada determina $w^V=a-c$ entre usuarios. El resultado principal caracteriza un equilibrio de tres tipos: bajo desigualdades explícitas sobre ofertas netas y suficiente masa experta, solo el tipo intermedio adopta, mientras la base trabaja con expertos humanos. Una prueba por factibilidad, beneficios y complementariedad establece asignación y salarios únicos en ese régimen. Un ejemplo racional y programas lineales verifican el resultado. Mallas de una distribución uniforme también presentan adopción intermedia, pero no prueban existencia, unicidad ni convergencia del equilibrio continuo. Las pruebas locales y un certificado se comprueban en Lean, con cobertura parcial documentada; la revisión manuscrita de la autora sigue pendiente.
 \end{abstract}
 \section{Introducción}
 El acceso técnico al conocimiento de una IA no implica que todos los trabajadores puedan incorporarla con el mismo costo. Si revisar y documentar su uso exige un gasto mayor a quienes tienen menos conocimiento, la tecnología puede resultar económicamente atractiva para tipos que no están en la base. Esa intuición compite con el costo de oportunidad: los más preparados también disponen de mejores opciones laborales. La pregunta es si esta fricción puede desplazar la adopción directa hacia tipos intermedios cuando salarios y asignaciones se ajustan.
@@ -150,7 +150,7 @@ Las necesidades de expertos son $h\alpha=0.125$ y $b_M\beta=0.15$, por lo que $0
 \[
  q_L=0.35<0.38,\quad q_M=0.4825>0.475,\quad q_H=0.7528<0.76.
 \]
-Todas las desigualdades de la proposición son estrictas. El certificado racional que genera \texttt{code/verify.py} evalúa cada recurso, desigualdad salarial e igualdad en actividades usadas con SymPy; una resolución LP independiente coincide con él.
+Todas las desigualdades de la proposición son estrictas. El script \texttt{code/verify.py} genera un certificado racional. Evalúa cada recurso, desigualdad salarial e igualdad en actividades usadas con SymPy; una resolución LP independiente coincide con él.
 \begin{center}
 \begin{tabular}{rrrrrr}\toprule
 Tipo $z$ & Masa & $w^0$ & $w^V$ & Usuarios IA & Independientes\\\midrule
@@ -230,7 +230,7 @@ La IA asistió en derivación, construcción del certificado, búsqueda bibliogr
 \begin{center}\small
 \begin{tabular}{p{.30\linewidth}p{.24\linewidth}p{.36\linewidth}}\toprule
 Afirmación examinada & Estado & Cómo se comprobó\\\midrule
-La FOC por sí sola da $w=a-c$. & Incompleta: necesita beneficio cero y $r=0$. & Derivación separada y SymPy.\\[4pt]
+Un borrador de IA exigía $\kappa<1$. & Cota superior injustificada. & $\kappa\geq0$, $z\in[0,1]$ implican $c(z)\geq0$; el modelo permite costos altos.\\[4pt]
 $\Delta^0>0$ identifica adoptantes finales. & Incorrecta como regla de equilibrio. & Se resuelve asignación y salarios; se usa masa primal $x_i$.\\[4pt]
 La selección intermedia sobrevive en cualquier continuo. & No demostrada. & Solo tres mallas y un teorema de tres tipos.\\[4pt]
 El ejemplo de tres tipos es equilibrio. & Certificado por el asistente; revisión humana pendiente. & Prueba completa, racionales y LP independiente.\\\bottomrule

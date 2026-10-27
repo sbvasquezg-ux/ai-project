@@ -1,0 +1,41 @@
+⚠ [3297/3300] Built Vasquez26HeterogeneousVerification.MainTheorems (7.7s)
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:20:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:20:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:20:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:48:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3298/3300] Built Vasquez26HeterogeneousVerification.PaperInterface (1.5s)
+ℹ [3299/3300] Built Vasquez26HeterogeneousVerification.ProofInterface (1.5s)
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:12:0: 'Vasquez26HeterogeneousVerification.proposition_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:13:0: 'Vasquez26HeterogeneousVerification.middle_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:14:0: 'Vasquez26HeterogeneousVerification.exact_three_type_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [3300/3300] Built Vasquez26HeterogeneousVerification (1.4s)
+Build completed successfully (3300 jobs).
+
+
+=== Chequeo del curso sobre fuente fijada ===
++ lake build +Vasquez26HeterogeneousVerification.PaperInterface
+⚠ [3297/3298] Replayed Vasquez26HeterogeneousVerification.MainTheorems
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:20:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:20:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:20:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: papers/Vasquez26HeterogeneousVerification/MainTheorems.lean:48:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (3298 jobs).
++ git diff --check -- papers/Vasquez26HeterogeneousVerification papers/Vasquez26HeterogeneousVerification.lean lakefile.toml ':(exclude)papers/Vasquez26HeterogeneousVerification/source/'

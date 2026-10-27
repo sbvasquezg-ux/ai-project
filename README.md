@@ -5,29 +5,32 @@
 <a href="https://arxiv.org/abs/2312.05481v11"><img src="https://img.shields.io/badge/arXiv-v11-0E7490" alt="arXiv v11"></a>
 <a href="slides/topic.pdf"><img src="https://img.shields.io/badge/Topic-20_min-6D28D9" alt="Topic 20 min"></a>
 <a href="proposal/proposal.pdf"><img src="https://img.shields.io/badge/Propuesta-PDF-E11D48" alt="Propuesta"></a>
-<a href="lean/"><img src="https://img.shields.io/badge/Lean-pendiente-F59E0B" alt="Lean pendiente"></a>
+<a href="lean/"><img src="https://img.shields.io/badge/Lean-parcial-F59E0B" alt="Lean pendiente"></a>
 <a href="code/verify.py"><img src="https://img.shields.io/badge/Python-SymPy-0E7490" alt="Python SymPy"></a>
 </p>
 
 **Sofía Belén Vásquez García · Track A · AI and Economic Modeling · UP 2026-II.**
 
-**Pregunta.** ¿Puede un costo de validación decreciente con el conocimiento desplazar el uso directo de IA no autónoma desde la base hacia tipos intermedios? Extensión propia de Ide y Talamàs (2025), **Proposición 6, p. 27 de arXiv v11**. No atribuye un error al paper.
+**Pregunta.** ¿Puede un gasto real de validación decreciente con conocimiento desplazar el uso directo de IA desde la base hacia tipos intermedios? Extensión propia de Ide y Talamàs (2025), **Proposición 6, p.27 de arXiv v11**.
 
-**Modelo.** Humanos de masa uno, tipos observables $z\in[0,1]$, distribución $G$ con densidad positiva y continua, problemas uniformes, dos niveles, competencia y libre entrada. Se mantienen $0<h<h_0(G)$, $a\in(0,1)$ e IA solo asesora. Con $\mu>h$, el cómputo es ocioso y $r=0$. El gasto real $c(z)\geq0$, $c'(z)\leq0$, es por trabajador y período; no consume tiempo ni cambia éxito. Inicialmente $c(z)=\kappa(1-z)$, $\kappa\geq0$.
+**Modelo.** La IA no autónoma solo asesora. El costo $c(z)=\kappa(1-z)$, $\kappa\geq0$, se paga por trabajador en bien final; no cambia tiempo ni éxito. Con competencia, libre entrada, dos niveles, $0<h<1$, $a\in(0,1)$ y $\mu>h$, resulta $r=0$:
 
-$$\max_{0\leq z\leq a}\Pi^V(z)=n(z)[a-w^V(z)-c(z)]-r,\qquad n(z)=\frac1{h(1-z)}.$$
+$$\max_{0\leq z\leq a}\Pi^V(z)=\frac{a-w^V(z)-c(z)}{h(1-z)}-r.$$
 
-**Resultado esperado y alcance.** En un óptimo interior diferenciable, la FOC es $w^{V\prime}+c'=(a-w^V-c)/(1-z)$. **Además**, beneficio cero en actividades usadas implica que ese cociente es $hr$. Con $r=0$, $w^V=a-c$ entre usuarios, y $w^{V\prime}=\kappa$ en un intervalo activo diferenciable. La FOC no determina quién usa IA. La **conjetura** es selección intermedia para algunos parámetros; $\kappa>w^{0\prime}$ solo hace crecer localmente la ventaja de entrada $\Delta^0=a-c-w^0$. El ejemplo $G(z)=z,h=.5,a=.88,\kappa=.53$ reproduce $(-.0070,+.0081,-.0232)$ en $z=(0,.25,.60)$: **entrada a salarios iniciales, no equilibrio**. Se comparará costo constante vs. pendiente y se recuperará el baseline al cerrar el modelo con $c=0$.
+**Resultado y condiciones.** FOC interior diferenciable: $w^{V\prime}+c'=(a-w^V-c)/(1-z)$. Beneficio cero y $r=0$ dan $w^V=a-c$ entre usuarios; en un intervalo activo, $w^{V\prime}=\kappa$. La asignación requiere además recursos y todas las alternativas.
 
-| Entregable | Estado |
+**Proposición propia de tres tipos.** Para tipos $(0,m,H)$, $0<m<H<1$, $m<a$, masas positivas $(\alpha,\beta,\gamma)$ de suma uno, defina $b_M=h(1-m)$, $v_L=H(1-h)$ y $v_M=H(1-b_M)$. Si $\gamma>h\alpha+b_M\beta$, $v_M>m$, $q_L<v_L$, $q_M>v_M$ y $q_H<H$ cuando $H\leq a$, donde $q_i=a-c(z_i)$, hay equilibrio único con salarios $(v_L,q_M,H)$ y solo el tipo medio usa IA. La ganancia neta es $\beta(q_M-v_M)>0$. **La distribución es discreta explícita**; el teorema del continuo queda abierto. En el ejemplo $(h,a,\kappa)=(.5,.88,.53)$, tipos $(0,.25,.76)$ y masas $(.25,.4,.35)$, el producto pasa de $.551$ a $.554$.
+
+| Entregable | Estado al 26-oct |
 |---|---|
-| [Propuesta](proposal/proposal.pdf) y [topic](slides/topic.pdf), con `.tex` | ✅ Topic listo; 7-oct, 07:55 |
-| [Código](code/verify.py), CSV y figura | ✅ SymPy y ejemplo; equilibrio nuevo pendiente |
-| [Slides finales](slides/final.tex) | ⏳ 28-oct; plantilla pendiente |
-| [Paper](paper/paper.tex) | ⏳ 26-nov; plantilla pendiente, ejemplo ajeno al topic |
-| [Lean](lean/) | ⏳ AppliedModelingLib; sin formalización propia aún |
-| [Manuscritos](hand/README.md) y [prompts](prompts.md) | Lista de derivaciones; fotos pendientes / registro disponible |
+| [Topic](slides/topic.pdf) y [propuesta](proposal/proposal.pdf) | ✅ Se conserva la entrega inicial |
+| [Paper](paper/paper.pdf), `.tex` y `.bib` | ✅ 9 páginas de cuerpo, pruebas y apéndices; versión para discusión |
+| [Presentación final](slides/final.pdf) | ✅ 19 slides centrales y 3 apéndices; guion de 30 min |
+| [Código](code/verify.py) | ✅ SymPy, certificado racional, LP y mallas 100/200/400 |
+| [Lean](lean/README.md) | ⚠ Parcial: pruebas locales y certificado; unicidad global abierta |
+| [Guía de derivaciones](hand/guia-derivaciones.pdf) | ✅ 10 páginas para estudiar; **manuscrito y veredicto de la autora pendientes** |
+| [Prompts](prompts.md) | Registro crudo y cambios; no se inventa revisión humana |
 
-**Reproducir:** `python3 -m pip install -r code/requirements.txt` y `python3 code/verify.py`; después, `latexmk -pdf` sobre `proposal.tex`, `topic.tex`, `final.tex` y `paper.tex` en sus carpetas. El workflow de la plantilla se conserva. [Búsqueda de novedad](proposal/literature-search.md) · [Guion de 20 min](slides/guion-topic.md) · [Atribuciones](code/ATTRIBUTION.md).
+**Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
 
-**Entrega:** sesión 13; merge antes del 7-oct a las 07:30 (Lima). La autora debe comentar el link del repo en el [issue #7](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7).
+Exposición: **28-oct, 08:20–09:05**. Slides mergeadas antes del **27-oct, 22:00 Lima**. Paper completo: **26-nov, 22:00**. El [enlace de entrega](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7#issuecomment-6028656558) ya fue publicado por la autora; no necesita otro comentario.
