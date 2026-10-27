@@ -49,3 +49,8 @@ La búsqueda textual incluyó `non-autonomous`, `nonautonomous`, `verification`,
 ## Conclusión de alcance
 
 La verificación costosa, su relación con experiencia y la validación dentro de jerarquías ya tienen antecedentes. La contribución propuesta es más estrecha: caracterizar el conjunto de usuarios y salarios de la economía de Ide–Talamàs con un gasto real obligatorio c(z), comparando nivel y pendiente. No se encontró esa caracterización en los pasajes revisados. Esto es evidencia localizada y provisional, no certificación de originalidad absoluta.
+
+
+## Actualización del 26 de octubre de 2026
+
+Se reabrieron las fichas primarias de arXiv para Xu et al., Quispe–Xu y Catalini et al. y la web de Eduard Talamàs. Xu et al. tiene v2 de 24-mar-2026 (https://arxiv.org/abs/2506.00532v2), que amplía modos de despliegue y capas; el topic solo discutía v1. El nuevo paper cita ambas versiones y mantiene la diferencia entre gasto real y tiempo/fiabilidad. La web del autor sigue anunciando Turing Valley como aceptado en Journal of Human Capital. No se afirma una búsqueda exhaustiva nueva de todos los citantes.

@@ -1,0 +1,14 @@
+{
+  "baseline_output": 0.551,
+  "extended_output": 0.554,
+  "gain": 0.0030000000000000027,
+  "compute": 0.15000000000000002,
+  "certificate": "rational SymPy + independent LP",
+  "diagnostics": {
+    "resource_residual": 0.0,
+    "negative_activity": 0.0,
+    "positive_unit_profit": 0.0,
+    "complementarity": 0.0,
+    "duality_gap": 0.0
+  }
+}

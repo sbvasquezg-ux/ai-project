@@ -1,4 +1,4 @@
-"""Chequeos locales de la extensión; no es un solver del nuevo equilibrio.
+"""Chequeos simbólicos, equilibrio finito y aproximación del continuo.
 
 uniform_baseline adapta ai-05-ide/sim.py (Belén Vásquez, MIT).
 Ejecutar desde cualquier carpeta: python3 code/verify.py.
@@ -96,7 +96,112 @@ def numeric_checks():
     fig.savefig(ROOT/'figures/entry_check.pdf',metadata={'Title':'Entrada a salarios iniciales; no es equilibrio','Author':'Sofía Belén Vásquez García','CreationDate':None,'ModDate':None})
     plt.close(fig)
     print('Tabla Δ0:',', '.join(f'{x:+.4f}' for x in actual))
-    print('Caso κ=0 y condiciones del baseline: OK. Equilibrio con validación: pendiente.')
+    print('Caso κ=0 e ilustración inicial: OK. Los nuevos equilibrios se verifican abajo.')
+
+
+
+def full_equilibrium_checks():
+    import json
+    from equilibrium import equilibrium
+    from fractions import Fraction
+    rows=[];curves={};h,a,k=.5,.88,.53
+    z3=np.array([0.,.25,.76]);m3=np.array([.25,.4,.35])
+    exact_w=np.array([.38,.4825,.76])
+    base3=equilibrium(z3,m3,h)
+    extended3=equilibrium(z3,m3,h,a,k)
+    np.testing.assert_allclose(base3.wages,[.38,.475,.76],atol=1e-9)
+    np.testing.assert_allclose(extended3.wages,exact_w,atol=1e-9)
+    np.testing.assert_allclose(extended3.ai,[0,.4,0],atol=1e-9)
+    np.testing.assert_allclose(extended3.independent,[0,0,.225],atol=1e-9)
+    assert abs(base3.net_output-.551)<1e-9 and abs(extended3.net_output-.554)<1e-9
+    assert abs(extended3.compute_demand-.15)<1e-9
+    # Exact rational certificate, independent of the floating-point optimizer.
+    L,M,H=map(sp.Rational,['0','0.25','0.76']);hh=sp.Rational(1,2)
+    aa=sp.Rational(22,25);kk=sp.Rational(53,100)
+    zz=[L,M,H];ww=[sp.Rational(19,50),sp.Rational(193,400),H]
+    independent=[0,0,sp.Rational(9,40)];xx=[0,sp.Rational(2,5),0]
+    yy={(0,1):sp.Rational(0),(0,2):sp.Rational(1,4),(1,2):sp.Rational(0)}
+    mm=[sp.Rational(1,4),sp.Rational(2,5),sp.Rational(7,20)]
+    q=[aa-kk*(1-t) for t in zz]
+    for i in range(3):
+        assert ww[i]>=zz[i] and ww[i]>=q[i]
+        use=independent[i]+xx[i]+sum(v for (u,j),v in yy.items() if u==i)
+        use+=sum(hh*(1-zz[u])*v for (u,j),v in yy.items() if j==i)
+        assert use==mm[i]
+        assert independent[i]*(ww[i]-zz[i])==0 and xx[i]*(ww[i]-q[i])==0
+    for (i,j),v in yy.items():
+        slack=ww[i]+hh*(1-zz[i])*ww[j]-zz[j]
+        assert slack>=0 and v*slack==0
+    assert sum(mm[i]*ww[i] for i in range(3))==sp.Rational(277,500)
+    # Symbolic slack used in the general three-type proof.
+    hS,mS,HS=sp.symbols('h m H',real=True)
+    vM=HS*(1-hS*(1-mS));vL=HS*(1-hS)
+    assert sp.expand((vL+hS*vM-mS)-(vM-mS+HS*hS*(1-hS)*(1-mS)))==0
+    # Baseline versus extension output gain in Proposition 2.
+    alpha,beta,gamma,qM=sp.symbols('alpha beta gamma qM',real=True)
+    Y=alpha*HS+beta*qM+(gamma-hS*alpha)*HS
+    Y0=(alpha+beta)*HS+(gamma-hS*alpha-hS*(1-mS)*beta)*HS
+    assert sp.expand(Y-Y0-beta*(qM-vM))==0
+    for N in [100,200,400]:
+        z=(np.arange(N)+.5)/N;mass=np.ones(N)/N
+        scenarios={
+          'sin_IA':equilibrium(z,mass,h),
+          'costo_cero':equilibrium(z,mass,h,a,0),
+          'constante':equilibrium(z,mass,h,a,constant_cost=k*(1-a/2)),
+          'heterogeneo':equilibrium(z,mass,h,a,k),
+        }
+        for name,e in scenarios.items():
+            used=np.flatnonzero(e.ai>1e-8)
+            rows.append(dict(N=N,scenario=name,net_output=e.net_output,gross_output=e.gross_output,
+              validation_spending=e.validation_spending,ai_mass=float(e.ai.sum()),
+              ai_min=float(z[used[0]]) if len(used) else '',ai_max=float(z[used[-1]]) if len(used) else '',
+              compute_demand=e.compute_demand,**e.diagnostics))
+            if name=='heterogeneo':
+                assert len(used)>0 and .15<z[used[0]]<.35 and z[used[-1]]<.4
+                assert e.ai[z<.15].sum()<1e-8
+                assert e.net_output>scenarios['sin_IA'].net_output
+        baseline=uniform_wage(z,h)
+        assert np.max(np.abs(scenarios['sin_IA'].wages-baseline))<.03
+        if N==400:curves=scenarios
+    with (ROOT/'output/equilibrium_summary.csv').open('w',newline='') as f:
+        writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+    e=curves['heterogeneo']
+    with (ROOT/'output/equilibrium_types.csv').open('w',newline='') as f:
+        writer=csv.writer(f);writer.writerow(['z','mass','wage','AI','independent'])
+        writer.writerows(zip(e.z,e.mass,e.wages,e.ai,e.independent))
+    # Every exact equilibrium table value is serialized from the checked solution.
+    with (ROOT/'output/three_type.csv').open('w',newline='') as f:
+        writer=csv.writer(f);writer.writerow(['z','mass','w0','wV','AI','independent'])
+        writer.writerows(zip(z3,m3,base3.wages,extended3.wages,extended3.ai,extended3.independent))
+    exact_report={'baseline_output':base3.net_output,'extended_output':extended3.net_output,
+      'gain':extended3.net_output-base3.net_output,'compute':extended3.compute_demand,
+      'certificate':'rational SymPy + independent LP','diagnostics':extended3.diagnostics}
+    (ROOT/'output/three_type_certificate.json').write_text(json.dumps(exact_report,indent=2)+'\n')
+    make_equilibrium_figures(curves,rows)
+    print('Proposición 2: certificado racional y LP de tres tipos OK; Y0=.551, YV=.554, usuarios IA=(0,.4,0).')
+    for row in rows:
+        if row['scenario']=='heterogeneo':print('Malla',row)
+    return rows
+
+def make_equilibrium_figures(curves,rows):
+    colors={'sin_IA':'#14121F','costo_cero':'#0E7490','constante':'#F59E0B','heterogeneo':'#6D28D9'}
+    labels={'sin_IA':'Sin IA','costo_cero':'Costo cero','constante':'Costo constante','heterogeneo':'Costo heterogéneo'}
+    fig,(ax,bx)=plt.subplots(1,2,figsize=(10.5,4),layout='constrained')
+    for name,e in curves.items():
+        ax.plot(e.z,e.wages,color=colors[name],label=labels[name],lw=2)
+        bx.plot(e.z,e.ai/e.mass,color=colors[name],label=labels[name],lw=1.6)
+    for panel in (ax,bx):
+        panel.spines[['top','right']].set_visible(False);panel.grid(alpha=.15);panel.set_xlabel('Conocimiento humano $z$')
+    ax.set_ylabel('Salario de equilibrio');bx.set_ylabel('Fracción del tipo que usa IA')
+    ax.legend(frameon=False,fontsize=9);bx.set_xlim(0,.9);bx.set_ylim(-.03,1.06)
+    fig.savefig(ROOT/'figures/equilibrium.pdf',metadata={'CreationDate':None,'ModDate':None});plt.close(fig)
+    fig,ax=plt.subplots(figsize=(7.7,3.6),layout='constrained')
+    for name in colors:
+        rr=[r for r in rows if r['scenario']==name]
+        ax.plot([r['N'] for r in rr],[r['net_output'] for r in rr],marker='o',color=colors[name],label=labels[name])
+    ax.set(xlabel='Número de tipos en la malla',ylabel='Producto neto',title='Sensibilidad a la discretización')
+    ax.spines[['top','right']].set_visible(False);ax.legend(frameon=False,fontsize=9);ax.grid(alpha=.15)
+    fig.savefig(ROOT/'figures/grid_check.pdf',metadata={'CreationDate':None,'ModDate':None});plt.close(fig)
 
 if __name__=='__main__':
-    symbolic_checks();numeric_checks()
+    symbolic_checks();numeric_checks();full_equilibrium_checks()
