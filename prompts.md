@@ -166,3 +166,95 @@ El manuscrito ya tiene 9 páginas de cuerpo, con dos proposiciones y sus pruebas
 - Fuente fijada para la formalización: commit 3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd. Los enunciados de las proposiciones se conservan; se actualiza el apéndice de estado. Los hashes y logs están en lean/.
 - La revisión automática rechazó un intento de ejecutar GPT-5.6 Sol/xhigh sobre archivos locales por transmisión del manuscrito no publicado a otro servicio. No se declara que ese modelo haya producido las pruebas. Cualquier revisión posterior debe usar exclusivamente material público verificado o recibir autorización específica.
 - La guía de 10 páginas y el guion de 30 minutos ayudan a estudiar; **no son fotos de derivaciones realizadas por la autora**. La slide 17 declara que falta su manuscrito real y su veredicto propio.
+
+
+## Revisión pública con GPT-5.6 Sol/xhigh — 26 de octubre
+
+El primer intento local fue rechazado por permisos. Tras verificar que el commit estaba publicado y el repositorio era público, se usó un clon nuevo con sandbox de solo lectura. No se accedió a los borradores privados.
+
+### Prompt al modelo (crudo)
+
+Review only this public repository https://github.com/sbvasquezg-ux/ai-project at commit 450b4d1cda392f6c4326b8b8fae7694bbeab8dc1. This directory is a fresh clone of that public commit, not an unpublished manuscript directory. Do not read any task files outside this clone. Read paper/paper.tex, paper/formalization-status.tex, lean/MainTheorems.lean, lean/PaperInterface.lean, lean/ProofInterface.lean and lean/status.json. Independently review the full mathematical proofs of Propositions 1 and 2, all inequalities and the rational example, and the precise limits of the Lean coverage. Report concrete mathematical errors, hidden hypotheses, misleading status claims or an explicit absence of such findings. Do not claim to have compiled or to have completed the full AppliedModelingLib semantic protocol. Make no file changes. Answer in Spanish with a concise review and exact references to files and lines.
+
+### Respuesta del modelo (cruda)
+
+## Dictamen
+
+No encontré errores matemáticos en las pruebas manuscritas de las Proposiciones 1 y 2, sus desigualdades ni el ejemplo racional. Sí encontré límites importantes —correctamente reconocidos en parte— en la cobertura Lean y dos inconsistencias de estado/metadatos.
+
+### Matemática
+
+- **Proposición 1:** la derivada
+  \[
+  n'(z)=\frac1{h(1-z)^2},\qquad \frac{n'}n=\frac1{1-z}
+  \]
+  y la FOC son correctas. Beneficio cero implica
+  \(a-w-c=rh(1-z)\), de donde \(w'+c'=hr\); con \(r=0\), \(w=a-c\), y para \(c=\kappa(1-z)\), \(w'=\kappa\). La interioridad \(0<z<a\), diferenciabilidad local y \(h>0\) justifican Fermat y las divisiones. Véase [paper/paper.tex:58](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:58>).
+
+- **Hipótesis implícita menor:** la conclusión sobre la pendiente requiere beneficio cero para todos los tipos de un entorno activo, no solo en un punto. El texto lo aclara inmediatamente después, por lo que no constituye un error. Véase [paper/paper.tex:63](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:63>) y [paper/paper.tex:82](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:82>).
+
+- **Proposición 2:** la construcción es factible y el argumento primal–dual de unicidad es válido. La identidad
+  \[
+  v_L+hv_M-m=(v_M-m)+Hh(1-h)(1-m)>0
+  \]
+  es algebraicamente correcta. Con IA, todas las actividades no utilizadas tienen holgura estricta; por complementariedad, cualquier óptimo solo puede usar \(LH\), IA de \(M\) e independencia de \(H\). Los recursos y la masa positiva de esas actividades fijan tanto cantidades como salarios. Véase [paper/paper.tex:118](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:118>) y la formulación primal–dual en [paper/paper.tex:205](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:205>).
+
+- La desigualdad \(b_M\beta<h<\mu\) empleada en la prueba se deduce de \(b_M=h(1-m)\), \(m>0\), \(\beta<1\) y la normalización de masas; no es una hipótesis nueva. Véase [paper/paper.tex:126](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:126>).
+
+- La diferencia de producto
+  \[
+  Y^V-Y^0=\beta(q_M-v_M)
+  \]
+  también es correcta. Véase [paper/paper.tex:132](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:132>).
+
+### Ejemplo racional
+
+Todos los valores y signos declarados son exactos:
+
+\[
+b_M=\frac38,\quad v_L=\frac{19}{50},\quad v_M=\frac{19}{40},\quad
+q_L=\frac7{20},\quad q_M=\frac{193}{400},\quad q_H=\frac{941}{1250}.
+\]
+
+Los márgenes relevantes son:
+
+\[
+\gamma-h\alpha-b_M\beta=\frac3{40}>0,\quad
+q_M-v_M=\frac3{400}>0,\quad
+H-q_H=\frac9{1250}>0.
+\]
+
+Además, \(d_H^V=9/40\), \(Y^0=0.551\), \(Y^V=0.554\), la ganancia es \(3/1000\), el producto bruto es \(0.713\) y el costo es \(0.159\). Todo coincide con [paper/paper.tex:140](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:140>).
+
+### Límites exactos de Lean
+
+Lean cubre:
+
+- derivada de `span`, FOC, consecuencia de beneficio cero, identidad salarial con \(r=0\) y derivada de una oferta lineal local ([lean/MainTheorems.lean:15](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/MainTheorems.lean:15>));
+- una especificación conjuntiva de esos resultados locales ([lean/PaperInterface.lean:8](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/PaperInterface.lean:8>));
+- holguras y recursos del candidato de tres tipos, la identidad de ganancia y el ejemplo racional ([lean/MainTheorems.lean:67](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/MainTheorems.lean:67>), [lean/MainTheorems.lean:108](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/MainTheorems.lean:108>)).
+
+No cubre:
+
+- una noción formal de actividad usada, libre entrada o equilibrio;
+- el paso de “intervalo usado” a igualdad salarial local: `active_interval_slope` recibe esa igualdad como hipótesis ([lean/MainTheorems.lean:62](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/MainTheorems.lean:62>));
+- optimalidad, existencia o unicidad de la Proposición 2, ni el equilibrio sin IA;
+- el modelo continuo, las simulaciones o su convergencia.
+
+Además, `middle_certificate` exige \(q_H<H\) **incondicionalmente** ([lean/MainTheorems.lean:82](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/MainTheorems.lean:82>)), mientras el manuscrito solo lo exige cuando \(H\le a\) ([paper/paper.tex:101](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/paper.tex:101>)). Por tanto, el certificado Lean general es más restrictivo que la proposición.
+
+### Estado y metadatos
+
+- La fuente formalizada está fijada al commit anterior `3fb4aab…`, no al commit revisado `450b4d1…` ([paper/formalization-status.tex:1](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/formalization-status.tex:1>), [lean/status.json:100](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/status.json:100>)). La afirmación de que las proposiciones se conservaron no constituye una comprobación semántica del commit actual.
+
+- `status.json` apunta a una interfaz bajo `papers/...` y registra cero líneas y cero filas ([lean/status.json:25](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/status.json:25>)), aunque la interfaz revisada contiene una especificación de 23 líneas. El inventario está desactualizado o describe otro artefacto.
+
+- El propio estado deja `paper_coverage_required: false`, listas de cobertura vacías y solo una ruta para la Proposición 1 ([lean/status.json:87](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/lean/status.json:87>)). Esto confirma que no existe cierre semántico completo.
+
+No compilé el proyecto ni verifiqué los registros externos mencionados; tampoco completé el protocolo semántico de AppliedModelingLib. Las afirmaciones de compilación de [paper/formalization-status.tex:12](</Users/belenvasquez/Documents/Codex/2026-10-04/https-github-com-sbvasquezg-ux-ai/work/final/public-review/paper/formalization-status.tex:12>) son afirmaciones del repositorio, no resultados de esta revisión.
+
+### Adjudicación del asistente, no de la autora
+
+Se corrigió la condición de elegibilidad de H en el certificado, se actualizaron los contadores del inventario y se compararon los bytes de ambas proposiciones y pruebas con la fuente fijada. El protocolo completo, la unicidad global en Lean y la revisión humana siguen pendientes. Esta revisión no transforma las pruebas anteriores en una ejecución de formalización realizada por Sol.
+
+Nota de registro: el revisor llama «pruebas manuscritas» a las pruebas escritas en LaTeX; no revisó fotografías ni manuscritos a mano, que siguen pendientes.
