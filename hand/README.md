@@ -1,14 +1,20 @@
-# Derivaciones a mano — pendientes
+# Derivaciones manuscritas de la autora — pendientes
 
-La autora debe hacer y explicar estas derivaciones. No hay fotos ni evidencia manuscrita todavía. No se presenta texto generado como si fuera trabajo a mano.
+La guía tipográfica de 10 páginas `guia-derivaciones.pdf` explica cada paso y contiene preguntas de comprensión. **No es un manuscrito, una revisión humana ni evidencia de trabajo a mano.**
 
-1. Partir de $n(z)=1/[h(1-z)]$ y obtener $n'(z)/n(z)=1/(1-z)$; indicar $h>0,z<1$.
-2. Derivar $\Pi^V=n(a-w^V-c)-r$ por regla del producto. Separar FOC interior de condiciones unilaterales en $0$ y $a$.
-3. Usar **beneficio cero**, además de la FOC, para obtener $a-w^V-c=rh(1-z)$ y $w^{V\prime}+c'=hr$.
-4. Con $r=0$, deducir $w^V=a-c$; con $c=\kappa(1-z)$, derivar $w^{V\prime}=\kappa$ en un intervalo activo.
-5. Derivar $\Delta^0=a-c-w^0$ y $\Delta^{0\prime}=\kappa-w^{0\prime}$. Explicar por qué usa salarios iniciales.
-6. Reproducir a mano el salario uniforme sin IA y los tres valores de la tabla; distinguir el corte ocupacional de $c(z)$.
-7. Comparar $c=0$, costo constante y costo lineal. Explicar nivel frente a pendiente.
-8. Escribir factibilidad, no beneficio positivo y complementariedad para el futuro equilibrio. Documentar la prueba o refutación de la conjetura cuando exista.
+La autora debe escribir por sí misma:
 
-Al incorporar fotos legibles, numerar páginas y vincular cada una con su ecuación. La revisión humana de las respuestas de IA sigue pendiente; véase `prompts.md`.
+1. La cota superior κ<1 de un borrador de IA es injustificada: demuestra no negatividad con κ≥0.
+2. Recurso b(z), derivada de n(z) y razón n'/n.
+3. Regla del producto, FOC y condiciones de interioridad.
+4. Beneficio cero, r=0 e identidad salarial; pendiente sobre un intervalo.
+5. Construcción de salarios y recursos del modelo de tres tipos.
+6. Las holguras de todas las actividades, en especial LM.
+7. Cota de producto, unicidad por complementariedad y ganancia neta.
+8. Certificado racional del ejemplo y diferencia frente a la tabla uniforme del topic.
+
+Fotografiar páginas reales, completas y legibles con nombres `01-foc.jpg`, `02-beneficio-cero.jpg`, `03-tres-tipos.jpg`, etc. El nombre es una sugerencia, no evidencia de que existan archivos.
+
+Antes de exponer, incorporar una fotografía real y su veredicto personal a la slide 17. Actualmente esa slide declara el manuscrito pendiente. No se ha fabricado una aprobación humana ni una imagen de manuscrito.
+
+Ensayo: `slides/guion-final.md`; pruebas: `paper/paper.pdf`.

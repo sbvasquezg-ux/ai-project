@@ -109,3 +109,60 @@ La propuesta ya compila en **4 páginas** y el código pasa: reproduce los tres 
 - `paper/paper.tex` y `slides/final.tex` conservan el ejemplo y cajas pendientes de la plantilla, con título/autora actualizados y aviso de que no son resultados del proyecto. Se retiran referencias a la figura de esfuerzo eliminada de code/ para que sigan compilando. No se presentan como entregas finales terminadas. `lean/` se conserva como plantilla pendiente.
 - Los PDFs fuente del paper se descargaron a una carpeta de trabajo fuera de git. No se publican PDFs ajenos.
 - **Revisión humana pendiente:** la autora debe comprobar las derivaciones a mano y evaluar las afirmaciones del asistente. No se inventa evidencia manuscrita ni certificación Lean.
+
+## Usuario — 26 de octubre de 2026
+
+````text
+ya tengo que terminar el paper, el miercoles es mi exposicion final, que me falta para terminar todo?
+````
+
+## Usuario — respuesta de aclaración
+
+````text
+me dijo que tengo que saber bien cada derivacion, nada sobre el contenido en realidad
+````
+
+## Usuario
+
+````text
+porfa puedes terminar todo?
+````
+
+## Asistente
+
+````text
+Voy a desarrollar el paper, las simulaciones y las slides finales, y a comprobar qué resultados de la extensión podemos demostrar. También prepararé una guía de derivaciones para que puedas estudiarlas. Las derivaciones manuscritas deberán ser tuyas; en Lean documentaré exactamente lo que logremos verificar y lo que quede abierto.
+````
+
+## Asistente
+
+````text
+La primera simulación del equilibrio ofrece un resultado prometedor: con los parámetros del topic, la adopción sigue concentrada en un intervalo intermedio después de reajustar salarios. Además, encontré un ejemplo de tres tipos con números racionales que parece admitir una prueba completa. Voy a verificarlo y usarlo para sostener el resultado formal, distinguiéndolo de la evidencia numérica del continuo.
+````
+
+## Asistente
+
+````text
+El ejemplo de tres tipos ya pasó dos comprobaciones independientes: un certificado con racionales exactos y la resolución del programa lineal. En él, solo adopta el tipo intermedio y el producto neto pasa de 0.551 a 0.554. El paper incluirá las condiciones y la prueba completa de ese régimen; las tres mallas uniformes se reportarán como evidencia numérica, sin atribuirles una prueba del continuo.
+````
+
+## Asistente
+
+````text
+El manuscrito ya tiene 9 páginas de cuerpo, con dos proposiciones y sus pruebas, además de referencias y apéndices. La revisión independiente no encontró un error que invalide la matemática; señaló precisiones menores que ya corregí. Lean también compila la FOC, la identidad salarial, la pendiente local y el certificado de tres tipos. La prueba completa de unicidad aún no está traducida a Lean y quedará identificada como pendiente.
+````
+
+## Registro de la entrega final — anotaciones, no transcripción ni aprobación humana
+
+- Se conserva la pregunta y el costo real c(z)=κ(1−z), κ≥0, así como h=.5, a=.88, κ=.53 de la ilustración. La FOC no se presenta como una asignación competitiva.
+- Se activa el **plan B ya previsto en la propuesta**: el resultado formal de equilibrio se prueba para tipos (0,m,H), con masas explícitas, mientras el uniforme continuo se estudia con mallas. Este cambio de distribución se declara en el Supuesto 4; no es una prueba del continuo ni una sustitución silenciosa de G.
+- La Proposición 2 demuestra un régimen suficiente con expertos excedentes, ofertas netas qL<vL, qM>vM y qH<H si elegible. Construye asignación, descarta todas las actividades alternativas y demuestra unicidad con cota de producto y complementariedad.
+- El ejemplo exacto usa tipos (0,.25,.76) y masas (.25,.4,.35); no se confunde con los puntos de la tabla uniforme del topic. Da wV=(.38,.4825,.76), usuarios IA=(0,.4,0), Y0=.551 e YV=.554. SymPy racional y un LP independiente lo verifican.
+- **Rectificación de un borrador de IA:** había impuesto κ<1 sin justificación. El modelo solo exige κ≥0. La no negatividad c(z)≥0 en [0,1] no necesita aquella cota. La restricción se descartó de las entregas. Esta es una afirmación real del borrador anterior (`work/revision/author_project.py`), no una transcripción inventada para la slide de adjudicación.
+- En una exploración de código, un doble signo imprimía el producto con signo negativo. Se corrigió antes del script y tablas entregados, y se comprobó la contabilidad neto=bruto−gasto. No se publicó ese valor exploratorio como resultado.
+- Una revisión independiente sin historial de autoría no identificó errores altos o medios en las proposiciones finitas. Señaló precisar solver s>z, escribir explícitamente (0,m,H), distinguir CSV de tablas LaTeX y corregir un mensaje de estado obsoleto; se incorporó. Esa revisión no es un veredicto humano ni una certificación Lean.
+- Se completan equilibrios con salarios endógenos y cuatro escenarios. Las masas adoptantes varían entre mallas: no se afirma convergencia. No se concluye que el costo heterogéneo mejore bienestar frente al constante; no se modelan daños evitados por validación.
+- Lean contiene pruebas propias compiladas de FOC, beneficio cero, pendiente local, certificado de recursos/holguras y ganancia neta. **No se acredita la formalización completa de la unicidad global de la Proposición 2 ni del continuo.** El check rápido del curso pasa; no equivale a un cierre semántico completo del protocolo de AppliedModelingLib.
+- Fuente fijada para la formalización: commit 3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd. Los enunciados de las proposiciones se conservan; se actualiza el apéndice de estado. Los hashes y logs están en lean/.
+- La revisión automática rechazó un intento de ejecutar GPT-5.6 Sol/xhigh sobre archivos locales por transmisión del manuscrito no publicado a otro servicio. No se declara que ese modelo haya producido las pruebas. Cualquier revisión posterior debe usar exclusivamente material público verificado o recibir autorización específica.
+- La guía de 10 páginas y el guion de 30 minutos ayudan a estudiar; **no son fotos de derivaciones realizadas por la autora**. La slide 17 declara que falta su manuscrito real y su veredicto propio.

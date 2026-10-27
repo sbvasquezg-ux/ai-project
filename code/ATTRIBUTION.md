@@ -31,3 +31,6 @@ SOFTWARE.
 ```
 
 La estructura y los archivos finales pendientes provienen de alexanderquispe/ai-project-template, commit 06d219c1c1aae587616b13a938c1b33ad2884e37. No se han copiado PDFs del artículo base a git.
+
+
+Actualización final: `equilibrium.py` adapta el problema de asignación del mismo repo de origen. Se separan independientes, usuarios IA y parejas humanas para recuperar cantidades, y se añade el gasto real a la productividad neta de IA. El certificado de tres tipos, pruebas y datos son propios de esta extensión.
