@@ -348,3 +348,22 @@ Build completed successfully (3300 jobs).
 ### Adjudicación del asistente sobre el alcance
 
 Las dos proposiciones numeradas están probadas en Lean, incluida la existencia y unicidad de todo el equilibrio de TRES tipos. No se declara un teorema del continuo, una recepción editorial, un recibo avanzado de AML ni una revisión a mano de la autora. La formalización matemática restante se completó sin cambiar el enunciado del paper.
+
+
+## Incorporación de la comprobación real de la autora
+
+### Usuario (crudo)
+
+esta es mi comprobacion a mano porfa incluyela en el slide 17 con mi veredicto
+
+Adjuntó la imagen original guardada en `hand/01-revision-kappa.png`. No se generó ni retocó la escritura.
+
+### Veredicto manuscrito de la autora (transcripción)
+
+La cota κ<1 es innecesaria para garantizar un costo no negativo. Basta con κ≥0. Un costo alto puede impedir que sea rentable adoptar IA, pero no invalida el modelo.
+
+### Integración del asistente
+
+Se incluyó la evidencia en la slide 17 usando recortes de visualización de la misma imagen y una transcripción del veredicto para legibilidad. Se actualizaron el guion y los estados de evidencia: esta comprobación está recibida; no se da por completo el resto del apéndice manuscrito ni otras adjudicaciones humanas.
+
+La nota final de la imagen sobre κ≥1 se aclara en el guion: en el modelo a<1, w(z)≥z y q(z)=a−κ(1−z)≤z−(1−a)<z para κ≥1, de modo que no hay adopción. La cota κ<1 puede ser necesaria para adopción positiva sin ser necesaria para la no negatividad del costo. No se modifica el veredicto aportado por la autora ni las proposiciones del paper. La incorporación tiene su fecha real posterior al merge de la entrega anterior; no se retrodata.

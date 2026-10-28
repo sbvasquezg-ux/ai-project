@@ -1,20 +1,20 @@
-# Derivaciones manuscritas de la autora — pendientes
+# Derivaciones manuscritas de la autora
 
-La guía tipográfica de 10 páginas `guia-derivaciones.pdf` explica cada paso y contiene preguntas de comprensión. **No es un manuscrito, una revisión humana ni evidencia de trabajo a mano.**
+## Evidencia recibida
 
-La autora debe escribir por sí misma:
+- [`01-revision-kappa.png`](01-revision-kappa.png): imagen original proporcionada por la autora. Contiene dominio, transformación de desigualdades, no negatividad de c(z)=κ(1−z), contraejemplo κ=2 y su veredicto. Se conserva sin alterar sus bytes; la slide 17 muestra ampliaciones mediante recortes de visualización y una transcripción fiel del veredicto.
 
-1. La cota superior κ<1 de un borrador de IA es injustificada: demuestra no negatividad con κ≥0.
-2. Recurso b(z), derivada de n(z) y razón n'/n.
-3. Regla del producto, FOC y condiciones de interioridad.
-4. Beneficio cero, r=0 e identidad salarial; pendiente sobre un intervalo.
-5. Construcción de salarios y recursos del modelo de tres tipos.
-6. Las holguras de todas las actividades, en especial LM.
-7. Cota de producto, unicidad por complementariedad y ganancia neta.
-8. Certificado racional del ejemplo y diferencia frente a la tabla uniforme del topic.
+La comprobación para la slide 17 ya está incorporada. Esto no implica que se hayan recibido las demás derivaciones del paper ni que la autora haya adjudicado todos sus resultados.
 
-Fotografiar páginas reales, completas y legibles con nombres `01-foc.jpg`, `02-beneficio-cero.jpg`, `03-tres-tipos.jpg`, etc. El nombre es una sugerencia, no evidencia de que existan archivos.
+## Resto del apéndice manuscrito
 
-Antes de exponer, incorporar una fotografía real y su veredicto personal a la slide 17. Actualmente esa slide declara el manuscrito pendiente. No se ha fabricado una aprobación humana ni una imagen de manuscrito.
+La guía `guia-derivaciones.pdf` explica cada paso y preguntas de comprensión; es una ayuda tipográfica, no evidencia a mano. Quedan por incorporar las páginas reales de la autora sobre:
 
-Ensayo: `slides/guion-final.md`; pruebas: `paper/paper.pdf`.
+1. Recurso b(z), derivada de n(z) y razón n'/n.
+2. Regla del producto, FOC y condiciones de interioridad.
+3. Beneficio cero, r=0, identidad salarial y pendiente en un intervalo.
+4. Salarios, recursos y las holguras de las nueve actividades del modelo de tres tipos.
+5. Cota salarial, unicidad por complementariedad y ganancia neta.
+6. Certificado racional y diferencia frente a la tabla uniforme del topic.
+
+Las futuras fotos deben ser completas y legibles; no se inventa trabajo manuscrito ni revisión humana. Ensayo: `slides/guion-final.md`.
