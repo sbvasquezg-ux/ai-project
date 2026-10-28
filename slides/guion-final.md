@@ -70,11 +70,13 @@ En el uniforme, muestra primero salarios y luego cantidades adoptantes. El costo
 
 La slide muestra la cláusula con IA de PropositionTwoSpec: hay un equilibrio candidato y cualquier otro tiene exactamente sus asignaciones y precios. x contiene nueve masas; p contiene tres salarios y la renta de cómputo. hr reúne solamente las condiciones primitivas de la Proposición 2, no su conclusión. candidate_equilibrium prueba existencia; equilibrium_unique prueba unicidad. El enunciado completo incluye también la economía sin IA y la ganancia neta. El kernel verifica estas pruebas con todos los usos alternativos del trabajo y la elegibilidad; r=0 se deriva de la capacidad ociosa. No verifica tu comprensión, ni convierte las mallas en un teorema continuo.
 
-## 17. Una afirmación de la IA que requiere tu veredicto
+## 17. Mi comprobación y mi veredicto
 
-Un borrador anterior introdujo κ<1 aunque el modelo solo exigía κ≥0. La no negatividad c(z)=κ(1−z) para z∈[0,1] no requiere esa cota superior. Escribe esa prueba a mano y confirma tu propio veredicto. La slide actual explica el hallazgo y declara el manuscrito pendiente; no debes decir que ya lo hiciste si no existe la fotografía.
+La imagen es tu manuscrito real: parte de c(z)=κ(1−z), z∈[0,1], κ≥0; invierte las desigualdades al multiplicar por −1 y obtiene 0≤c(z)≤κ. Tu contraejemplo κ=2, z=1/2 da c=1≥0. Explica que rechazas la cota κ<1 como requisito para definir un costo no negativo; no rechazas que pueda aparecer como condición económica de adopción. Lee y defiende tu propio veredicto, transcrito fielmente junto a la foto. La imagen completa queda en hand/01-revision-kappa.png.
 
-Como segunda precaución, distingue Δ0>0 de adopción de equilibrio: usa salarios previos, y necesitas resolver el reajuste.
+Si te preguntan por tu nota final: bajo a<1 y la alternativa independiente w(z)≥z, κ≥1 implica q(z)=a−κ(1−z)≤a−(1−z)=z−(1−a)<z≤w(z). Por tanto, en este modelo no hay adopción cuando κ≥1. Eso es un resultado económico derivado; no significa que el costo deje de estar bien definido. La slide se centra en la no negatividad del costo, como dice tu veredicto.
+
+Las demás páginas del apéndice manuscrito todavía se deben incorporar.
 
 ## 18–19. Límite y preguntas
 

@@ -243,19 +243,28 @@ exact ⟨candidate_equilibrium e true hr,
 \texttt{hr} reúne las condiciones primitivas de la Proposición 2. El enunciado completo prueba también el baseline, $r=0$ y la ganancia neta.\par
 \textbf{Qué verifica:} las nueve actividades, recursos, elegibilidad y unicidad; no se supone que el candidato ya sea equilibrio.
 \end{frame}
-\begin{frame}{Una restricción que introdujo la IA}
-\textbf{Borrador anterior:} impuso $0\leq\kappa<1$ al costo lineal.
+\begin{frame}{Mi comprobación: ¿hace falta $\kappa<1$?}
+\begin{columns}[T,onlytextwidth]
+\column{.61\textwidth}
+% Original preserved byte-for-byte. Trim only controls the displayed viewport.
+\includegraphics[width=\linewidth,trim=30bp 770bp 30bp 360bp,clip]{../hand/01-revision-kappa.png}\par\vspace{.12cm}
+\includegraphics[width=\linewidth,trim=30bp 358bp 30bp 1410bp,clip]{../hand/01-revision-kappa.png}
+\column{.35\textwidth}
+\small\textbf{Borrador de la IA:} $0\leq\kappa<1$.
+\begin{block}{Mi veredicto}
+\small
+La cota $\kappa<1$ es innecesaria para garantizar un costo no negativo. Basta con $\kappa\geq0$.
+\medskip\par
+Un costo alto puede impedir que sea rentable adoptar IA, pero no invalida el modelo.
+\end{block}
+\small
+\textbf{Lo que comprobé:}
 \[
-z\in[0,1],\quad\kappa\geq0
-\ \Longrightarrow\ c(z)=\kappa(1-z)\geq0.
+0\leq c(z)\leq\kappa.
 \]
-La no negatividad del gasto no exige $\kappa<1$. Costos altos pueden excluir actividades sin invalidar la definición de la tecnología.
-\begin{keybox}
-Veredicto del chequeo del asistente: la cota superior era injustificada.\par
-La autora debe reconstruir la prueba y confirmar su propio veredicto.
-\end{keybox}
-\small\medskip
-Manuscrito de la autora pendiente: incorporar una fotografía real antes de exponer. Guía: \texttt{hand/guia-derivaciones.pdf}.
+Costo válido y adopción rentable son preguntas distintas.
+\end{columns}
+\sourcefoot{Manuscrito y veredicto de Sofía Belén Vásquez García. Imagen completa en hand/01-revision-kappa.png.}
 \end{frame}
 \begin{frame}{Resultados demostrados y trabajo abierto}
 \begin{columns}[T]

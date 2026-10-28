@@ -28,7 +28,7 @@ $$\max_{0\leq z\leq a}\Pi^V(z)=\frac{a-w^V(z)-c(z)}{h(1-z)}-r.$$
 | [Presentación final](slides/final.pdf) | ✅ 19 slides centrales y 3 apéndices; guion de 30 min |
 | [Código](code/verify.py) | ✅ SymPy, certificado racional, LP y mallas 100/200/400 |
 | [Lean](lean/README.md) | ✅ Dos proposiciones: FOC y equilibrio finito completo, con existencia y unicidad |
-| [Guía de derivaciones](hand/guia-derivaciones.pdf) | ✅ 10 páginas para estudiar; **manuscrito y veredicto de la autora pendientes** |
+| [Guía de derivaciones](hand/guia-derivaciones.pdf) | ✅ 10 páginas para estudiar; **comprobación y veredicto de la slide 17 recibidos; resto del manuscrito pendiente** |
 | [Prompts](prompts.md) | Registro crudo y cambios; no se inventa revisión humana |
 
 **Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Revisión independiente](paper/lean-final-review.md) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
