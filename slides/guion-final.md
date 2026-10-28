@@ -56,7 +56,7 @@ Construye, luego verifica: L trabaja con H, M usa IA y el resto de H es independ
 
 Recorre todas las alternativas en la tabla. Detente en LM: muestra la identidad de su holgura y las condiciones que hacen cada término positivo. Esta revisión descarta que la base prefiera contratar al intermedio como solver y es esencial para el resultado.
 
-Para unicidad, explica la cota salarial: cada actividad produce como máximo el valor salarial de los recursos que utiliza. Suma usando vaciado de mercado. El candidato alcanza la cota. Una actividad con holgura estricta no puede entrar en una asignación óptima. Los recursos fijan las tres actividades restantes; sus igualdades fijan los salarios. No atribuyas a Lean esta prueba global: todavía no está completamente traducida.
+Para unicidad, explica la cota salarial: cada actividad produce como máximo el valor salarial de los recursos que utiliza. Suma usando vaciado de mercado. El candidato alcanza la cota. Una actividad con holgura estricta no puede entrar en una asignación óptima. Los recursos fijan las tres actividades restantes; sus igualdades fijan los salarios. Esta prueba completa del modelo de tres tipos ya está formalizada en Lean; no la confundas con una prueba del continuo.
 
 Resta los productos y muestra la cancelación. La ganancia es la masa de M por cuánto supera su oferta de IA al salario humano que financiaba antes.
 
@@ -68,7 +68,7 @@ En el uniforme, muestra primero salarios y luego cantidades adoptantes. El costo
 
 ## 16. Lean
 
-Explica la correspondencia de símbolos entre la igualdad del paper y el enunciado Lean. La prueba completa está en el archivo; la slide muestra un fragmento. El kernel verifica la derivación bajo sus hipótesis. También compilan el certificado de recursos/holguras y la ganancia. La formalización global de Proposición 2 y el cierre semántico completo quedan pendientes. El chequeo rápido de AppliedModelingLib pasó, pero no debes llamarlo una prueba de toda la economía.
+La slide muestra la cláusula con IA de PropositionTwoSpec: hay un equilibrio candidato y cualquier otro tiene exactamente sus asignaciones y precios. x contiene nueve masas; p contiene tres salarios y la renta de cómputo. hr reúne solamente las condiciones primitivas de la Proposición 2, no su conclusión. candidate_equilibrium prueba existencia; equilibrium_unique prueba unicidad. El enunciado completo incluye también la economía sin IA y la ganancia neta. El kernel verifica estas pruebas con todos los usos alternativos del trabajo y la elegibilidad; r=0 se deriva de la capacidad ociosa. No verifica tu comprensión, ni convierte las mallas en un teorema continuo.
 
 ## 17. Una afirmación de la IA que requiere tu veredicto
 

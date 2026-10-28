@@ -1,3 +1,5 @@
+> Registro histórico de la revisión del 26 de octubre, sobre 450b4d1. La versión final posterior tiene las dos pruebas completas; su revisión está en `lean-final-review.md`. Se conserva el dictamen original en crudo.
+
 # Revisión independiente sobre el repositorio público
 
 Modelo: `gpt-5.6-sol`; razonamiento `xhigh`; sesión `01a17af1-a48f-7291-870a-50457d3b67b2`. Fuente revisada: commit `450b4d1`. El proceso terminó con exit 0. Es revisión adicional de matemáticas y código; no acredita que ese modelo haya producido la formalización ni un cierre semántico completo.

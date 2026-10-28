@@ -1,9 +1,7 @@
-# Notas de alcance
+# Notas de la formalización final
 
-HasDerivAt expresa las derivadas locales. IsLocalMax permite usar Fermat. La pendiente exige igualdad eventual con la oferta lineal; no se deriva una función usando solo una igualdad en un punto.
+Las dos proposiciones se prueban sin condiciones económicas adicionales. La condición a>0 se explicita en el registro y ya se deduce de 0<m<a. Las condiciones de diferenciabilidad en un entorno y costo no negativo se corresponden con la fuente.
 
-MiddleCertificate es la conclusión de un teorema a partir de primitivas, no una hipótesis de optimalidad. Expone holguras y recursos del candidato. Su tipo no expresa la unicidad de todos los equilibrios y no recibe ese crédito.
+Los únicos tipos con elegibilidad que puede variar en el régimen de tres tipos son los expertos H; 0<a y m<a garantizan elegibilidad de L y M. La definición no se presenta como un modelo general arbitrario fuera del régimen.
 
-La prueba de unicidad del paper es matemática e independiente de este certificado Lean; queda pendiente traducir su argumento de dualidad y complementariedad.
-
-Revisión pública posterior con GPT-5.6 Sol/xhigh sobre 450b4d1: no encontró errores matemáticos, señaló la condición qH incondicional (corregida a H≤a → qH<H) y contadores de inventario (actualizados). Las proposiciones y pruebas coinciden exactamente con el pin 3fb4aab; se guardan hashes en audit/proposition_source_comparison.json. No es cierre semántico ni revisión humana.
+Se derivan r=0, las masas y los salarios; no se suponen optimalidad ni unicidad. La igualdad salarial local se deriva de beneficio cero en un entorno. El campo administrativo de estado de AML se distingue del estado probado de los dos resultados del curso. No se finge un recibo avanzado ni anotación humana.

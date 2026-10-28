@@ -224,21 +224,24 @@ $N$ & Producto neto & Masa IA & Mínimo $z$ & Máximo $z$\\\midrule
 \item El gasto heterogéneo no domina al constante en producto neto.
 \end{itemize}
 \end{frame}
-\begin{frame}[fragile]{Lean: afirmación y prueba comprobada}
+\begin{frame}[fragile]{Lean: existencia y unicidad del mismo equilibrio}
 \small
-\textbf{En el paper:} beneficio cero y $r=0$ implican $w^V=a-c$.
-\begin{verbatim}
-theorem wage_of_zero_profit (h a z : ℝ) (w c : ℝ → ℝ)
-    (hh : 0 < h) (hz : z < 1)
-    (hp : profit h a 0 w c z = 0) :
-    w z = a-c z := by
-  ...
-  linarith
-\end{verbatim}
-El fragmento omite líneas en la slide; el archivo contiene la prueba completa.
+\textbf{En el paper:} bajo las condiciones de la Proposición 2, existe un único equilibrio en asignaciones y salarios, con y sin IA.
 \medskip\par
-\textbf{Cobertura:} FOC, identidad salarial y pendiente local; certificado de recursos/holguras de tres tipos, ejemplo racional y ganancia neta.\par
-\alert{La unicidad global de la Proposición 2 no está formalizada en Lean.}
+\textbf{En Lean, parte con IA de \texttt{PropositionTwoSpec}:}
+\begin{footnotesize}\begin{verbatim}
+Equilibrium e true (candidateAllocation e true)
+  (candidatePrices e true) ∧
+∀ x p, Equilibrium e true x p →
+  x = candidateAllocation e true ∧ p = candidatePrices e true
+\end{verbatim}\end{footnotesize}
+\textbf{Fragmento que prueba esa conjunción:}
+\begin{footnotesize}\begin{verbatim}
+exact ⟨candidate_equilibrium e true hr,
+       equilibrium_unique e true hr⟩
+\end{verbatim}\end{footnotesize}
+\texttt{hr} reúne las condiciones primitivas de la Proposición 2. El enunciado completo prueba también el baseline, $r=0$ y la ganancia neta.\par
+\textbf{Qué verifica:} las nueve actividades, recursos, elegibilidad y unicidad; no se supone que el candidato ya sea equilibrio.
 \end{frame}
 \begin{frame}{Una restricción que introdujo la IA}
 \textbf{Borrador anterior:} impuso $0\leq\kappa<1$ al costo lineal.
@@ -257,7 +260,7 @@ Manuscrito de la autora pendiente: incorporar una fotografía real antes de expo
 \begin{frame}{Resultados demostrados y trabajo abierto}
 \begin{columns}[T]
 \column{.48\linewidth}
-\textbf{Demostrado en el paper}
+\textbf{Demostrado y formalizado}
 \begin{itemize}
 \item Relación local de salarios.
 \item Equilibrio único en el régimen de tres tipos.
@@ -268,7 +271,6 @@ Manuscrito de la autora pendiente: incorporar una fotografía real antes de expo
 \begin{itemize}
 \item Caracterización global del continuo.
 \item Convergencia de asignaciones.
-\item Unicidad global en Lean.
 \item Revisión manuscrita humana.
 \end{itemize}
 \end{columns}
