@@ -3,8 +3,7 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Tactic
 
-/-! Proposición 1 y certificado general de la Proposición 2.
-La unicidad global de la Proposición 2 queda fuera de la cobertura Lean. -/
+/-! Cálculo local y lemas algebraicos auxiliares. -/
 noncomputable section
 namespace Vasquez26HeterogeneousVerification
 
@@ -63,6 +62,15 @@ theorem active_interval_slope (a k z wp : ℝ) (w : ℝ → ℝ)
     (hw : HasDerivAt w wp z)
     (he : w =ᶠ[nhds z] (fun t : ℝ => a-k*(1-t))) : wp = k := by
   exact hw.unique ((linear_offer_derivative a k z).congr_of_eventuallyEq he)
+
+/-- Zero profit throughout the active neighborhood supplies the wage identity
+needed to differentiate it; the wage identity is not an assumption. -/
+theorem active_neighborhood_slope (h a k z wp : ℝ) (w : ℝ → ℝ)
+    (hh : 0 < h) (hz : z < 1) (hw : HasDerivAt w wp z)
+    (hp : ∀ᶠ t in nhds z, profit h a 0 w (fun s => k*(1-s)) t = 0) : wp = k := by
+  apply active_interval_slope a k z wp w hw
+  filter_upwards [hp, eventually_lt_nhds hz] with t ht htz
+  exact wage_of_zero_profit h a t w (fun s => k*(1-s)) hh htz ht
 
 /-- Candidate certificate: positive independent H, strict unused-activity slacks,
 zero profit in LH, and all three resource identities. AI of M pays qM by definition. -/
