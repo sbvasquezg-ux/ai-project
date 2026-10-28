@@ -184,7 +184,7 @@ Y^V-Y^0&=\beta q_M-\beta H+b_M\beta H\\
 &=\beta[q_M-H(1-b_M)]\\
 &=\beta(q_M-v_M)>0.
 \end{align*}
-\pregunta{Reconstruye la cota salarial. ¿Por qué las holguras estrictas, y no la FOC, permiten probar unicidad? ¿Qué parte sigue sin estar completamente traducida a Lean?}
+\pregunta{Reconstruye la cota salarial. ¿Por qué las holguras estrictas, y no la FOC, permiten probar unicidad? ¿Por qué esta prueba finita no demuestra un teorema del continuo?}
 \newpage
 \section*{8. Reproducir el ejemplo con números exactos}
 Usa $h=1/2$, $a=22/25$, $\kappa=53/100$, $m=1/4$, $H=19/25$, y masas $(1/4,2/5,7/20)$.
@@ -214,7 +214,7 @@ El producto bruto es $0.25(0.76)+0.4(0.88)+0.225(0.76)=0.713$. El gasto es $0.4[
 
 En las mallas uniformes de 100, 200 y 400 tipos persiste el intervalo intermedio. La masa adoptante oscila; no debes decir que ya probaste convergencia. Los parámetros son ilustrativos y no identifican efectos causales sobre salarios reales.
 
-\textbf{Lean.} Se comprueban derivadas y álgebra mediante reglas y tácticas verificadas por el kernel. Hay pruebas locales de FOC, beneficio cero, pendiente sobre identidad local, un certificado de recursos/holguras de tres tipos y ganancia neta. La unicidad global de equilibrio de la Proposición 2 no está completamente traducida. Compilar estos lemas no equivale a certificar todas las conclusiones del paper ni la comprensión humana.
+\textbf{Lean.} Las dos proposiciones tienen enunciados y pruebas completos. La Proposición 1 deriva FOC, beneficio cero y pendiente en un entorno activo. La Proposición 2 construye el equilibrio de tres tipos y demuestra unicidad de asignaciones y salarios, tanto sin IA como con validación; también prueba la ganancia neta. Se representan las nueve actividades y el mercado de cómputo: $r=0$ se deriva, no se impone como conclusión supuesta. El kernel comprueba cada paso bajo las condiciones explícitas del paper. Esto no demuestra el continuo ni sustituye tu comprensión y revisión a mano.
 
 \textbf{Restricción de IA que debes adjudicar.} Un borrador anterior exigía $\kappa<1$. Para cualquier $\kappa\geq0$ y $z\in[0,1]$, ambos factores de $c(z)=\kappa(1-z)$ son no negativos. No se necesita una cota superior. Escribe esa prueba a mano y confirma tu propio veredicto.\par\medskip\textbf{Otra afirmación que debes examinar.} ``$\Delta^0>0$ identifica a los adoptantes finales''. Es insuficiente porque utiliza $w^0$, el salario previo. Escribe a mano la comparación, explica la diferencia y después muestra cómo el certificado nuevo incorpora $w^V$ y recursos. Solo tras hacer esa revisión puedes afirmar que tú la comprobaste.
 \pregunta{¿Puedes interpretar cada eje de las figuras? ¿Qué diferencia hay entre un residuo pequeño, un certificado racional y una prueba general?}

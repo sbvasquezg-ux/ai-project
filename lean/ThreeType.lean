@@ -9,6 +9,7 @@ structure ThreeTypeRegime (e : Economy) : Prop where
   m_pos : 0 < e.m
   m_lt_H : e.m < e.H
   H_lt_one : e.H < 1
+  a_pos : 0 < e.a
   m_lt_a : e.m < e.a
   a_lt_one : e.a < 1
   k_nonneg : 0 ≤ e.k
@@ -42,7 +43,9 @@ theorem regime_facts (e : Economy) (hr : ThreeTypeRegime e) :
   have hb : 0 < bM e := mul_pos hr.h_pos (sub_pos.mpr hm1)
   have hvL : 0 < vL e := mul_pos hH0 (sub_pos.mpr hr.h_lt_one)
   have hid : vL e+e.h*vM e-e.m =
-      (vM e-e.m)+e.H*e.h*(1-e.h)*(1-e.m) := by dsimp [vL,vM,bM]; ring
+      (vM e-e.m)+e.H*e.h*(1-e.h)*(1-e.m) := by
+    dsimp [vL,vM,bM,assistanceTime]
+    ring
   have hprod : 0 < e.H*e.h*(1-e.h)*(1-e.m) :=
     mul_pos (mul_pos (mul_pos hH0 hr.h_pos) (sub_pos.mpr hr.h_lt_one)) (sub_pos.mpr hm1)
   have hLM : 0 < vL e+e.h*vM e-e.m := by rw [hid]; linarith [hr.middle_outside]
@@ -70,7 +73,10 @@ theorem candidate_feasible (e : Economy) (ai : Bool) (hr : ThreeTypeRegime e) :
     cases ai <;> simp [candidateAllocation]
   have hresH : (candidateAllocation e ai).dH+(candidateAllocation e ai).xH+
       e.h*(candidateAllocation e ai).yLH+bM e*(candidateAllocation e ai).yMH = e.gamma := by
-    cases ai <;> simp [candidateAllocation] <;> ring
+    cases ai
+    · simp [candidateAllocation]
+      ring
+    · simp [candidateAllocation]
   have hno : ai = false → (candidateAllocation e ai).xL = 0 ∧
       (candidateAllocation e ai).xM = 0 ∧ (candidateAllocation e ai).xH = 0 := by
     intro ha; subst ai; simp [candidateAllocation]

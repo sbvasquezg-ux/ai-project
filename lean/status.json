@@ -8,24 +8,24 @@
   "repository_visibility": "public",
   "build_target": "lake build +Vasquez26HeterogeneousVerification",
   "status": "partially formalized",
-  "main_caveat": "La Proposición 2 no está formalizada por completo: faltan la definición general de equilibrio, optimalidad y unicidad; hay un certificado general de su candidato y una comprobación racional. No hay recibo de cierre semántico completo.",
-  "human_summary": "Pruebas locales y certificado de tres tipos compilados; revisión humana y cobertura global pendientes.",
+  "main_caveat": "Both numbered course results are proved and source-reviewed. This catalog status retains the absence of an accepted advanced AppliedModelingLib semantic-closeout receipt; it does NOT mean that Proposition 2 remains open. The additional audit was interrupted by model quota and a macOS resource-limit issue.",
+  "human_summary": "Las dos proposiciones del curso tienen pruebas completas y compiladas. Solo la autora debe hacer y adjudicar sus derivaciones. No se reivindica un recibo avanzado de cierre de AppliedModelingLib.",
   "human_summary_review": {
     "status": "draft",
     "note": "Texto del asistente. No se atribuye aprobación humana."
   },
-  "review_entrypoint": "papers/Vasquez26HeterogeneousVerification/FINAL_VALIDATION_REPORT.md",
+  "review_entrypoint": "papers/Vasquez26HeterogeneousVerification/docs/COURSE_VALIDATION_REPORT.md",
   "human_review": {
     "reviewed_rows": 0,
-    "total_rows": 1,
+    "total_rows": 2,
     "stale_rows": 0,
     "mismatch_rows": 0,
     "source": "paper-local status.json review_surface; human entries come from dashboard logs"
   },
   "paper_interface": {
     "path": "papers/Vasquez26HeterogeneousVerification/PaperInterface.lean",
-    "line_count": 23,
-    "declaration_rows": 1,
+    "line_count": 55,
+    "declaration_rows": 2,
     "review_rows": 0,
     "oversized": false,
     "maintainability_issue": null,
@@ -86,9 +86,10 @@
     "assumption_names": [],
     "source_definition_names": [],
     "proposition_spec_proofs": {
-      "Vasquez26HeterogeneousVerification.PropositionOneSpec": "Vasquez26HeterogeneousVerification.proposition_one"
+      "Vasquez26HeterogeneousVerification.PropositionOneSpec": "Vasquez26HeterogeneousVerification.proposition_one",
+      "Vasquez26HeterogeneousVerification.PropositionTwoSpec": "Vasquez26HeterogeneousVerification.proposition_two"
     },
-    "paper_coverage_required": false,
+    "paper_coverage_required": true,
     "include_names": [],
     "slices": [
       {
@@ -104,12 +105,35 @@
     "pdf_sha256": "f71bcb5f37d389dec3e242bf454f067f0cc90ac6391ab9aca5ca0cacb8b84b74",
     "arxiv": "No arXiv: manuscrito propio no publicado en revista."
   },
-  "coverage_note": "El Spec de Proposición 1 y su endpoint compilan. Proposición 2 tiene cobertura parcial mediante certificado y ganancia; no se declara correspondencia semántica v12 aceptada.",
+  "coverage_note": "Dos resultados numerados, dos endpoints cerrados, sin hipótesis adicionales. La verificación matemática del curso está completa. El recibo avanzado del registro de AML no se acredita y no se falsifica.",
   "independent_review": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "xhigh",
     "session": "01a17af1-a48f-7291-870a-50457d3b67b2",
     "source_commit": "450b4d1cda392f6c4326b8b8fae7694bbeab8dc1",
     "scope": "Revisión de código y matemáticas sobre clon público, sin compilación por el revisor; no es una corrida completa del protocolo ni adjudicación humana."
+  },
+  "course_delivery_status": "all_numbered_results_proved",
+  "course_validation": {
+    "required_command": "python3 scripts/paper_contribution.py check Vasquez26HeterogeneousVerification --fast",
+    "exit_code": 0,
+    "proved_numbered_results": 2,
+    "open_numbered_results": 0,
+    "results": {
+      "Proposition 1": "proposition_one : PropositionOneSpec",
+      "Proposition 2": "proposition_two : PropositionTwoSpec"
+    },
+    "source_pin": "3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd",
+    "source_review": "docs/SOURCE_CODE_REVIEW.md",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "model_run": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "scope": "Course-configured run on freshly cloned public sources; updated source-facing primitives/conditions and compiled both endpoints. Quota ended during additional semantic-audit preparation. Final forced module builds and --fast were run by the coordinating assistant. No accepted advanced audit receipt claimed."
+    }
   }
 }

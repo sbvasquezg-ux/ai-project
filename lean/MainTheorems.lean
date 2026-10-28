@@ -7,7 +7,10 @@ import Mathlib.Tactic
 noncomputable section
 namespace Vasquez26HeterogeneousVerification
 
-def span (h z : ℝ) : ℝ := 1 / (h * (1-z))
+def assistanceTime (h z : ℝ) : ℝ := h * (1-z)
+def validationCost (k z : ℝ) : ℝ := k * (1-z)
+def netOffer (a k z : ℝ) : ℝ := a-validationCost k z
+def span (h z : ℝ) : ℝ := 1 / assistanceTime h z
 def profit (h a r : ℝ) (w c : ℝ → ℝ) (z : ℝ) : ℝ :=
   span h z * (a-w z-c z)-r
 
@@ -16,7 +19,11 @@ theorem span_derivative (h z : ℝ) (hh : 0 < h) (hz : z < 1) :
   have hden : h*(1-z) ≠ 0 := ne_of_gt (mul_pos hh (sub_pos.mpr hz))
   have hd := ((hasDerivAt_const z (1:ℝ)).div
     ((hasDerivAt_const z h).mul ((hasDerivAt_const z (1:ℝ)).sub (hasDerivAt_id z))) hden)
-  convert hd using 1 <;> dsimp [span] <;> field_simp <;> ring
+  convert hd using 1
+  all_goals
+    dsimp [span, assistanceTime]
+    field_simp
+    ring
 
 theorem foc_of_local_max (h a r z wp cp : ℝ) (w c : ℝ → ℝ)
     (hh : 0 < h) (hz : z < 1)
@@ -28,7 +35,7 @@ theorem foc_of_local_max (h a r z wp cp : ℝ) (w c : ℝ → ℝ)
   have he := hm.hasDerivAt_eq_zero hd
   have hn : h ≠ 0 := ne_of_gt hh
   have hz0 : 1-z ≠ 0 := ne_of_gt (sub_pos.mpr hz)
-  dsimp [span] at he
+  dsimp [span, assistanceTime] at he
   field_simp at he ⊢
   nlinarith
 
@@ -44,7 +51,8 @@ theorem wage_of_zero_profit (h a z : ℝ) (w c : ℝ → ℝ)
 theorem linear_offer_derivative (a k z : ℝ) :
     HasDerivAt (fun t : ℝ => a-k*(1-t)) k z := by
   convert (hasDerivAt_const z a).sub
-    ((hasDerivAt_const z k).mul ((hasDerivAt_const z (1:ℝ)).sub (hasDerivAt_id z))) using 1 <;> ring
+    ((hasDerivAt_const z k).mul ((hasDerivAt_const z (1:ℝ)).sub (hasDerivAt_id z))) using 1
+  all_goals ring
 
 theorem rental_foc (h a r z wp cp : ℝ) (w c : ℝ → ℝ)
     (hh : 0 < h) (hz : z < 1)
@@ -54,7 +62,7 @@ theorem rental_foc (h a r z wp cp : ℝ) (w c : ℝ → ℝ)
   have hf := foc_of_local_max h a r z wp cp w c hh hz hw hc hm
   have hn : h ≠ 0 := ne_of_gt hh
   have hz0 : 1-z ≠ 0 := ne_of_gt (sub_pos.mpr hz)
-  dsimp [profit, span] at hp
+  dsimp [profit, span, assistanceTime] at hp
   field_simp at hp hf
   nlinarith
 

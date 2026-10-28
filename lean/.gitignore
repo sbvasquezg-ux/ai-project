@@ -23,3 +23,8 @@ source_tex/
 *.zip
 
 .standalone/
+
+# Preserve the framework root ignore for non-accepting local traces on export.
+.review_traces/*
+!.review_traces/
+!.review_traces/paper_theorem_validations.jsonl

@@ -1,20 +1,22 @@
 La fuente formalizada es el manuscrito propio fijado en el commit
 \href{https://github.com/sbvasquezg-ux/ai-project/commit/3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd}{\texttt{3fb4aab}}.
-Las proposiciones del cuerpo se conservan; este apéndice actualiza el estado.
-Se creó la carpeta con AppliedModelingLib, commit \texttt{194edcc}, y se copió completa a \texttt{lean/}, respetando su \texttt{.gitignore}. No se copió la ejecución de otro estudiante.
+Los enunciados y las pruebas matemáticas del cuerpo se conservan; este apéndice actualiza su formalización. La carpeta se desarrolló en AppliedModelingLib, commit \texttt{194edcc}, y se exporta completa a \texttt{lean/}, respetando su \texttt{.gitignore}.
 \begin{center}\small
-\begin{tabular}{>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.36\linewidth}>{\raggedright\arraybackslash}p{.38\linewidth}}\toprule
+\begin{tabular}{>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.35\linewidth}>{\raggedright\arraybackslash}p{.39\linewidth}}\toprule
 Resultado & Declaración / archivo & Estado y alcance\\\midrule
-Prop. 1 & \texttt{proposition\_one} en \texttt{ProofInterface.lean}; lemas en \texttt{MainTheorems.lean} & FOC, renta, identidad salarial y pendiente local compiladas. Revisión semántica completa del protocolo y revisión humana pendientes.\\[5pt]
-Prop. 2 & \texttt{middle\_certificate}, \texttt{exact\_three\_type\_certificate}, \texttt{net\_output\_gain} & Parcial: recursos y holguras del candidato, ejemplo y ganancia. No están formalizadas la definición general de equilibrio, su optimalidad y unicidad global.\\\bottomrule
+Prop. 1 & \texttt{proposition\_one} en \texttt{ProofInterface.lean}; \texttt{PropositionOneSpec} & Probada: FOC, cociente $hr$, identidad con $r=0$ y pendiente a partir de beneficio cero en un entorno.\\[5pt]
+Prop. 2 & \texttt{proposition\_two} en \texttt{ProofInterface.lean}; \texttt{PropositionTwoSpec} & Probada: existencia y unicidad de asignaciones y salarios en ambas economías; renta cero, elegibilidad y ganancia neta.\\\bottomrule
 \end{tabular}
 \end{center}
-Se ejecutaron:
+La definición de equilibrio representa las nueve actividades, los recursos humanos con tiempo de ayuda, el cómputo, la ausencia de beneficio y la complementariedad. La renta $r=0$ se deduce de $\mu>h$; no se introduce como una conclusión asumida. Las condiciones del régimen son las primitivas y desigualdades de la Proposición 2. No se añade una hipótesis de optimalidad, existencia o unicidad.
+
+La prueba formal de unicidad usa la identidad de brecha salarial, las desigualdades de ambas economías y las holguras estrictas para descartar actividades alternativas. Los recursos fijan las masas restantes y la complementariedad fija salarios y renta. El resultado es global dentro del régimen de tres tipos; no es un teorema del continuo.
+
+Los registros reproducibles se conservan en \texttt{lean/}. El punto de entrada del curso es:
 \begin{quote}\small\ttfamily
-lake build +Vasquez26HeterogeneousVerification\\
 python3 scripts/paper\_contribution.py check\\
 \hspace*{1em}Vasquez26HeterogeneousVerification --fast
 \end{quote}
-Ambos comandos terminaron con salida exitosa; los registros están en \texttt{lean/check-output.txt}. Este chequeo rápido verifica compilación e aislamiento, no un cierre semántico completo. Las pruebas no usan huecos ni axiomas añadidos; la inspección de axiomas reporta únicamente \texttt{propext}, \texttt{Classical.choice} y \texttt{Quot.sound}. No se declara un recibo de cierre aceptado de AppliedModelingLib.
+Las declaraciones están cerradas sin huecos ni axiomas añadidos. La inspección de ambas pruebas usa únicamente los axiomas estándar \texttt{propext}, \texttt{Classical.choice} y \texttt{Quot.sound}. La revisión manuscrita y el veredicto de la autora siguen pendientes; no se sustituyen por estas comprobaciones.
 
-Una revisión adicional con GPT-5.6 Sol/xhigh, limitada al clon público, no encontró errores matemáticos; detectó una condición más fuerte en el certificado y metadatos incompletos, corregidos y recompilados. El dictamen crudo está en \texttt{paper/independent-review.md}. Las dos proposiciones y pruebas coinciden byte por byte con la fuente fijada. Esa revisión no acredita una corrida completa de formalización con Sol ni un cierre semántico. La cobertura global y la revisión humana siguen pendientes.
+La corrida se ejecutó con GPT-5.6 Sol/xhigh sobre repositorios públicos. Tras sus ajustes y compilación, se agotó la cuota durante una auditoría adicional. El asistente coordinador ejecutó los chequeos finales, ambos con salida 0, y un revisor independiente comparó el código final con las dos proposiciones. El informe y los límites del registro están en \texttt{lean/docs/COURSE\_VALIDATION\_REPORT.md}. No se reivindica un recibo avanzado de publicación de AppliedModelingLib ni una revisión humana.

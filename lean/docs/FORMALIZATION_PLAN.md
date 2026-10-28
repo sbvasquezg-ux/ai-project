@@ -1,9 +1,10 @@
-# Plan y límite actual
+# Plan y resultado de la traducción formal
 
-1. Fuente propia fijada por commit, Proposiciones 1 y 2, Supuestos 1–4.
-2. Inventario independiente de la matemática del manuscrito realizado, con hallazgos menores corregidos. No es una revisión de correspondencia semántica Lean.
-3. Proposición 1: Spec y pruebas locales compilados.
-4. Proposición 2: certificado del candidato, ejemplo y ganancia compilados; definición global, optimalidad y unicidad aún abiertos en Lean.
-5. Cierre v12 y revisión humana no concluidos. Los archivos audit/ de la plantilla conservan obligaciones abiertas.
+1. FOC, relación con renta, identidad salarial y pendiente local: completadas.
+2. Modelo competitivo explícito de nueve actividades, recursos y cómputo: completado.
+3. Construcción de ambos equilibrios y unicidad de asignaciones y salarios: completadas.
+4. Identidad y positividad de la ganancia neta: completadas.
+5. Comprobaciones forzadas, --fast y revisión independiente de fuente/código: completadas.
+6. Derivaciones y adjudicación a mano de la autora: pendientes de la autora.
 
-No se reemplaza un resultado abierto por una hipótesis que afirme su conclusión.
+No se añadió un teorema del continuo. El protocolo avanzado de publicación de AML no tiene recibo emitido; no se presenta como un requisito matemático abierto de las dos proposiciones ni se inventa su cierre. Ver COURSE_VALIDATION_REPORT.md.

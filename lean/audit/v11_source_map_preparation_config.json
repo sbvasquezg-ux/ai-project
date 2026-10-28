@@ -3,6 +3,7 @@
   "paper": "Vasquez26HeterogeneousVerification",
   "namespace": "Vasquez26HeterogeneousVerification",
   "paper_interface_module": "",
+  "semantic_preflight_import_module": "Vasquez26HeterogeneousVerification.ProofInterface",
   "semantic_route_schema": 2,
   "closeout_review_policy": {
     "schema": 1,
@@ -14,31 +15,751 @@
       "final_adversarial_review": []
     }
   },
-  "source_version": "",
-  "include_specs": [],
-  "source_item_for_spec": {},
-  "evidence_declaration_for_spec": {},
-  "source_semantic_declarations": {},
-  "paper_semantic_prerequisite_sources": {},
+  "source_version": "Unpublished journal manuscript pinned at public commit 3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd",
+  "include_specs": [
+    "PropositionOne",
+    "PropositionTwo"
+  ],
+  "source_item_for_spec": {
+    "PropositionOne": "proposition_1",
+    "PropositionTwo": "proposition_2"
+  },
+  "evidence_declaration_for_spec": {
+    "PropositionOne": "Vasquez26HeterogeneousVerification.proposition_one",
+    "PropositionTwo": "Vasquez26HeterogeneousVerification.proposition_two"
+  },
+  "add_source_items": {
+    "assumption_1_technology_information": {
+      "statement": "Assumption 1 (Technology and information), including observable types, unit mass, the two-level technology b(z)=h(1-z), competition, and free entry.",
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:35-37",
+      "source_note": "Governing model prerequisite for both numbered propositions.",
+      "claim_bearing": false,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.bM",
+        "Vasquez26HeterogeneousVerification.bH"
+      ]
+    },
+    "assumption_2_ai_validation": {
+      "statement": "Assumption 2 (AI and real validation expenditure), including eligibility z<=a and c(z)=kappa(1-z).",
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:38-40",
+      "source_note": "Governing AI and validation-cost prerequisite for both numbered propositions.",
+      "claim_bearing": false,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.qL",
+        "Vasquez26HeterogeneousVerification.qM",
+        "Vasquez26HeterogeneousVerification.qH"
+      ]
+    },
+    "assumption_3_compute": {
+      "statement": "Assumption 3 (Compute), with mu>h, aggregate demand bounded by h, and zero rental under slackness.",
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:41-43",
+      "source_note": "Governing compute-market prerequisite; rental zero remains derived from abundance and complementarity.",
+      "claim_bearing": false,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.compute"
+      ]
+    },
+    "assumption_4_finite_specialization": {
+      "statement": "Assumption 4 (Finite specialization), with types (0,m,H), positive divisible masses summing to one, retained activities, and m<a.",
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:50-52",
+      "source_note": "Governing finite economy and competitive-equilibrium prerequisite for Proposition 2.",
+      "claim_bearing": false,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.Allocation",
+        "Vasquez26HeterogeneousVerification.Prices",
+        "Vasquez26HeterogeneousVerification.Economy",
+        "Vasquez26HeterogeneousVerification.Allocation.Nonnegative",
+        "Vasquez26HeterogeneousVerification.vL",
+        "Vasquez26HeterogeneousVerification.vM",
+        "Vasquez26HeterogeneousVerification.Feasible",
+        "Vasquez26HeterogeneousVerification.NoProfit",
+        "Vasquez26HeterogeneousVerification.Complementary",
+        "Vasquez26HeterogeneousVerification.Equilibrium",
+        "Vasquez26HeterogeneousVerification.output"
+      ]
+    },
+    "definition_assistance_time": {
+      "statement": "For a worker of type z, the human-assistance time requirement is b(z)=h(1-z).",
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:35-37",
+      "source_note": "Normal-scope model definition within Assumption 1.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.assistanceTime"
+      ]
+    },
+    "definition_validation_cost": {
+      "statement": "In the main exercise, mandatory validation expenditure per worker is c(z)=kappa(1-z), with kappa>=0.",
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:38-40",
+      "source_note": "Normal-scope model definition within Assumption 2.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.validationCost"
+      ]
+    },
+    "definition_firm_activity": {
+      "statement": "An AI unit serves n(z)=1/b(z) workers, and the firm's validation-economy profit from hiring type z is Pi^V(z)=n(z)[a-w^V(z)-c(z)]-r for 0<=z<=a.",
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:44-47",
+      "source_note": "Normal-scope firm technology and objective definition.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.span",
+        "Vasquez26HeterogeneousVerification.profit"
+      ]
+    },
+    "definition_net_offer": {
+      "statement": "The net AI offer is q(z)=a-c(z); the initial comparison Delta^0(z)=q(z)-w^0(z) does not determine the new equilibrium.",
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:48",
+      "source_note": "Normal-scope net-offer definition and its explicit interpretive limit.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.netOffer"
+      ]
+    },
+    "definition_finite_population": {
+      "statement": "For the finite result, the population has types (0,m,H), 0<m<H<1, positive masses alpha,beta,gamma summing to one, and divisible masses.",
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:50-53",
+      "source_note": "Normal-scope definition of the finite population used by Proposition 2.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.Economy"
+      ]
+    },
+    "definition_finite_activity_masses": {
+      "statement": "In a finite population, d_i is independent mass, x_i is AI-user mass, y_ij is type-i worker mass assisted by type j>i; equilibrium requires feasible resources, human clearing, no-positive-profit wages, and zero profit on used activities.",
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:55",
+      "source_note": "Normal-scope finite allocation and equilibrium vocabulary.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.Feasible",
+        "Vasquez26HeterogeneousVerification.NoProfit",
+        "Vasquez26HeterogeneousVerification.Complementary",
+        "Vasquez26HeterogeneousVerification.Equilibrium"
+      ]
+    },
+    "proposition_1": {
+      "statement": "Proposition 1: local FOC, zero-profit rental relation, zero-rental wage identity, and the active-neighborhood slope under linear validation cost.",
+      "source_kind": "proposition",
+      "source_location": ".audit_source/paper.tex:58-64",
+      "source_note": "First numbered source result; one complete transparent Spec and one exact proof endpoint.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.PropositionOneSpec"
+      ]
+    },
+    "proposition_2": {
+      "statement": "Proposition 2: existence and uniqueness of allocations and all prices in the baseline and validation economies, middle-only AI use, exact allocation, and strictly positive net-output gain.",
+      "source_kind": "proposition",
+      "source_location": ".audit_source/paper.tex:96-111",
+      "source_note": "Second numbered source result; the continuous extension is outside the claimed theorem.",
+      "claim_bearing": true,
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.PropositionTwoSpec"
+      ]
+    }
+  },
+  "source_semantic_declarations": {
+    "assumption_1_technology_information": [
+      "Vasquez26HeterogeneousVerification.bM",
+      "Vasquez26HeterogeneousVerification.bH"
+    ],
+    "assumption_2_ai_validation": [
+      "Vasquez26HeterogeneousVerification.qL",
+      "Vasquez26HeterogeneousVerification.qM",
+      "Vasquez26HeterogeneousVerification.qH"
+    ],
+    "assumption_3_compute": [
+      "Vasquez26HeterogeneousVerification.compute"
+    ],
+    "assumption_4_finite_specialization": [
+      "Vasquez26HeterogeneousVerification.Allocation",
+      "Vasquez26HeterogeneousVerification.Prices",
+      "Vasquez26HeterogeneousVerification.Allocation.Nonnegative",
+      "Vasquez26HeterogeneousVerification.vL",
+      "Vasquez26HeterogeneousVerification.vM",
+      "Vasquez26HeterogeneousVerification.output"
+    ],
+    "definition_assistance_time": [
+      "Vasquez26HeterogeneousVerification.assistanceTime"
+    ],
+    "definition_validation_cost": [
+      "Vasquez26HeterogeneousVerification.validationCost"
+    ],
+    "definition_firm_activity": [
+      "Vasquez26HeterogeneousVerification.span",
+      "Vasquez26HeterogeneousVerification.profit"
+    ],
+    "definition_net_offer": [
+      "Vasquez26HeterogeneousVerification.netOffer"
+    ],
+    "definition_finite_population": [
+      "Vasquez26HeterogeneousVerification.Economy"
+    ],
+    "definition_finite_activity_masses": [
+      "Vasquez26HeterogeneousVerification.Feasible",
+      "Vasquez26HeterogeneousVerification.NoProfit",
+      "Vasquez26HeterogeneousVerification.Complementary",
+      "Vasquez26HeterogeneousVerification.Equilibrium"
+    ]
+  },
+  "paper_semantic_prerequisite_sources": {
+    "Vasquez26HeterogeneousVerification.bM": "assumption_1_technology_information",
+    "Vasquez26HeterogeneousVerification.bH": "assumption_1_technology_information",
+    "Vasquez26HeterogeneousVerification.qL": "assumption_2_ai_validation",
+    "Vasquez26HeterogeneousVerification.qM": "assumption_2_ai_validation",
+    "Vasquez26HeterogeneousVerification.qH": "assumption_2_ai_validation",
+    "Vasquez26HeterogeneousVerification.compute": "assumption_3_compute",
+    "Vasquez26HeterogeneousVerification.Allocation": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.Prices": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.Allocation.Nonnegative": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.vL": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.vM": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.output": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.assistanceTime": "definition_assistance_time",
+    "Vasquez26HeterogeneousVerification.validationCost": "definition_validation_cost",
+    "Vasquez26HeterogeneousVerification.span": "definition_firm_activity",
+    "Vasquez26HeterogeneousVerification.profit": "definition_firm_activity",
+    "Vasquez26HeterogeneousVerification.netOffer": "definition_net_offer",
+    "Vasquez26HeterogeneousVerification.Economy": "definition_finite_population",
+    "Vasquez26HeterogeneousVerification.Feasible": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.NoProfit": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.Complementary": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.Equilibrium": "definition_finite_activity_masses"
+  },
   "library_semantic_prerequisite_sources": {},
-  "semantic_context_requirements": {},
+  "semantic_context_requirements": {
+    "assumption_1_technology_information": [
+      {
+        "semantic_role": "model_construction",
+        "source_location": ".audit_source/paper.tex:44-47"
+      }
+    ],
+    "assumption_2_ai_validation": [
+      {
+        "semantic_role": "definition",
+        "source_location": ".audit_source/paper.tex:44-48"
+      },
+      {
+        "semantic_role": "definition",
+        "source_location": ".audit_source/paper.tex:89-94"
+      }
+    ],
+    "assumption_4_finite_specialization": [
+      {
+        "semantic_role": "model",
+        "source_location": ".audit_source/paper.tex:53-55"
+      },
+      {
+        "semantic_role": "definition",
+        "source_location": ".audit_source/paper.tex:89-94"
+      },
+      {
+        "semantic_role": "model",
+        "source_location": ".audit_source/paper.tex:205-220"
+      }
+    ],
+    "proposition_1": [
+      {
+        "semantic_role": "stated_antecedent",
+        "source_location": ".audit_source/paper.tex:35-43"
+      },
+      {
+        "semantic_role": "model",
+        "source_location": ".audit_source/paper.tex:44-48"
+      },
+      {
+        "semantic_role": "scope",
+        "source_location": ".audit_source/paper.tex:82"
+      }
+    ],
+    "proposition_2": [
+      {
+        "semantic_role": "stated_antecedent",
+        "source_location": ".audit_source/paper.tex:35-43"
+      },
+      {
+        "semantic_role": "model",
+        "source_location": ".audit_source/paper.tex:44-55"
+      },
+      {
+        "semantic_role": "definition",
+        "source_location": ".audit_source/paper.tex:89-94"
+      },
+      {
+        "semantic_role": "model",
+        "source_location": ".audit_source/paper.tex:205-220"
+      },
+      {
+        "semantic_role": "scope",
+        "source_location": ".audit_source/paper.tex:192-193"
+      }
+    ]
+  },
+  "replace_semantic_context_requirements_for": [
+    "assumption_1_technology_information",
+    "assumption_2_ai_validation",
+    "assumption_4_finite_specialization",
+    "proposition_1",
+    "proposition_2"
+  ],
+  "explicit_source_claim_atoms": {
+    "proposition_1": [
+      {
+        "id": "proposition_1.foc",
+        "source_locator": ".audit_source/paper.tex:58-64",
+        "semantic_claim": "The local interior maximizer satisfies the displayed FOC.",
+        "verbatim_source_clause": "w^{V\\prime}(z)+c'(z)=\\frac{a-w^V(z)-c(z)}{1-z}"
+      },
+      {
+        "id": "proposition_1.zero_profit_rental",
+        "source_locator": ".audit_source/paper.tex:58-64",
+        "semantic_claim": "At zero profit, the FOC quotient equals h times the compute rental.",
+        "verbatim_source_clause": "Si además la actividad tiene beneficio cero, el cociente es $hr$."
+      },
+      {
+        "id": "proposition_1.zero_rental_wage",
+        "source_locator": ".audit_source/paper.tex:58-64",
+        "semantic_claim": "At zero compute rental and zero profit, the wage equals net AI output.",
+        "verbatim_source_clause": "Con $r=0$, $w^V(z)=a-c(z)$."
+      },
+      {
+        "id": "proposition_1.active_neighborhood_slope",
+        "source_locator": ".audit_source/paper.tex:58-64",
+        "semantic_claim": "An open active neighborhood under linear validation cost has wage slope kappa.",
+        "verbatim_source_clause": "Si la actividad es usada en un intervalo abierto y $c(z)=\\kappa(1-z)$, entonces $w^{V\\prime}(z)=\\kappa$ en ese intervalo."
+      }
+    ],
+    "proposition_2": [
+      {
+        "id": "proposition_2.baseline_equilibrium",
+        "source_locator": ".audit_source/paper.tex:96-111",
+        "semantic_claim": "The no-AI economy has the stated unique allocation and wage vector.",
+        "verbatim_source_clause": "Sin IA existe un único equilibrio en asignaciones y salarios: los tipos $L,M$ trabajan con expertos $H$, el resto de $H$ produce de forma independiente, y $w^0=(\\vL,\\vM,H)$."
+      },
+      {
+        "id": "proposition_2.validation_uniqueness",
+        "source_locator": ".audit_source/paper.tex:96-111",
+        "semantic_claim": "The heterogeneous-validation economy has a unique equilibrium in allocations and wages.",
+        "verbatim_source_clause": "Con validación heterogénea existe un único equilibrio en asignaciones y salarios:"
+      },
+      {
+        "id": "proposition_2.validation_wages",
+        "source_locator": ".audit_source/paper.tex:96-111",
+        "semantic_claim": "The validation-economy wage vector is (vL,qM,H).",
+        "verbatim_source_clause": "(w^V_L,w^V_M,w^V_H)=(\\vL,q_M,H)."
+      },
+      {
+        "id": "proposition_2.validation_allocation",
+        "source_locator": ".audit_source/paper.tex:96-111",
+        "semantic_claim": "Only the middle type uses AI and every validation-economy allocation is as displayed.",
+        "verbatim_source_clause": "Solo $M$ usa IA: $x_M=\\beta$, $x_L=x_H=0$. La base trabaja con expertos, $y_{LH}=\\alpha$, y $d_H=\\gamma-h\\alpha$; las demás actividades son nulas."
+      },
+      {
+        "id": "proposition_2.output_gain_identity",
+        "source_locator": ".audit_source/paper.tex:96-111",
+        "semantic_claim": "The net-output change equals beta times the middle-type net-offer gap.",
+        "verbatim_source_clause": "Y^V-Y^0=\\beta(q_M-\\vM)"
+      },
+      {
+        "id": "proposition_2.output_gain_positive",
+        "source_locator": ".audit_source/paper.tex:96-111",
+        "semantic_claim": "The net-output change is strictly positive.",
+        "verbatim_source_clause": ">0."
+      }
+    ]
+  },
+  "initialize_selected_source_claim_atoms": true,
   "model_convention_ids_by_source_item": {},
+  "prose_definition_reconciliations": {
+    "definition_assistance_time": {
+      "presentation_id": "assistance_time_definition",
+      "semantic_basis": "The source item states exactly the source definition b(z)=h(1-z) for the assistance time required by a worker of type z.",
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "validator_type": "agent",
+      "validated_at": "2026-10-28T02:48:00Z"
+    },
+    "definition_validation_cost": {
+      "presentation_id": "validation_cost_definition",
+      "semantic_basis": "The source item preserves the mandatory per-worker validation expenditure and the main linear specification c(z)=kappa(1-z), kappa>=0.",
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "validator_type": "agent",
+      "validated_at": "2026-10-28T02:48:00Z"
+    },
+    "definition_firm_activity": {
+      "presentation_id": "firm_activity_definition",
+      "semantic_basis": "The source item preserves n(z)=1/b(z), the eligibility domain 0<=z<=a, and the displayed firm profit objective Pi^V(z).",
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "validator_type": "agent",
+      "validated_at": "2026-10-28T02:48:00Z"
+    },
+    "definition_net_offer": {
+      "presentation_id": "net_offer_notation",
+      "semantic_basis": "The source item preserves q(z)=a-c(z), Delta^0(z)=q(z)-w^0(z), and the source's explicit warning that Delta^0 does not determine the new equilibrium.",
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "validator_type": "agent",
+      "validated_at": "2026-10-28T02:48:00Z"
+    },
+    "definition_finite_population": {
+      "presentation_id": "finite_population_definition",
+      "semantic_basis": "The source item preserves the three finite types, their strict ordering, positive masses summing to one, and the divisibility of those masses.",
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "validator_type": "agent",
+      "validated_at": "2026-10-28T02:48:00Z"
+    },
+    "definition_finite_activity_masses": {
+      "presentation_id": "finite_activity_mass_definition",
+      "semantic_basis": "The source item preserves the meanings of d_i, x_i, and y_ij and records the stated necessary feasibility, clearing, no-profit, and used-activity zero-profit equilibrium requirements.",
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "validator_type": "agent",
+      "validated_at": "2026-10-28T02:48:00Z"
+    }
+  },
   "source_named_result_inventory_review": {
-    "complete": false,
-    "validator": "",
-    "method": "",
-    "validated_at": "",
-    "prose_definition_presentations": [],
-    "candidate_presentations": [],
+    "complete": true,
+    "validator": "Codex root source inventory extractor",
+    "method": "Read the complete canonical paper.tex before consulting Lean; reconciled the six mechanically detected named presentations and separately inventoried unnumbered notation/support without issuing source-to-Lean judgments.",
+    "validated_at": "2026-10-28T02:21:44Z",
+    "prose_definition_presentations": [
+      {
+        "id": "assistance_time_definition",
+        "source_locator": ".audit_source/paper.tex:35-37",
+        "defined_entity_kind": "object",
+        "defined_object": "b(z)",
+        "scope_disposition": "normal_named_theory_definition",
+        "scope_reason": "This is the model-wide assistance-time definition in Assumption 1.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "validation_cost_definition",
+        "source_locator": ".audit_source/paper.tex:38-40",
+        "defined_entity_kind": "object",
+        "defined_object": "c(z)",
+        "scope_disposition": "normal_named_theory_definition",
+        "scope_reason": "This is the model-wide validation-cost definition in Assumption 2.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "net_offer_notation",
+        "source_locator": ".audit_source/paper.tex:48",
+        "defined_entity_kind": "object",
+        "defined_object": "\\q(z)",
+        "scope_disposition": "normal_named_theory_definition",
+        "scope_reason": "This is the model-wide net-offer definition and its explicit interpretive limit.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "firm_activity_definition",
+        "source_locator": ".audit_source/paper.tex:44-47",
+        "defined_entity_kind": "object",
+        "defined_object": "n(z)",
+        "scope_disposition": "normal_named_theory_definition",
+        "scope_reason": "This is the model-wide firm-scale and profit-objective definition.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "finite_population_definition",
+        "source_locator": ".audit_source/paper.tex:50-53",
+        "defined_entity_kind": "object",
+        "defined_object": "(0,m,H)",
+        "scope_disposition": "normal_named_theory_definition",
+        "scope_reason": "This is the model-wide finite-population definition for Proposition 2.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "finite_activity_mass_definition",
+        "source_locator": ".audit_source/paper.tex:55",
+        "defined_entity_kind": "object",
+        "defined_object": "d_i",
+        "scope_disposition": "normal_named_theory_definition",
+        "scope_reason": "This is the model-wide finite allocation and equilibrium vocabulary.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "three_type_notation",
+        "source_locator": ".audit_source/paper.tex:89-94",
+        "defined_entity_kind": "object",
+        "defined_object": "b_M",
+        "scope_disposition": "local_proof_notation",
+        "scope_reason": "These displayed abbreviations specialize the already defined model primitives for Proposition 2.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "output_formula_notation",
+        "source_locator": ".audit_source/paper.tex:132-137",
+        "defined_entity_kind": "object",
+        "defined_object": "Y^0",
+        "scope_disposition": "local_proof_notation",
+        "scope_reason": "These output expressions are proof support for Proposition 2's already inventoried gain clause.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "baseline_aliases",
+        "source_locator": ".audit_source/paper.tex:24",
+        "defined_entity_kind": "object",
+        "defined_object": "a",
+        "scope_disposition": "deep_only_definition",
+        "scope_reason": "These aliases translate notation from the cited baseline article and are not part of either new numbered result's normal source vocabulary.",
+        "normal_scope_exclusion_approval": {
+          "schema": 1,
+          "approval_kind": "explicit_user_instruction",
+          "approval_reference": "The user limited this phase to the manuscript's two numbered propositions and their prerequisite assumptions/models, and explicitly prohibited inventing a continuous-extension theorem.",
+          "approved_at": "2026-10-27T00:00:00Z"
+        },
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "validation_cost_restatement",
+        "source_locator": ".audit_source/paper.tex:195",
+        "defined_entity_kind": "object",
+        "defined_object": "gasto",
+        "scope_disposition": "repeated_normal_definition",
+        "canonical_presentation_id": "validation_cost_definition",
+        "semantic_basis": "This sentence repeats the canonical validation-cost interpretation as expenditure in goods while listing limits of that reduced-form model.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "assistance_time_restatement",
+        "source_locator": ".audit_source/paper.tex:206",
+        "defined_entity_kind": "object",
+        "defined_object": "b_i",
+        "scope_disposition": "repeated_normal_definition",
+        "canonical_presentation_id": "assistance_time_definition",
+        "semantic_basis": "The appendix formula b_i=h(1-z_i) is the finite-index restatement of the canonical assistance-time definition b(z)=h(1-z).",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "activity_mass_restatement",
+        "source_locator": ".audit_source/paper.tex:214",
+        "defined_entity_kind": "object",
+        "defined_object": "y_{ij}",
+        "scope_disposition": "repeated_normal_definition",
+        "canonical_presentation_id": "finite_activity_mass_definition",
+        "semantic_basis": "The appendix repeats that y_ij measures worker mass and that activities are divisible, matching the canonical finite activity-mass vocabulary.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "uniform_grid_notation",
+        "source_locator": ".audit_source/paper.tex:169-170",
+        "defined_entity_kind": "object",
+        "defined_object": "z_i",
+        "scope_disposition": "computational_definition",
+        "scope_reason": "The midpoint grid belongs only to the numerical continuous-economy exercise, which the source explicitly does not claim as a theorem.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "constant_cost_comparison_notation",
+        "source_locator": ".audit_source/paper.tex:172",
+        "defined_entity_kind": "object",
+        "defined_object": "\\bar c",
+        "scope_disposition": "computational_definition",
+        "scope_reason": "This average is used only in the numerical technology comparison and is not a prerequisite of either numbered proposition.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      },
+      {
+        "id": "finite_lp_notation",
+        "source_locator": ".audit_source/paper.tex:205-220",
+        "defined_entity_kind": "object",
+        "defined_object": "d_i",
+        "scope_disposition": "local_proof_notation",
+        "scope_reason": "The appendix primal-dual display supports the proof route for Proposition 2 but does not state another independently named result.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z"
+      }
+    ],
+    "candidate_presentations": [
+      {
+        "id": "baseline_external_restatement",
+        "source_locator": ".audit_source/paper.tex:24",
+        "presentation_label": "Resultado que se extiende",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This paragraph restates the cited baseline article and fixes notation; it is neither of this manuscript's numbered propositions."
+      },
+      {
+        "id": "firm_offer_model_display",
+        "source_locator": ".audit_source/paper.tex:44-48",
+        "presentation_label": "Firm activity and net offer",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "These displays define the governing firm activity and offer comparison already inventoried as source definitions, not an additional result."
+      },
+      {
+        "id": "finite_equilibrium_prose",
+        "source_locator": ".audit_source/paper.tex:55",
+        "presentation_label": "Finite equilibrium requirements",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This prose supplies the equilibrium vocabulary already inventoried as a source definition and is not a separate theorem."
+      },
+      {
+        "id": "foc_limits",
+        "source_locator": ".audit_source/paper.tex:84",
+        "presentation_label": "FOC insufficiency and endpoints",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This is an explanatory limitation of Proposition 1 and records endpoint necessary conditions; it is not presented as another numbered result."
+      },
+      {
+        "id": "linear_cost_interpretation",
+        "source_locator": ".audit_source/paper.tex:86",
+        "presentation_label": "Linear-cost interpretation",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "The identity n(z)c(z)=kappa/h and the resulting offer slope interpret the parametrization used in Proposition 1."
+      },
+      {
+        "id": "rational_witness",
+        "source_locator": ".audit_source/paper.tex:140-162",
+        "presentation_label": "A rational equilibrium satisfying the conditions",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This section instantiates and numerically explains Proposition 2; it is an example and proof-support certificate, not a third numbered result."
+      },
+      {
+        "id": "continuous_simulations",
+        "source_locator": ".audit_source/paper.tex:169-184",
+        "presentation_label": "Continuous-population simulations",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "These finite-grid numerical exercises are explicitly simulations rather than a theorem about the continuous economy."
+      },
+      {
+        "id": "initial_gap_derivative",
+        "source_locator": ".audit_source/paper.tex:187-188",
+        "presentation_label": "Initial-gap derivative discussion",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This discussion contrasts a local initial-price comparison with the equilibrium inequalities required by Proposition 2."
+      },
+      {
+        "id": "numerical_welfare_comparisons",
+        "source_locator": ".audit_source/paper.tex:190",
+        "presentation_label": "Numerical technology comparisons",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "These are reported numerical comparisons with explicit limits, not a claimed analytical welfare theorem."
+      },
+      {
+        "id": "result_boundaries",
+        "source_locator": ".audit_source/paper.tex:192-195",
+        "presentation_label": "Boundaries of the result",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This section explicitly excludes continuous existence, uniqueness, convergence, and universal selection claims and describes modeling limits."
+      },
+      {
+        "id": "finite_lp_primal_dual",
+        "source_locator": ".audit_source/paper.tex:205-220",
+        "presentation_label": "Finite allocation and optimality certificate",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "The appendix primal-dual system is proof support for Proposition 2's equilibrium and uniqueness argument, not an independent named theorem."
+      },
+      {
+        "id": "finite_lp_existence_note",
+        "source_locator": ".audit_source/paper.tex:222",
+        "presentation_label": "Finite LP existence note",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This unnumbered paragraph explains finite LP existence and explicitly says that it does not solve the continuous limit."
+      },
+      {
+        "id": "exact_computation_checks",
+        "source_locator": ".audit_source/paper.tex:224",
+        "presentation_label": "Exact computation checks",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This paragraph documents exact and numerical code checks for the example, not an additional mathematical claim selected for formalization."
+      }
+    ],
     "source_region_partition": {
-      "complete": false,
-      "validator": "",
-      "method": "",
-      "validated_at": "",
-      "regions": [],
-      "source_item_regions": {},
-      "candidate_presentation_regions": {},
-      "prose_definition_presentation_regions": {},
+      "complete": true,
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "method": "Partitioned the complete canonical TeX into main text and appendix at the explicit appendix command.",
+      "validated_at": "2026-10-28T02:21:44Z",
+      "regions": [
+        {
+          "id": "main_text",
+          "kind": "main_text",
+          "source_locator": ".audit_source/paper.tex:1-203"
+        },
+        {
+          "id": "appendix",
+          "kind": "appendix",
+          "source_locator": ".audit_source/paper.tex:204-241"
+        }
+      ],
+      "source_item_regions": {
+        "assumption_1_technology_information": "main_text",
+        "assumption_2_ai_validation": "main_text",
+        "assumption_3_compute": "main_text",
+        "assumption_4_finite_specialization": "main_text",
+        "definition_assistance_time": "main_text",
+        "definition_validation_cost": "main_text",
+        "definition_firm_activity": "main_text",
+        "definition_net_offer": "main_text",
+        "definition_finite_population": "main_text",
+        "definition_finite_activity_masses": "main_text",
+        "proposition_1": "main_text",
+        "proposition_2": "main_text"
+      },
+      "candidate_presentation_regions": {
+        "baseline_external_restatement": "main_text",
+        "firm_offer_model_display": "main_text",
+        "finite_equilibrium_prose": "main_text",
+        "foc_limits": "main_text",
+        "linear_cost_interpretation": "main_text",
+        "rational_witness": "main_text",
+        "continuous_simulations": "main_text",
+        "initial_gap_derivative": "main_text",
+        "numerical_welfare_comparisons": "main_text",
+        "result_boundaries": "main_text",
+        "finite_lp_primal_dual": "appendix",
+        "finite_lp_existence_note": "appendix",
+        "exact_computation_checks": "appendix"
+      },
+      "prose_definition_presentation_regions": {
+        "assistance_time_definition": "main_text",
+        "validation_cost_definition": "main_text",
+        "net_offer_notation": "main_text",
+        "firm_activity_definition": "main_text",
+        "finite_population_definition": "main_text",
+        "finite_activity_mass_definition": "main_text",
+        "three_type_notation": "main_text",
+        "output_formula_notation": "main_text",
+        "baseline_aliases": "main_text",
+        "validation_cost_restatement": "main_text",
+        "assistance_time_restatement": "appendix",
+        "activity_mass_restatement": "appendix",
+        "uniform_grid_notation": "main_text",
+        "constant_cost_comparison_notation": "main_text",
+        "finite_lp_notation": "appendix"
+      },
       "promoted_source_items": []
     }
   }

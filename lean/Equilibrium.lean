@@ -34,11 +34,11 @@ structure Economy where
   gamma : ℝ
   mu : ℝ
 
-def bM (e : Economy) := e.h * (1-e.m)
-def bH (e : Economy) := e.h * (1-e.H)
-def qL (e : Economy) := e.a-e.k
-def qM (e : Economy) := e.a-e.k*(1-e.m)
-def qH (e : Economy) := e.a-e.k*(1-e.H)
+def bM (e : Economy) := assistanceTime e.h e.m
+def bH (e : Economy) := assistanceTime e.h e.H
+def qL (e : Economy) := netOffer e.a e.k 0
+def qM (e : Economy) := netOffer e.a e.k e.m
+def qH (e : Economy) := netOffer e.a e.k e.H
 def vL (e : Economy) := e.H*(1-e.h)
 def vM (e : Economy) := e.H*(1-bM e)
 
@@ -168,7 +168,7 @@ theorem compute_le_h (e : Economy) (ai : Bool) (x : Allocation)
   have hmprod := mul_nonneg (le_of_lt hm) hxM
   have hHprod := mul_nonneg (le_of_lt hH0) hxH
   have hd : compute e x ≤ e.h*(x.xL+x.xM+x.xH) := by
-    dsimp [compute,bM,bH]
+    dsimp [compute,bM,bH,assistanceTime]
     nlinarith
   nlinarith
 

@@ -1,0 +1,1307 @@
+{
+  "schema": 1,
+  "paper": "Vasquez26HeterogeneousVerification",
+  "source_url": "https://github.com/sbvasquezg-ux/ai-project/blob/3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd/paper/paper.pdf",
+  "source_version": "Unpublished journal manuscript pinned at public commit 3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd",
+  "source_artifact_path": ".audit_source/paper.tex",
+  "source_artifact_sha256": "c85ea6817bd1b6ff228ee1156c5dc96fd9a008c0f4858abe36b8f0f4235820b2",
+  "source_inventory_kind": "source_first_current_protocol_preparation",
+  "source_curated": false,
+  "seed_scaffold": true,
+  "source_coverage_mode": "named_theoretical_statements",
+  "items": {
+    "assumption_1_technology_information": {
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:35-37",
+      "statement": "Assumption 1 (Technology and information), including observable types, unit mass, the two-level technology b(z)=h(1-z), competition, and free entry.",
+      "source_note": "Governing model prerequisite for both numbered propositions.",
+      "claim_bearing": false,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 35,
+          "line_end": 37,
+          "quoted_text": "\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}",
+          "quoted_text_sha256": "453c1934d35a87a08aa9a1430e68e026932616bba53829dd5a253555c95bad4e"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.bM",
+        "Vasquez26HeterogeneousVerification.bH"
+      ],
+      "aliases": [
+        "bM",
+        "bH"
+      ],
+      "semantic_context_requirements": [
+        {
+          "semantic_role": "model_construction",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 44,
+              "line_end": 47,
+              "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}",
+              "quoted_text_sha256": "bb9fe0fcf9143750b8d154260db58c417bc7cca1574999466e1ac4883065f397"
+            }
+          ]
+        }
+      ],
+      "inventory_role": "source_semantic_declaration"
+    },
+    "assumption_2_ai_validation": {
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:38-40",
+      "statement": "Assumption 2 (AI and real validation expenditure), including eligibility z<=a and c(z)=kappa(1-z).",
+      "source_note": "Governing AI and validation-cost prerequisite for both numbered propositions.",
+      "claim_bearing": false,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 38,
+          "line_end": 40,
+          "quoted_text": "\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}",
+          "quoted_text_sha256": "b94806fc2715e6dd477ba9e83d84f469fabd737136ebb283781d3b3e7c0804fb"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.qL",
+        "Vasquez26HeterogeneousVerification.qM",
+        "Vasquez26HeterogeneousVerification.qH"
+      ],
+      "aliases": [
+        "qL",
+        "qM",
+        "qH"
+      ],
+      "semantic_context_requirements": [
+        {
+          "semantic_role": "definition",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 44,
+              "line_end": 48,
+              "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}\nDefino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.",
+              "quoted_text_sha256": "15d91697ad126d8ce4af141f176f6752e25475999531b5fdd666c917e5b9ee54"
+            }
+          ]
+        },
+        {
+          "semantic_role": "definition",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 89,
+              "line_end": 94,
+              "quoted_text": "Para la población del Supuesto 4, escribo\n\\[\n b_M=h(1-m),\\quad \\vL=H(1-h),\\quad \\vM=H(1-b_M),\\quad\n q_L=a-\\kappa,\\quad q_M=a-\\kappa(1-m).\n\\]\nSi $H\\leq a$, también $q_H=a-\\kappa(1-H)$. Las cantidades $\\vL,\\vM$ son salarios financiados al combinar cada tipo inferior con expertos de salario $H$.",
+              "quoted_text_sha256": "ca24c494a6166bad677215cd43e463029b8be6f43b1ef150028876e82c99b7f1"
+            }
+          ]
+        }
+      ],
+      "inventory_role": "source_semantic_declaration"
+    },
+    "assumption_3_compute": {
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:41-43",
+      "statement": "Assumption 3 (Compute), with mu>h, aggregate demand bounded by h, and zero rental under slackness.",
+      "source_note": "Governing compute-market prerequisite; rental zero remains derived from abundance and complementarity.",
+      "claim_bearing": false,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 41,
+          "line_end": 43,
+          "quoted_text": "\\begin{assumption}[Cómputo]\\label{ass:compute}\nLa dotación $\\mu>h$ es exógena y el cómputo ocioso tiene renta cero. Como su demanda es $\\int b(z)x(dz)\\leq h$, resulta $r=0$.\n\\end{assumption}",
+          "quoted_text_sha256": "dc1b49a87c203ef01f4529da1ed3cada68e2f98fd1309994c5142c5ad27806f2"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.compute"
+      ],
+      "aliases": [
+        "compute"
+      ],
+      "inventory_role": "source_semantic_declaration"
+    },
+    "assumption_4_finite_specialization": {
+      "source_kind": "assumption",
+      "source_location": ".audit_source/paper.tex:50-52",
+      "statement": "Assumption 4 (Finite specialization), with types (0,m,H), positive divisible masses summing to one, retained activities, and m<a.",
+      "source_note": "Governing finite economy and competitive-equilibrium prerequisite for Proposition 2.",
+      "claim_bearing": false,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 50,
+          "line_end": 52,
+          "quoted_text": "\\begin{assumption}[Especialización finita]\\label{ass:finite}\nPara el resultado global se reemplaza la distribución continua por la terna $(0,m,H)$, con $0<m<H<1$ con masas positivas $\\alpha,\\beta,\\gamma$, cuya suma es uno. Se conservan tecnología, información, actividades y fricción de los Supuestos 1--3. Para el resultado de tres tipos se exige $m<a$ y las condiciones adicionales de la Proposición 2.\n\\end{assumption}",
+          "quoted_text_sha256": "1e4c87379349b6a7c55c9c8c4b1a0969053d52d497a8f90e8597eb8218de953b"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.Allocation",
+        "Vasquez26HeterogeneousVerification.Prices",
+        "Vasquez26HeterogeneousVerification.Allocation.Nonnegative",
+        "Vasquez26HeterogeneousVerification.vL",
+        "Vasquez26HeterogeneousVerification.vM",
+        "Vasquez26HeterogeneousVerification.output"
+      ],
+      "aliases": [
+        "Allocation",
+        "Prices",
+        "Economy",
+        "Nonnegative",
+        "vL",
+        "vM",
+        "Feasible",
+        "NoProfit",
+        "Complementary",
+        "Equilibrium",
+        "output"
+      ],
+      "semantic_context_requirements": [
+        {
+          "semantic_role": "model",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 53,
+              "line_end": 55,
+              "quoted_text": "Este cambio de distribución es explícito: corresponde al plan B de la propuesta. El teorema finito no se presenta como una prueba del continuo. Las masas son divisibles; una fracción de cada tipo puede trabajar en cada ocupación.\n\nEn una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.",
+              "quoted_text_sha256": "183cc578a6fcfc9a7678ccc7247ec863bfe08ace72d7a19cbab3c842961e966f"
+            }
+          ]
+        },
+        {
+          "semantic_role": "definition",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 89,
+              "line_end": 94,
+              "quoted_text": "Para la población del Supuesto 4, escribo\n\\[\n b_M=h(1-m),\\quad \\vL=H(1-h),\\quad \\vM=H(1-b_M),\\quad\n q_L=a-\\kappa,\\quad q_M=a-\\kappa(1-m).\n\\]\nSi $H\\leq a$, también $q_H=a-\\kappa(1-H)$. Las cantidades $\\vL,\\vM$ son salarios financiados al combinar cada tipo inferior con expertos de salario $H$.",
+              "quoted_text_sha256": "ca24c494a6166bad677215cd43e463029b8be6f43b1ef150028876e82c99b7f1"
+            }
+          ]
+        },
+        {
+          "semantic_role": "model",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 205,
+              "line_end": 220,
+              "quoted_text": "\\section{Asignación finita y certificado de optimalidad}\nPara tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es\n\\[\n\\max_{d,x,y\\geq0}\\ \\sum_i z_i d_i+\\sum_{i:z_i\\leq a}(a-c_i)x_i+\\sum_{i<j}z_jy_{ij},\n\\]\n\\[\nd_i+x_i+\\sum_{j>i}y_{ij}+\\sum_{k<i}b_ky_{ki}=M_i,\\qquad\nx_i=0\\text{ si }z_i>a.\n\\]\nCon cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.\n\nEl dual minimiza $\\sum_iM_iw_i$ sujeto a\n\\[\nw_i\\geq z_i,\\qquad w_i\\geq a-c_i\\ (z_i\\leq a),\\qquad w_i+b_iw_j\\geq z_j\\ (i<j).\n\\]\nLa restricción dual de una actividad es su condición de no beneficio por trabajador. La complementariedad exige igualdad si esa actividad recibe masa positiva. Un primal factible y un dual factible con objetivos iguales certifican optimalidad: multiplicar cada desigualdad dual por la variable primal y sumar utiliza exactamente las restricciones de recursos. Esta es la desigualdad que usa la prueba de unicidad de la Proposición 2; no requiere suponer un equilibrio ya existente.",
+              "quoted_text_sha256": "d6bdae396513ca4f81fe93bd686441a5820d5a020be2db83ec646182e41b8add"
+            }
+          ]
+        }
+      ],
+      "inventory_role": "source_semantic_declaration"
+    },
+    "definition_assistance_time": {
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:35-37",
+      "statement": "For a worker of type z, the human-assistance time requirement is b(z)=h(1-z).",
+      "source_note": "Normal-scope model definition within Assumption 1.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 35,
+          "line_end": 37,
+          "quoted_text": "\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}",
+          "quoted_text_sha256": "453c1934d35a87a08aa9a1430e68e026932616bba53829dd5a253555c95bad4e"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.assistanceTime"
+      ],
+      "aliases": [
+        "assistanceTime"
+      ],
+      "source_prose_definition_reconciliation": {
+        "schema": 2,
+        "relation": "source_item_represents_prose_definition",
+        "presentation_sha256": "16f5053bc15ec71fec401511062a0e7e8011f32322b0ec1e7c4ded15bde03119",
+        "source_item_statement_sha256": "be287c5fa307d5d83cda738dce598150f1351e12c397c757b1b8022917b6a46a",
+        "judgment": "semantically_equivalent",
+        "semantic_basis": "The source item states exactly the source definition b(z)=h(1-z) for the assistance time required by a worker of type z.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:48:00Z"
+      },
+      "inventory_role": "source_semantic_declaration"
+    },
+    "definition_validation_cost": {
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:38-40",
+      "statement": "In the main exercise, mandatory validation expenditure per worker is c(z)=kappa(1-z), with kappa>=0.",
+      "source_note": "Normal-scope model definition within Assumption 2.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 38,
+          "line_end": 40,
+          "quoted_text": "\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}",
+          "quoted_text_sha256": "b94806fc2715e6dd477ba9e83d84f469fabd737136ebb283781d3b3e7c0804fb"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.validationCost"
+      ],
+      "aliases": [
+        "validationCost"
+      ],
+      "source_prose_definition_reconciliation": {
+        "schema": 2,
+        "relation": "source_item_represents_prose_definition",
+        "presentation_sha256": "18137ec1e0e6c7e900aeebbd0a754532f31f4ed4710ea6ac3070edf9ca4be4a4",
+        "source_item_statement_sha256": "3c6bf5b49200f2694f76af0bcea9239930c5e612b5d4a91cb1d5dedb965418a3",
+        "judgment": "semantically_equivalent",
+        "semantic_basis": "The source item preserves the mandatory per-worker validation expenditure and the main linear specification c(z)=kappa(1-z), kappa>=0.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:48:00Z"
+      },
+      "inventory_role": "source_semantic_declaration"
+    },
+    "definition_firm_activity": {
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:44-47",
+      "statement": "An AI unit serves n(z)=1/b(z) workers, and the firm's validation-economy profit from hiring type z is Pi^V(z)=n(z)[a-w^V(z)-c(z)]-r for 0<=z<=a.",
+      "source_note": "Normal-scope firm technology and objective definition.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 44,
+          "line_end": 47,
+          "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}",
+          "quoted_text_sha256": "bb9fe0fcf9143750b8d154260db58c417bc7cca1574999466e1ac4883065f397"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.span",
+        "Vasquez26HeterogeneousVerification.profit"
+      ],
+      "aliases": [
+        "span",
+        "profit"
+      ],
+      "source_prose_definition_reconciliation": {
+        "schema": 2,
+        "relation": "source_item_represents_prose_definition",
+        "presentation_sha256": "2610be0aaded6bb06d966bfd97d8caf69d9d1ba67542b4296115902ffea6f9ab",
+        "source_item_statement_sha256": "15ff86a9dcf68b30180595fe60c1858d6130eab6b23f969b6f528f659c233be8",
+        "judgment": "semantically_equivalent",
+        "semantic_basis": "The source item preserves n(z)=1/b(z), the eligibility domain 0<=z<=a, and the displayed firm profit objective Pi^V(z).",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:48:00Z"
+      },
+      "inventory_role": "source_semantic_declaration"
+    },
+    "definition_net_offer": {
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:48",
+      "statement": "The net AI offer is q(z)=a-c(z); the initial comparison Delta^0(z)=q(z)-w^0(z) does not determine the new equilibrium.",
+      "source_note": "Normal-scope net-offer definition and its explicit interpretive limit.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 48,
+          "line_end": 48,
+          "quoted_text": "Defino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.",
+          "quoted_text_sha256": "841a5bde6c956c3a101c2b0687d6a6c7dfd82a2db00216730ec08aa74c5185ed"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.netOffer"
+      ],
+      "aliases": [
+        "netOffer"
+      ],
+      "source_prose_definition_reconciliation": {
+        "schema": 2,
+        "relation": "source_item_represents_prose_definition",
+        "presentation_sha256": "0e0198cdcad0cf3b762baa312e1238862077eadd1519c88bb6482ecda53591ba",
+        "source_item_statement_sha256": "3678abe5d692b82e6de6a6b17cbef0e64434adf63e03f2ec1d60ca51d69ff96d",
+        "judgment": "semantically_equivalent",
+        "semantic_basis": "The source item preserves q(z)=a-c(z), Delta^0(z)=q(z)-w^0(z), and the source's explicit warning that Delta^0 does not determine the new equilibrium.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:48:00Z"
+      },
+      "inventory_role": "source_semantic_declaration"
+    },
+    "definition_finite_population": {
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:50-53",
+      "statement": "For the finite result, the population has types (0,m,H), 0<m<H<1, positive masses alpha,beta,gamma summing to one, and divisible masses.",
+      "source_note": "Normal-scope definition of the finite population used by Proposition 2.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 50,
+          "line_end": 53,
+          "quoted_text": "\\begin{assumption}[Especialización finita]\\label{ass:finite}\nPara el resultado global se reemplaza la distribución continua por la terna $(0,m,H)$, con $0<m<H<1$ con masas positivas $\\alpha,\\beta,\\gamma$, cuya suma es uno. Se conservan tecnología, información, actividades y fricción de los Supuestos 1--3. Para el resultado de tres tipos se exige $m<a$ y las condiciones adicionales de la Proposición 2.\n\\end{assumption}\nEste cambio de distribución es explícito: corresponde al plan B de la propuesta. El teorema finito no se presenta como una prueba del continuo. Las masas son divisibles; una fracción de cada tipo puede trabajar en cada ocupación.",
+          "quoted_text_sha256": "ce5412fa7a7d93ba486cf840b6f410998577de7ca06f1632291fbf8c4848985a"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.Economy"
+      ],
+      "aliases": [
+        "Economy"
+      ],
+      "source_prose_definition_reconciliation": {
+        "schema": 2,
+        "relation": "source_item_represents_prose_definition",
+        "presentation_sha256": "a7cbdcaa8ec4dc86a8efc7bda884689600c28186518a7f1f9dd1c888fb3096b1",
+        "source_item_statement_sha256": "d240c50cb719b21963586f478b4ec543de8bafc64c35befd2acf34f5251463c5",
+        "judgment": "semantically_equivalent",
+        "semantic_basis": "The source item preserves the three finite types, their strict ordering, positive masses summing to one, and the divisibility of those masses.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:48:00Z"
+      },
+      "inventory_role": "source_semantic_declaration"
+    },
+    "definition_finite_activity_masses": {
+      "source_kind": "definition",
+      "source_location": ".audit_source/paper.tex:55",
+      "statement": "In a finite population, d_i is independent mass, x_i is AI-user mass, y_ij is type-i worker mass assisted by type j>i; equilibrium requires feasible resources, human clearing, no-positive-profit wages, and zero profit on used activities.",
+      "source_note": "Normal-scope finite allocation and equilibrium vocabulary.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 55,
+          "line_end": 55,
+          "quoted_text": "En una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.",
+          "quoted_text_sha256": "324baecdc47ead3820f24e72fd61a1737219202c489476ab23dad458f1da685d"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.Feasible",
+        "Vasquez26HeterogeneousVerification.NoProfit",
+        "Vasquez26HeterogeneousVerification.Complementary",
+        "Vasquez26HeterogeneousVerification.Equilibrium"
+      ],
+      "aliases": [
+        "Feasible",
+        "NoProfit",
+        "Complementary",
+        "Equilibrium"
+      ],
+      "source_prose_definition_reconciliation": {
+        "schema": 2,
+        "relation": "source_item_represents_prose_definition",
+        "presentation_sha256": "dc81de9d75c412a3b6d779486b8cecfd37c8becf8d38e77b8c772ba69906b93d",
+        "source_item_statement_sha256": "4a42e20da12815d0c95f64053c0b21d11f9d68b986556dbdbb8dc87ea10dd15c",
+        "judgment": "semantically_equivalent",
+        "semantic_basis": "The source item preserves the meanings of d_i, x_i, and y_ij and records the stated necessary feasibility, clearing, no-profit, and used-activity zero-profit equilibrium requirements.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:48:00Z"
+      },
+      "inventory_role": "source_semantic_declaration"
+    },
+    "proposition_1": {
+      "source_kind": "proposition",
+      "source_location": ".audit_source/paper.tex:58-64",
+      "statement": "Proposition 1: local FOC, zero-profit rental relation, zero-rental wage identity, and the active-neighborhood slope under linear validation cost.",
+      "source_note": "First numbered source result; one complete transparent Spec and one exact proof endpoint.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 58,
+          "line_end": 64,
+          "quoted_text": "\\begin{proposition}[FOC y salario de una actividad usada]\\label{prop:local}\nBajo los Supuestos 1--3, sean $0<z<a<1$ y $w^V,c$ diferenciables en un entorno de $z$. Si $z$ maximiza localmente el beneficio de \\eqref{eq:firm}, entonces\n\\begin{equation}\\label{eq:foc}\nw^{V\\prime}(z)+c'(z)=\\frac{a-w^V(z)-c(z)}{1-z}.\n\\end{equation}\nSi además la actividad tiene beneficio cero, el cociente es $hr$. Con $r=0$, $w^V(z)=a-c(z)$. Si la actividad es usada en un intervalo abierto y $c(z)=\\kappa(1-z)$, entonces $w^{V\\prime}(z)=\\kappa$ en ese intervalo.\n\\end{proposition}",
+          "quoted_text_sha256": "91d93bcb1074ae08029c63ad594db04d268695c7657902822edc1569ca9ea266"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.proposition_one"
+      ],
+      "aliases": [
+        "PropositionOneSpec"
+      ],
+      "semantic_context_requirements": [
+        {
+          "semantic_role": "stated_antecedent",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 35,
+              "line_end": 43,
+              "quoted_text": "\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}\n\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}\n\\begin{assumption}[Cómputo]\\label{ass:compute}\nLa dotación $\\mu>h$ es exógena y el cómputo ocioso tiene renta cero. Como su demanda es $\\int b(z)x(dz)\\leq h$, resulta $r=0$.\n\\end{assumption}",
+              "quoted_text_sha256": "d581ad3be1d36740f53fd01c042b3b4b4184b4527675ea168d8c0987d0dfeb6d"
+            }
+          ]
+        },
+        {
+          "semantic_role": "model",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 44,
+              "line_end": 48,
+              "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}\nDefino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.",
+              "quoted_text_sha256": "15d91697ad126d8ce4af141f176f6752e25475999531b5fdd666c917e5b9ee54"
+            }
+          ]
+        },
+        {
+          "semantic_role": "scope",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 82,
+              "line_end": 82,
+              "quoted_text": "El primer término de la derivada valora mayor escala; el segundo recoge el costo de cambiar de tipo. La igualdad salarial procede de beneficio cero, incluso sin optimalidad interior. La pendiente, en cambio, necesita una identidad válida alrededor del punto. No se deduce la derivada de una igualdad que solo valga en un tipo aislado.",
+              "quoted_text_sha256": "6f92465788ef9d71298470c9a49dde311e746679d29b11d3f7fcc2044566d40e"
+            }
+          ]
+        }
+      ],
+      "semantic_contract": {
+        "spec_declaration": "Vasquez26HeterogeneousVerification.PropositionOneSpec",
+        "evidence_declaration": "Vasquez26HeterogeneousVerification.proposition_one",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      },
+      "support_lean_declarations": [
+        "Vasquez26HeterogeneousVerification.PropositionOneSpec"
+      ],
+      "source_claim_atoms": [
+        {
+          "id": "proposition_1.foc",
+          "source_locator": ".audit_source/paper.tex:58-64",
+          "source_quote_sha256": "91d93bcb1074ae08029c63ad594db04d268695c7657902822edc1569ca9ea266",
+          "semantic_claim": "The local interior maximizer satisfies the displayed FOC.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_one",
+          "identity_schema": 3,
+          "verbatim_source_clause": "w^{V\\prime}(z)+c'(z)=\\frac{a-w^V(z)-c(z)}{1-z}"
+        },
+        {
+          "id": "proposition_1.zero_profit_rental",
+          "source_locator": ".audit_source/paper.tex:58-64",
+          "source_quote_sha256": "91d93bcb1074ae08029c63ad594db04d268695c7657902822edc1569ca9ea266",
+          "semantic_claim": "At zero profit, the FOC quotient equals h times the compute rental.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_one",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Si además la actividad tiene beneficio cero, el cociente es $hr$."
+        },
+        {
+          "id": "proposition_1.zero_rental_wage",
+          "source_locator": ".audit_source/paper.tex:58-64",
+          "source_quote_sha256": "91d93bcb1074ae08029c63ad594db04d268695c7657902822edc1569ca9ea266",
+          "semantic_claim": "At zero compute rental and zero profit, the wage equals net AI output.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_one",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Con $r=0$, $w^V(z)=a-c(z)$."
+        },
+        {
+          "id": "proposition_1.active_neighborhood_slope",
+          "source_locator": ".audit_source/paper.tex:58-64",
+          "source_quote_sha256": "91d93bcb1074ae08029c63ad594db04d268695c7657902822edc1569ca9ea266",
+          "semantic_claim": "An open active neighborhood under linear validation cost has wage slope kappa.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_one",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Si la actividad es usada en un intervalo abierto y $c(z)=\\kappa(1-z)$, entonces $w^{V\\prime}(z)=\\kappa$ en ese intervalo."
+        }
+      ]
+    },
+    "proposition_2": {
+      "source_kind": "proposition",
+      "source_location": ".audit_source/paper.tex:96-111",
+      "statement": "Proposition 2: existence and uniqueness of allocations and all prices in the baseline and validation economies, middle-only AI use, exact allocation, and strictly positive net-output gain.",
+      "source_note": "Second numbered source result; the continuous extension is outside the claimed theorem.",
+      "claim_bearing": true,
+      "source_anchor_evidence": [
+        {
+          "path": ".audit_source/paper.tex",
+          "line_start": 96,
+          "line_end": 111,
+          "quoted_text": "\\begin{proposition}[Régimen intermedio de tres tipos]\\label{prop:middle}\nBajo los Supuestos 1--4, supóngase\n\\begin{align}\n &\\gamma>h\\alpha+b_M\\beta,\\qquad \\vM>m,\\label{eq:surplus}\\\\\n &q_L<\\vL,\\qquad q_M>\\vM,\\label{eq:offers}\\\\\n &q_H<H\\quad\\text{si }H\\leq a.\\label{eq:high}\n\\end{align}\nSin IA existe un único equilibrio en asignaciones y salarios: los tipos $L,M$ trabajan con expertos $H$, el resto de $H$ produce de forma independiente, y $w^0=(\\vL,\\vM,H)$. Con validación heterogénea existe un único equilibrio en asignaciones y salarios:\n\\begin{equation}\\label{eq:prices3}\n (w^V_L,w^V_M,w^V_H)=(\\vL,q_M,H).\n\\end{equation}\nSolo $M$ usa IA: $x_M=\\beta$, $x_L=x_H=0$. La base trabaja con expertos, $y_{LH}=\\alpha$, y $d_H=\\gamma-h\\alpha$; las demás actividades son nulas. El producto neto aumenta respecto de la economía sin IA en\n\\begin{equation}\\label{eq:gain}\n Y^V-Y^0=\\beta(q_M-\\vM)>0.\n\\end{equation}\n\\end{proposition}",
+          "quoted_text_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a"
+        }
+      ],
+      "lean_declarations": [
+        "Vasquez26HeterogeneousVerification.proposition_two"
+      ],
+      "aliases": [
+        "PropositionTwoSpec"
+      ],
+      "semantic_context_requirements": [
+        {
+          "semantic_role": "stated_antecedent",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 35,
+              "line_end": 43,
+              "quoted_text": "\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}\n\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}\n\\begin{assumption}[Cómputo]\\label{ass:compute}\nLa dotación $\\mu>h$ es exógena y el cómputo ocioso tiene renta cero. Como su demanda es $\\int b(z)x(dz)\\leq h$, resulta $r=0$.\n\\end{assumption}",
+              "quoted_text_sha256": "d581ad3be1d36740f53fd01c042b3b4b4184b4527675ea168d8c0987d0dfeb6d"
+            }
+          ]
+        },
+        {
+          "semantic_role": "model",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 44,
+              "line_end": 55,
+              "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}\nDefino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.\n\n\\begin{assumption}[Especialización finita]\\label{ass:finite}\nPara el resultado global se reemplaza la distribución continua por la terna $(0,m,H)$, con $0<m<H<1$ con masas positivas $\\alpha,\\beta,\\gamma$, cuya suma es uno. Se conservan tecnología, información, actividades y fricción de los Supuestos 1--3. Para el resultado de tres tipos se exige $m<a$ y las condiciones adicionales de la Proposición 2.\n\\end{assumption}\nEste cambio de distribución es explícito: corresponde al plan B de la propuesta. El teorema finito no se presenta como una prueba del continuo. Las masas son divisibles; una fracción de cada tipo puede trabajar en cada ocupación.\n\nEn una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.",
+              "quoted_text_sha256": "6da070d05f27874e751efffcce47aef626fd40d0f198093338837144b3274fed"
+            }
+          ]
+        },
+        {
+          "semantic_role": "definition",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 89,
+              "line_end": 94,
+              "quoted_text": "Para la población del Supuesto 4, escribo\n\\[\n b_M=h(1-m),\\quad \\vL=H(1-h),\\quad \\vM=H(1-b_M),\\quad\n q_L=a-\\kappa,\\quad q_M=a-\\kappa(1-m).\n\\]\nSi $H\\leq a$, también $q_H=a-\\kappa(1-H)$. Las cantidades $\\vL,\\vM$ son salarios financiados al combinar cada tipo inferior con expertos de salario $H$.",
+              "quoted_text_sha256": "ca24c494a6166bad677215cd43e463029b8be6f43b1ef150028876e82c99b7f1"
+            }
+          ]
+        },
+        {
+          "semantic_role": "model",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 205,
+              "line_end": 220,
+              "quoted_text": "\\section{Asignación finita y certificado de optimalidad}\nPara tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es\n\\[\n\\max_{d,x,y\\geq0}\\ \\sum_i z_i d_i+\\sum_{i:z_i\\leq a}(a-c_i)x_i+\\sum_{i<j}z_jy_{ij},\n\\]\n\\[\nd_i+x_i+\\sum_{j>i}y_{ij}+\\sum_{k<i}b_ky_{ki}=M_i,\\qquad\nx_i=0\\text{ si }z_i>a.\n\\]\nCon cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.\n\nEl dual minimiza $\\sum_iM_iw_i$ sujeto a\n\\[\nw_i\\geq z_i,\\qquad w_i\\geq a-c_i\\ (z_i\\leq a),\\qquad w_i+b_iw_j\\geq z_j\\ (i<j).\n\\]\nLa restricción dual de una actividad es su condición de no beneficio por trabajador. La complementariedad exige igualdad si esa actividad recibe masa positiva. Un primal factible y un dual factible con objetivos iguales certifican optimalidad: multiplicar cada desigualdad dual por la variable primal y sumar utiliza exactamente las restricciones de recursos. Esta es la desigualdad que usa la prueba de unicidad de la Proposición 2; no requiere suponer un equilibrio ya existente.",
+              "quoted_text_sha256": "d6bdae396513ca4f81fe93bd686441a5820d5a020be2db83ec646182e41b8add"
+            }
+          ]
+        },
+        {
+          "semantic_role": "scope",
+          "source_anchor_evidence": [
+            {
+              "path": ".audit_source/paper.tex",
+              "line_start": 192,
+              "line_end": 193,
+              "quoted_text": "\\subsection{Fronteras del resultado}\nEl teorema resuelve un régimen discreto con expertos excedentes. Fuera de esas desigualdades pueden cambiar precios, soporte y ocupaciones. En particular, no se ha probado existencia o unicidad del nuevo equilibrio continuo, ni la convergencia de las mallas al mismo. Tampoco se ha establecido selección intermedia para toda distribución o para cualquier $\\kappa>0$. El límite $c=0$ recupera exactamente la tecnología y las restricciones del baseline; las simulaciones muestran su ordenamiento, pero este trabajo no vuelve a demostrar la Proposición 6 del artículo para el continuo.",
+              "quoted_text_sha256": "f090ac7509cf056f2e5ffb2199726a730a7dab4dea03d1d45acd46fe0054e6e5"
+            }
+          ]
+        }
+      ],
+      "semantic_contract": {
+        "spec_declaration": "Vasquez26HeterogeneousVerification.PropositionTwoSpec",
+        "evidence_declaration": "Vasquez26HeterogeneousVerification.proposition_two",
+        "evidence_mode": "proves",
+        "semantic_shape": "plain"
+      },
+      "support_lean_declarations": [
+        "Vasquez26HeterogeneousVerification.PropositionTwoSpec"
+      ],
+      "source_claim_atoms": [
+        {
+          "id": "proposition_2.baseline_equilibrium",
+          "source_locator": ".audit_source/paper.tex:96-111",
+          "source_quote_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a",
+          "semantic_claim": "The no-AI economy has the stated unique allocation and wage vector.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_two",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Sin IA existe un único equilibrio en asignaciones y salarios: los tipos $L,M$ trabajan con expertos $H$, el resto de $H$ produce de forma independiente, y $w^0=(\\vL,\\vM,H)$."
+        },
+        {
+          "id": "proposition_2.validation_uniqueness",
+          "source_locator": ".audit_source/paper.tex:96-111",
+          "source_quote_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a",
+          "semantic_claim": "The heterogeneous-validation economy has a unique equilibrium in allocations and wages.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_two",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Con validación heterogénea existe un único equilibrio en asignaciones y salarios:"
+        },
+        {
+          "id": "proposition_2.validation_wages",
+          "source_locator": ".audit_source/paper.tex:96-111",
+          "source_quote_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a",
+          "semantic_claim": "The validation-economy wage vector is (vL,qM,H).",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_two",
+          "identity_schema": 3,
+          "verbatim_source_clause": "(w^V_L,w^V_M,w^V_H)=(\\vL,q_M,H)."
+        },
+        {
+          "id": "proposition_2.validation_allocation",
+          "source_locator": ".audit_source/paper.tex:96-111",
+          "source_quote_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a",
+          "semantic_claim": "Only the middle type uses AI and every validation-economy allocation is as displayed.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_two",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Solo $M$ usa IA: $x_M=\\beta$, $x_L=x_H=0$. La base trabaja con expertos, $y_{LH}=\\alpha$, y $d_H=\\gamma-h\\alpha$; las demás actividades son nulas."
+        },
+        {
+          "id": "proposition_2.output_gain_identity",
+          "source_locator": ".audit_source/paper.tex:96-111",
+          "source_quote_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a",
+          "semantic_claim": "The net-output change equals beta times the middle-type net-offer gap.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_two",
+          "identity_schema": 3,
+          "verbatim_source_clause": "Y^V-Y^0=\\beta(q_M-\\vM)"
+        },
+        {
+          "id": "proposition_2.output_gain_positive",
+          "source_locator": ".audit_source/paper.tex:96-111",
+          "source_quote_sha256": "4afe02bc16cf42ab3e8a8718f78498b6970207d19c74de02ac5cbf2f5df0263a",
+          "semantic_claim": "The net-output change is strictly positive.",
+          "reviewed_lean_route": "Vasquez26HeterogeneousVerification.proposition_two",
+          "identity_schema": 3,
+          "verbatim_source_clause": ">0."
+        }
+      ]
+    }
+  },
+  "approved_review_context_schema": 1,
+  "semantic_contract_schema": 1,
+  "semantic_route_schema": 2,
+  "source_anchor_evidence_required": true,
+  "paper_semantic_prerequisite_sources": {
+    "Vasquez26HeterogeneousVerification.Allocation": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.Allocation.Nonnegative": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.Complementary": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.Economy": "definition_finite_population",
+    "Vasquez26HeterogeneousVerification.Equilibrium": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.Feasible": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.NoProfit": "definition_finite_activity_masses",
+    "Vasquez26HeterogeneousVerification.Prices": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.assistanceTime": "definition_assistance_time",
+    "Vasquez26HeterogeneousVerification.bH": "assumption_1_technology_information",
+    "Vasquez26HeterogeneousVerification.bM": "assumption_1_technology_information",
+    "Vasquez26HeterogeneousVerification.compute": "assumption_3_compute",
+    "Vasquez26HeterogeneousVerification.netOffer": "definition_net_offer",
+    "Vasquez26HeterogeneousVerification.output": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.profit": "definition_firm_activity",
+    "Vasquez26HeterogeneousVerification.qH": "assumption_2_ai_validation",
+    "Vasquez26HeterogeneousVerification.qL": "assumption_2_ai_validation",
+    "Vasquez26HeterogeneousVerification.qM": "assumption_2_ai_validation",
+    "Vasquez26HeterogeneousVerification.span": "definition_firm_activity",
+    "Vasquez26HeterogeneousVerification.vL": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.vM": "assumption_4_finite_specialization",
+    "Vasquez26HeterogeneousVerification.validationCost": "definition_validation_cost"
+  },
+  "source_spec_correspondence_schema": 1,
+  "paper_interface_namespace": "Vasquez26HeterogeneousVerification",
+  "semantic_preflight_import_module": "Vasquez26HeterogeneousVerification.ProofInterface",
+  "source_claim_atoms_schema": 1,
+  "closeout_review_policy": {
+    "schema": 1,
+    "source_scope": "all_named_theory",
+    "repeat_final_scope": "main_primary",
+    "required_final_adversary_count": 1,
+    "scheduling": {
+      "initial_semantic_review": [],
+      "final_adversarial_review": []
+    }
+  },
+  "source_inventory_policy": "Canonical v11 review binds one transparent PaperInterface Spec to each selected source claim; retained source claims without a current Spec route remain explicit audit work rather than disappearing from the inventory.",
+  "source_named_result_inventory_review": {
+    "schema": 1,
+    "complete": true,
+    "validator": "Codex root source inventory extractor",
+    "method": "Read the complete canonical paper.tex before consulting Lean; reconciled the six mechanically detected named presentations and separately inventoried unnumbered notation/support without issuing source-to-Lean judgments.",
+    "validated_at": "2026-10-28T02:21:44Z",
+    "prose_definition_presentations": [
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "b(z)",
+        "definitional_clause": "\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}",
+        "scope_disposition": "normal_named_theory_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 35,
+          "line_end": 37,
+          "quoted_text": "\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}",
+          "quoted_text_sha256": "453c1934d35a87a08aa9a1430e68e026932616bba53829dd5a253555c95bad4e"
+        }
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "c(z)",
+        "definitional_clause": "\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}",
+        "scope_disposition": "normal_named_theory_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 38,
+          "line_end": 40,
+          "quoted_text": "\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}",
+          "quoted_text_sha256": "b94806fc2715e6dd477ba9e83d84f469fabd737136ebb283781d3b3e7c0804fb"
+        }
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "\\q(z)",
+        "definitional_clause": "Defino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.",
+        "scope_disposition": "normal_named_theory_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 48,
+          "line_end": 48,
+          "quoted_text": "Defino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.",
+          "quoted_text_sha256": "841a5bde6c956c3a101c2b0687d6a6c7dfd82a2db00216730ec08aa74c5185ed"
+        }
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "n(z)",
+        "definitional_clause": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}",
+        "scope_disposition": "normal_named_theory_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 44,
+          "line_end": 47,
+          "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}",
+          "quoted_text_sha256": "bb9fe0fcf9143750b8d154260db58c417bc7cca1574999466e1ac4883065f397"
+        }
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "(0,m,H)",
+        "definitional_clause": "\\begin{assumption}[Especialización finita]\\label{ass:finite}\nPara el resultado global se reemplaza la distribución continua por la terna $(0,m,H)$, con $0<m<H<1$ con masas positivas $\\alpha,\\beta,\\gamma$, cuya suma es uno. Se conservan tecnología, información, actividades y fricción de los Supuestos 1--3. Para el resultado de tres tipos se exige $m<a$ y las condiciones adicionales de la Proposición 2.\n\\end{assumption}\nEste cambio de distribución es explícito: corresponde al plan B de la propuesta. El teorema finito no se presenta como una prueba del continuo. Las masas son divisibles; una fracción de cada tipo puede trabajar en cada ocupación.",
+        "scope_disposition": "normal_named_theory_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 50,
+          "line_end": 53,
+          "quoted_text": "\\begin{assumption}[Especialización finita]\\label{ass:finite}\nPara el resultado global se reemplaza la distribución continua por la terna $(0,m,H)$, con $0<m<H<1$ con masas positivas $\\alpha,\\beta,\\gamma$, cuya suma es uno. Se conservan tecnología, información, actividades y fricción de los Supuestos 1--3. Para el resultado de tres tipos se exige $m<a$ y las condiciones adicionales de la Proposición 2.\n\\end{assumption}\nEste cambio de distribución es explícito: corresponde al plan B de la propuesta. El teorema finito no se presenta como una prueba del continuo. Las masas son divisibles; una fracción de cada tipo puede trabajar en cada ocupación.",
+          "quoted_text_sha256": "ce5412fa7a7d93ba486cf840b6f410998577de7ca06f1632291fbf8c4848985a"
+        }
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "d_i",
+        "definitional_clause": "En una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.",
+        "scope_disposition": "normal_named_theory_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 55,
+          "line_end": 55,
+          "quoted_text": "En una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.",
+          "quoted_text_sha256": "324baecdc47ead3820f24e72fd61a1737219202c489476ab23dad458f1da685d"
+        }
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "b_M",
+        "definitional_clause": "Para la población del Supuesto 4, escribo\n\\[\n b_M=h(1-m),\\quad \\vL=H(1-h),\\quad \\vM=H(1-b_M),\\quad\n q_L=a-\\kappa,\\quad q_M=a-\\kappa(1-m).\n\\]\nSi $H\\leq a$, también $q_H=a-\\kappa(1-H)$. Las cantidades $\\vL,\\vM$ son salarios financiados al combinar cada tipo inferior con expertos de salario $H$.",
+        "scope_disposition": "local_proof_notation",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 89,
+          "line_end": 94,
+          "quoted_text": "Para la población del Supuesto 4, escribo\n\\[\n b_M=h(1-m),\\quad \\vL=H(1-h),\\quad \\vM=H(1-b_M),\\quad\n q_L=a-\\kappa,\\quad q_M=a-\\kappa(1-m).\n\\]\nSi $H\\leq a$, también $q_H=a-\\kappa(1-H)$. Las cantidades $\\vL,\\vM$ son salarios financiados al combinar cada tipo inferior con expertos de salario $H$.",
+          "quoted_text_sha256": "ca24c494a6166bad677215cd43e463029b8be6f43b1ef150028876e82c99b7f1"
+        },
+        "scope_reason": "These displayed abbreviations specialize the already defined model primitives for Proposition 2.",
+        "scope_judgment": "excluded_from_normal_named_theory",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "scope_judgment_source_sha256": "751384fd27e259b328c479860553f5d344440f143c56e2dfe5d0bedf744430f0"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "Y^0",
+        "definitional_clause": "\\textbf{5. Producto.} Las expresiones factibles son\n\\[\nY^0=(\\alpha+\\beta)H+(\\gamma-h\\alpha-b_M\\beta)H,\n\\quad Y^V=\\alpha H+\\beta q_M+(\\gamma-h\\alpha)H.\n\\]\nRestar y usar $\\vM=H(1-b_M)$ da \\eqref{eq:gain}.",
+        "scope_disposition": "local_proof_notation",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 132,
+          "line_end": 137,
+          "quoted_text": "\\textbf{5. Producto.} Las expresiones factibles son\n\\[\nY^0=(\\alpha+\\beta)H+(\\gamma-h\\alpha-b_M\\beta)H,\n\\quad Y^V=\\alpha H+\\beta q_M+(\\gamma-h\\alpha)H.\n\\]\nRestar y usar $\\vM=H(1-b_M)$ da \\eqref{eq:gain}.",
+          "quoted_text_sha256": "12a517e779f099692440dbdbe5cff9587e6af7e28c88688528e83bb0625ff675"
+        },
+        "scope_reason": "These output expressions are proof support for Proposition 2's already inventoried gain clause.",
+        "scope_judgment": "excluded_from_normal_named_theory",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "scope_judgment_source_sha256": "2ec2ad447a3873e741a57073093d1ebb9c68c121ad3015d055b1536a9eda9a9c"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "a",
+        "definitional_clause": "\\textbf{Resultado que se extiende.} \\emph{Artificial Intelligence in the Knowledge Economy} está publicado en \\emph{Journal of Political Economy}, 133(12), 3762--3800. Uso la paginación de arXiv:2312.05481v11: tecnología y beneficios en la sección 3.1, p. 12, e IA no autónoma en la sección 6, con Proposición 6 en p. 27. Escribo $a$ en lugar de $z_{\\mathrm{AI}}$, $w^0$ por el salario inicial $w$ y $w^N$ por el salario $w^\\star$ con copiloto sin costo. Cuando $a>w^0(0)$, el baseline tiene adopción desde la base y $w^N=a$ entre usuarios, con $r=0$; cuando $a\\leq w^0(0)$, no hay adopción.",
+        "scope_disposition": "deep_only_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 24,
+          "line_end": 24,
+          "quoted_text": "\\textbf{Resultado que se extiende.} \\emph{Artificial Intelligence in the Knowledge Economy} está publicado en \\emph{Journal of Political Economy}, 133(12), 3762--3800. Uso la paginación de arXiv:2312.05481v11: tecnología y beneficios en la sección 3.1, p. 12, e IA no autónoma en la sección 6, con Proposición 6 en p. 27. Escribo $a$ en lugar de $z_{\\mathrm{AI}}$, $w^0$ por el salario inicial $w$ y $w^N$ por el salario $w^\\star$ con copiloto sin costo. Cuando $a>w^0(0)$, el baseline tiene adopción desde la base y $w^N=a$ entre usuarios, con $r=0$; cuando $a\\leq w^0(0)$, no hay adopción.",
+          "quoted_text_sha256": "c117ed293d74945f90545aacb56917acf1ea1b8d515b3013e9d7286526fc4084"
+        },
+        "scope_reason": "These aliases translate notation from the cited baseline article and are not part of either new numbered result's normal source vocabulary.",
+        "scope_judgment": "excluded_from_normal_named_theory",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "normal_scope_exclusion_approval": {
+          "schema": 1,
+          "approval_kind": "explicit_user_instruction",
+          "approval_reference": "The user limited this phase to the manuscript's two numbered propositions and their prerequisite assumptions/models, and explicitly prohibited inventing a continuous-extension theorem.",
+          "approved_at": "2026-10-27T00:00:00Z"
+        },
+        "scope_judgment_source_sha256": "a18156a31c366b68ee906b7b3ad2b127f6664f88afff8044049847e85a918efb"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "gasto",
+        "definitional_clause": "El gasto es una representación reducida en bienes. Interpretarlo como tiempo del mismo trabajador o de un gerente exigiría cambiar recursos y, posiblemente, $n(z)$. El conocimiento es observable; no hay selección adversa, aprendizaje ni decisiones de educación. La IA no cambia su capacidad y no hay alucinaciones endógenas. Los antecedentes de supervisión estudian otros mecanismos; esta simplificación permite aislar la fricción de costo.",
+        "scope_disposition": "repeated_normal_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 195,
+          "line_end": 195,
+          "quoted_text": "El gasto es una representación reducida en bienes. Interpretarlo como tiempo del mismo trabajador o de un gerente exigiría cambiar recursos y, posiblemente, $n(z)$. El conocimiento es observable; no hay selección adversa, aprendizaje ni decisiones de educación. La IA no cambia su capacidad y no hay alucinaciones endógenas. Los antecedentes de supervisión estudian otros mecanismos; esta simplificación permite aislar la fricción de costo.",
+          "quoted_text_sha256": "16fdb6a47e980d97ad075aa83dc305ba8b9a1c31652c97f6e54ab222e2322dd6"
+        },
+        "repetition_judgment": "semantically_equivalent_restatement",
+        "semantic_basis": "This sentence repeats the canonical validation-cost interpretation as expenditure in goods while listing limits of that reduced-form model.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "canonical_presentation_sha256": "18137ec1e0e6c7e900aeebbd0a754532f31f4ed4710ea6ac3070edf9ca4be4a4",
+        "repetition_judgment_source_sha256": "bebe7a00feef805b89d027bae4c88cbd21f49c82e100b23ba653de5ecdfb9f4d"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "b_i",
+        "definitional_clause": "Para tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es",
+        "scope_disposition": "repeated_normal_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 206,
+          "line_end": 206,
+          "quoted_text": "Para tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es",
+          "quoted_text_sha256": "1c9f1d9bbed30864d8ade6987b5e2e427a6abf49aceaae7a680cfc2214cd1511"
+        },
+        "repetition_judgment": "semantically_equivalent_restatement",
+        "semantic_basis": "The appendix formula b_i=h(1-z_i) is the finite-index restatement of the canonical assistance-time definition b(z)=h(1-z).",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "canonical_presentation_sha256": "16f5053bc15ec71fec401511062a0e7e8011f32322b0ec1e7c4ded15bde03119",
+        "repetition_judgment_source_sha256": "7cee95727b51ce6ff83fde4f619b2df569d3ce90260f8bfd8c5561d7931199f2"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "y_{ij}",
+        "definitional_clause": "Con cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.",
+        "scope_disposition": "repeated_normal_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 214,
+          "line_end": 214,
+          "quoted_text": "Con cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.",
+          "quoted_text_sha256": "952ee8571dfa4e1b31bb85ccb9573a870053baca13e186ea05a9a7ce47b5386d"
+        },
+        "repetition_judgment": "semantically_equivalent_restatement",
+        "semantic_basis": "The appendix repeats that y_ij measures worker mass and that activities are divisible, matching the canonical finite activity-mass vocabulary.",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "canonical_presentation_sha256": "dc81de9d75c412a3b6d779486b8cecfd37c8becf8d38e77b8c772ba69906b93d",
+        "repetition_judgment_source_sha256": "9bcf8429a7d10155544b8666ce0465a24e1476248afe3975585ef35bcab34990"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "z_i",
+        "definitional_clause": "\\section{Simulaciones: población uniforme y controles}\nPara estudiar el continuo original empleo $G(z)=z$, $h=0.5<h_0(G)=0.75$, $a=0.88$, $\\kappa=0.53$ y $\\mu=1>h$. La malla de $N$ puntos medios asigna masa $1/N$ a $z_i=(i-1/2)/N$. El programa maximiza producto neto sobre independientes, usuarios IA y todas las parejas humanas $i<j$, sujeto al vaciado de cada tipo. Los multiplicadores duales entregan salarios; las variables primales identifican quién usa IA.",
+        "scope_disposition": "computational_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 169,
+          "line_end": 170,
+          "quoted_text": "\\section{Simulaciones: población uniforme y controles}\nPara estudiar el continuo original empleo $G(z)=z$, $h=0.5<h_0(G)=0.75$, $a=0.88$, $\\kappa=0.53$ y $\\mu=1>h$. La malla de $N$ puntos medios asigna masa $1/N$ a $z_i=(i-1/2)/N$. El programa maximiza producto neto sobre independientes, usuarios IA y todas las parejas humanas $i<j$, sujeto al vaciado de cada tipo. Los multiplicadores duales entregan salarios; las variables primales identifican quién usa IA.",
+          "quoted_text_sha256": "8b83fd66a0a4ee272d3c0191854f8704b7168f8ee90810f45a1a257974b4cef4"
+        },
+        "scope_reason": "The midpoint grid belongs only to the numerical continuous-economy exercise, which the source explicitly does not claim as a theorem.",
+        "scope_judgment": "excluded_from_normal_named_theory",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "scope_judgment_source_sha256": "96b5b3ba508c7f9671524f4fd8e87dfb5dc63a578c1240b5de5063ee40b58bde"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "\\bar c",
+        "definitional_clause": "Comparo ausencia de IA, costo cero, costo heterogéneo y un costo constante con el mismo promedio \\emph{entre tipos elegibles del continuo}: $\\bar c=\\kappa(1-a/2)=0.2968$. Igualar ese promedio no iguala el gasto realizado, porque la adopción es endógena. La figura muestra salarios y fracciones adoptantes con $N=400$.",
+        "scope_disposition": "computational_definition",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 172,
+          "line_end": 172,
+          "quoted_text": "Comparo ausencia de IA, costo cero, costo heterogéneo y un costo constante con el mismo promedio \\emph{entre tipos elegibles del continuo}: $\\bar c=\\kappa(1-a/2)=0.2968$. Igualar ese promedio no iguala el gasto realizado, porque la adopción es endógena. La figura muestra salarios y fracciones adoptantes con $N=400$.",
+          "quoted_text_sha256": "2d3a109e0d930bc2e98b4b3aa3ffbecb010b0bbc85036ba875a24b62b5f98e0e"
+        },
+        "scope_reason": "This average is used only in the numerical technology comparison and is not a prerequisite of either numbered proposition.",
+        "scope_judgment": "excluded_from_normal_named_theory",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "scope_judgment_source_sha256": "4213a9a00917850a3a8dadef456063d95e9e5f2454164c2d5f16e658495d1074"
+      },
+      {
+        "schema": 1,
+        "presentation_kind": "definition",
+        "defined_entity_kind": "object",
+        "defined_object": "d_i",
+        "definitional_clause": "\\section{Asignación finita y certificado de optimalidad}\nPara tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es\n\\[\n\\max_{d,x,y\\geq0}\\ \\sum_i z_i d_i+\\sum_{i:z_i\\leq a}(a-c_i)x_i+\\sum_{i<j}z_jy_{ij},\n\\]\n\\[\nd_i+x_i+\\sum_{j>i}y_{ij}+\\sum_{k<i}b_ky_{ki}=M_i,\\qquad\nx_i=0\\text{ si }z_i>a.\n\\]\nCon cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.\n\nEl dual minimiza $\\sum_iM_iw_i$ sujeto a\n\\[\nw_i\\geq z_i,\\qquad w_i\\geq a-c_i\\ (z_i\\leq a),\\qquad w_i+b_iw_j\\geq z_j\\ (i<j).\n\\]\nLa restricción dual de una actividad es su condición de no beneficio por trabajador. La complementariedad exige igualdad si esa actividad recibe masa positiva. Un primal factible y un dual factible con objetivos iguales certifican optimalidad: multiplicar cada desigualdad dual por la variable primal y sumar utiliza exactamente las restricciones de recursos. Esta es la desigualdad que usa la prueba de unicidad de la Proposición 2; no requiere suponer un equilibrio ya existente.",
+        "scope_disposition": "local_proof_notation",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 205,
+          "line_end": 220,
+          "quoted_text": "\\section{Asignación finita y certificado de optimalidad}\nPara tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es\n\\[\n\\max_{d,x,y\\geq0}\\ \\sum_i z_i d_i+\\sum_{i:z_i\\leq a}(a-c_i)x_i+\\sum_{i<j}z_jy_{ij},\n\\]\n\\[\nd_i+x_i+\\sum_{j>i}y_{ij}+\\sum_{k<i}b_ky_{ki}=M_i,\\qquad\nx_i=0\\text{ si }z_i>a.\n\\]\nCon cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.\n\nEl dual minimiza $\\sum_iM_iw_i$ sujeto a\n\\[\nw_i\\geq z_i,\\qquad w_i\\geq a-c_i\\ (z_i\\leq a),\\qquad w_i+b_iw_j\\geq z_j\\ (i<j).\n\\]\nLa restricción dual de una actividad es su condición de no beneficio por trabajador. La complementariedad exige igualdad si esa actividad recibe masa positiva. Un primal factible y un dual factible con objetivos iguales certifican optimalidad: multiplicar cada desigualdad dual por la variable primal y sumar utiliza exactamente las restricciones de recursos. Esta es la desigualdad que usa la prueba de unicidad de la Proposición 2; no requiere suponer un equilibrio ya existente.",
+          "quoted_text_sha256": "d6bdae396513ca4f81fe93bd686441a5820d5a020be2db83ec646182e41b8add"
+        },
+        "scope_reason": "The appendix primal-dual display supports the proof route for Proposition 2 but does not state another independently named result.",
+        "scope_judgment": "excluded_from_normal_named_theory",
+        "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+        "validator_type": "agent",
+        "validated_at": "2026-10-28T02:21:44Z",
+        "scope_judgment_source_sha256": "e6817bd9602e6880107b523182adbdae387eb2f869ac864f6270df3f8f457873"
+      }
+    ],
+    "discovered_prose_definition_sha256": "8d06025473dd186afc72d1b6d158eb976ea8130c0a9cd6032fd7ba0ed0241504",
+    "source_artifact_sha256": "c85ea6817bd1b6ff228ee1156c5dc96fd9a008c0f4858abe36b8f0f4235820b2",
+    "candidate_presentations": [
+      {
+        "schema": 1,
+        "id": "baseline_external_restatement",
+        "presentation_label": "Resultado que se extiende",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This paragraph restates the cited baseline article and fixes notation; it is neither of this manuscript's numbered propositions.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 24,
+          "line_end": 24,
+          "quoted_text": "\\textbf{Resultado que se extiende.} \\emph{Artificial Intelligence in the Knowledge Economy} está publicado en \\emph{Journal of Political Economy}, 133(12), 3762--3800. Uso la paginación de arXiv:2312.05481v11: tecnología y beneficios en la sección 3.1, p. 12, e IA no autónoma en la sección 6, con Proposición 6 en p. 27. Escribo $a$ en lugar de $z_{\\mathrm{AI}}$, $w^0$ por el salario inicial $w$ y $w^N$ por el salario $w^\\star$ con copiloto sin costo. Cuando $a>w^0(0)$, el baseline tiene adopción desde la base y $w^N=a$ entre usuarios, con $r=0$; cuando $a\\leq w^0(0)$, no hay adopción.",
+          "quoted_text_sha256": "c117ed293d74945f90545aacb56917acf1ea1b8d515b3013e9d7286526fc4084"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "firm_offer_model_display",
+        "presentation_label": "Firm activity and net offer",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "These displays define the governing firm activity and offer comparison already inventoried as source definitions, not an additional result.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 44,
+          "line_end": 48,
+          "quoted_text": "Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}\nDefino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.",
+          "quoted_text_sha256": "15d91697ad126d8ce4af141f176f6752e25475999531b5fdd666c917e5b9ee54"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "finite_equilibrium_prose",
+        "presentation_label": "Finite equilibrium requirements",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This prose supplies the equilibrium vocabulary already inventoried as a source definition and is not a separate theorem.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 55,
+          "line_end": 55,
+          "quoted_text": "En una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.",
+          "quoted_text_sha256": "324baecdc47ead3820f24e72fd61a1737219202c489476ab23dad458f1da685d"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "foc_limits",
+        "presentation_label": "FOC insufficiency and endpoints",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This is an explanatory limitation of Proposition 1 and records endpoint necessary conditions; it is not presented as another numbered result.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 84,
+          "line_end": 84,
+          "quoted_text": "La FOC tampoco es suficiente para un máximo estricto. Sustituir el salario de beneficio cero en el beneficio puede generar indiferencia entre tipos. En un extremo del dominio, las condiciones necesarias son unilaterales: $\\Pi^{V\\prime}(0)\\leq0$ o $\\Pi^{V\\prime}(a)\\geq0$, cuando existen las derivadas correspondientes.",
+          "quoted_text_sha256": "5b43089d88a35affbf92ad94287c136ad79867e5642e62afa19b2d3b2c03e142"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "linear_cost_interpretation",
+        "presentation_label": "Linear-cost interpretation",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "The identity n(z)c(z)=kappa/h and the resulting offer slope interpret the parametrization used in Proposition 1.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 86,
+          "line_end": 86,
+          "quoted_text": "Un detalle útil para interpretar la parametrización es $n(z)c(z)=\\kappa/h$: el gasto por unidad de IA es constante en esta forma lineal. Aun así, la oferta salarial por trabajador es $a-\\kappa+\\kappa z$. La selección requiere comparar esa oferta con las actividades humanas y los recursos, que no son constantes en $z$.",
+          "quoted_text_sha256": "23f6c0b4e63b50a5f1350782bf763ed3d3b13db9505444afc8106b20bf8a88a9"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "rational_witness",
+        "presentation_label": "A rational equilibrium satisfying the conditions",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This section instantiates and numerically explains Proposition 2; it is an example and proof-support certificate, not a third numbered result.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 140,
+          "line_end": 162,
+          "quoted_text": "\\section{Un equilibrio racional que satisface las condiciones}\nFijo los mismos $h,a,\\kappa$ del topic, pero una población explícita de tres tipos:\n\\[\nh=\\tfrac12,\\quad a=\\tfrac{22}{25}=0.88,\\quad\\kappa=\\tfrac{53}{100}=0.53,\n\\]\n\\[\n(z_L,z_M,z_H)=(0,\\tfrac14,\\tfrac{19}{25}),\n\\quad(\\alpha,\\beta,\\gamma)=(\\tfrac14,\\tfrac25,\\tfrac7{20}).\n\\]\nLas necesidades de expertos son $h\\alpha=0.125$ y $b_M\\beta=0.15$, por lo que $0.35>0.275$. Los salarios humanos son $\\vL=0.38$, $\\vM=0.475>m=0.25$. Las ofertas netas son\n\\[\n q_L=0.35<0.38,\\quad q_M=0.4825>0.475,\\quad q_H=0.7528<0.76.\n\\]\nTodas las desigualdades de la proposición son estrictas. El certificado racional que genera \\texttt{code/verify.py} evalúa cada recurso, desigualdad salarial e igualdad en actividades usadas con SymPy; una resolución LP independiente coincide con él.\n\\begin{center}\n\\begin{tabular}{rrrrrr}\\toprule\nTipo $z$ & Masa & $w^0$ & $w^V$ & Usuarios IA & Independientes\\\\\\midrule\n0.00 &0.25 &0.3800 &0.3800 &0.00 &0.000\\\\\n0.25 &0.40 &0.4750 &0.4825 &0.40 &0.000\\\\\n0.76 &0.35 &0.7600 &0.7600 &0.00 &0.225\\\\\\bottomrule\n\\end{tabular}\n\\end{center}\nLa única jerarquía humana utilizada es $LH$, con $0.25$ trabajadores y $0.125$ expertos. La IA atiende al tipo medio y demanda $0.15$ unidades de cómputo. La producción neta pasa de $Y^0=0.551$ a $Y^V=0.554$, con ganancia $0.003=0.4(0.4825-0.475)$. El producto bruto con IA es $0.713$; el gasto de validación es $0.159$, de modo que $0.713-0.159=0.554$. Son cantidades ilustrativas, sin calibración empírica.",
+          "quoted_text_sha256": "16a2e2c95cf2f801d8b066f743cda088ecc0f1947ce246a3d3cff93fe51cd339"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "continuous_simulations",
+        "presentation_label": "Continuous-population simulations",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "These finite-grid numerical exercises are explicitly simulations rather than a theorem about the continuous economy.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 169,
+          "line_end": 184,
+          "quoted_text": "\\section{Simulaciones: población uniforme y controles}\nPara estudiar el continuo original empleo $G(z)=z$, $h=0.5<h_0(G)=0.75$, $a=0.88$, $\\kappa=0.53$ y $\\mu=1>h$. La malla de $N$ puntos medios asigna masa $1/N$ a $z_i=(i-1/2)/N$. El programa maximiza producto neto sobre independientes, usuarios IA y todas las parejas humanas $i<j$, sujeto al vaciado de cada tipo. Los multiplicadores duales entregan salarios; las variables primales identifican quién usa IA.\n\nComparo ausencia de IA, costo cero, costo heterogéneo y un costo constante con el mismo promedio \\emph{entre tipos elegibles del continuo}: $\\bar c=\\kappa(1-a/2)=0.2968$. Igualar ese promedio no iguala el gasto realizado, porque la adopción es endógena. La figura muestra salarios y fracciones adoptantes con $N=400$.\n\\begin{center}\\includegraphics[width=.97\\linewidth]{../code/figures/equilibrium.pdf}\\end{center}\n\\begin{center}\\small\n\\begin{tabular}{rrrrr}\\toprule\n$N$ & $Y^V$ & Masa con IA & Menor $z$ usuario & Mayor $z$ usuario\\\\\\midrule\n100&0.692416&0.042187&0.23500&0.27500\\\\\n200&0.692471&0.033137&0.23750&0.27250\\\\\n400&0.692483&0.037226&0.23375&0.27125\\\\\\bottomrule\n\\end{tabular}\n\\end{center}\nEn estas mallas, la fricción heterogénea excluye la base y deja usuarios intermedios. Con costo cero la adopción parte de la base; con costo constante también lo hace, pero su masa es menor. La igualdad salarial $w_i=q_i$ no se utiliza para clasificar usuarios: puede haber tipos indiferentes que no reciben masa de IA.\n\nLos residuos de recursos, no beneficio, complementariedad y brecha primal--dual son menores que $10^{-7}$; el código falla si se supera esa tolerancia. Los CSV guardan los valores efectivos. La estabilidad del producto no debe confundirse con convergencia de masas: estas pasan de $0.0422$ a $0.0331$ y $0.0372$. La aproximación confirma el patrón en mallas concretas, no un teorema del continuo.",
+          "quoted_text_sha256": "68ee916c6fa4f93f9953f2f60f7f5f344f7d8309b84db4abc986b4b3f9cf49ad"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "initial_gap_derivative",
+        "presentation_label": "Initial-gap derivative discussion",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This discussion contrasts a local initial-price comparison with the equilibrium inequalities required by Proposition 2.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 187,
+          "line_end": 188,
+          "quoted_text": "\\subsection{Nivel, pendiente y costo de oportunidad}\nCon $c(z)=\\bar c$, la oferta $a-\\bar c$ es plana. Con $c(z)=\\kappa(1-z)$, su pendiente es $\\kappa$. A salarios iniciales, $\\Delta^{0\\prime}=\\kappa-w^{0\\prime}$, de modo que $\\kappa>w^{0\\prime}$ indica ventaja de entrada creciente localmente. Esa condición no es suficiente para la Proposición 2: también deben sostenerse las alternativas humanas, los salarios y la capacidad experta. Las desigualdades \\eqref{eq:surplus}--\\eqref{eq:high} muestran qué añade el cierre de equilibrio.",
+          "quoted_text_sha256": "3dbf686e4f1528eb5cae547e08b1073600405be87c8b7067cf0f245471352529"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "numerical_welfare_comparisons",
+        "presentation_label": "Numerical technology comparisons",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "These are reported numerical comparisons with explicit limits, not a claimed analytical welfare theorem.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 190,
+          "line_end": 190,
+          "quoted_text": "El costo heterogéneo no domina en bienestar al costo constante de igual promedio. Con $N=400$, el producto neto es aproximadamente $0.692483$ con heterogeneidad y $0.729923$ con costo constante; sin IA es $0.692334$ y sin gasto de validación es $0.893418$. Son comparaciones de tecnologías con costos realizados diferentes. El modelo no permite concluir que una regulación de validación mejore eficiencia o distribución: no incluye daños por errores que dicha regulación pudiera evitar.",
+          "quoted_text_sha256": "8d6d0c4902a056f219264248ed4349588e6098ba33e17f1bcb885dd3dc474e39"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "result_boundaries",
+        "presentation_label": "Boundaries of the result",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This section explicitly excludes continuous existence, uniqueness, convergence, and universal selection claims and describes modeling limits.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 192,
+          "line_end": 195,
+          "quoted_text": "\\subsection{Fronteras del resultado}\nEl teorema resuelve un régimen discreto con expertos excedentes. Fuera de esas desigualdades pueden cambiar precios, soporte y ocupaciones. En particular, no se ha probado existencia o unicidad del nuevo equilibrio continuo, ni la convergencia de las mallas al mismo. Tampoco se ha establecido selección intermedia para toda distribución o para cualquier $\\kappa>0$. El límite $c=0$ recupera exactamente la tecnología y las restricciones del baseline; las simulaciones muestran su ordenamiento, pero este trabajo no vuelve a demostrar la Proposición 6 del artículo para el continuo.\n\nEl gasto es una representación reducida en bienes. Interpretarlo como tiempo del mismo trabajador o de un gerente exigiría cambiar recursos y, posiblemente, $n(z)$. El conocimiento es observable; no hay selección adversa, aprendizaje ni decisiones de educación. La IA no cambia su capacidad y no hay alucinaciones endógenas. Los antecedentes de supervisión estudian otros mecanismos; esta simplificación permite aislar la fricción de costo.",
+          "quoted_text_sha256": "37ace359167aea0644dfd88c39a2b6a922d37a674a23efcec3328ab470cc7829"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "finite_lp_primal_dual",
+        "presentation_label": "Finite allocation and optimality certificate",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "The appendix primal-dual system is proof support for Proposition 2's equilibrium and uniqueness argument, not an independent named theorem.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 205,
+          "line_end": 220,
+          "quoted_text": "\\section{Asignación finita y certificado de optimalidad}\nPara tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es\n\\[\n\\max_{d,x,y\\geq0}\\ \\sum_i z_i d_i+\\sum_{i:z_i\\leq a}(a-c_i)x_i+\\sum_{i<j}z_jy_{ij},\n\\]\n\\[\nd_i+x_i+\\sum_{j>i}y_{ij}+\\sum_{k<i}b_ky_{ki}=M_i,\\qquad\nx_i=0\\text{ si }z_i>a.\n\\]\nCon cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.\n\nEl dual minimiza $\\sum_iM_iw_i$ sujeto a\n\\[\nw_i\\geq z_i,\\qquad w_i\\geq a-c_i\\ (z_i\\leq a),\\qquad w_i+b_iw_j\\geq z_j\\ (i<j).\n\\]\nLa restricción dual de una actividad es su condición de no beneficio por trabajador. La complementariedad exige igualdad si esa actividad recibe masa positiva. Un primal factible y un dual factible con objetivos iguales certifican optimalidad: multiplicar cada desigualdad dual por la variable primal y sumar utiliza exactamente las restricciones de recursos. Esta es la desigualdad que usa la prueba de unicidad de la Proposición 2; no requiere suponer un equilibrio ya existente.",
+          "quoted_text_sha256": "d6bdae396513ca4f81fe93bd686441a5820d5a020be2db83ec646182e41b8add"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "finite_lp_existence_note",
+        "presentation_label": "Finite LP existence note",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This unnumbered paragraph explains finite LP existence and explicitly says that it does not solve the continuous limit.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 222,
+          "line_end": 222,
+          "quoted_text": "El primal finito es no vacío (todos independientes), cerrado y acotado: cada variable consume al menos una unidad de alguna masa humana, por lo que está acotada. La programación lineal finita entrega un óptimo y un dual; la existencia finita no resuelve el paso al continuo. El código usa HiGHS mediante SciPy y verifica el certificado sin tomar el estado de éxito del optimizador como único control.",
+          "quoted_text_sha256": "a3afc5a3638e0a22fbfbb2c679aa6d374563112364b082dbaa368a6063d1c342"
+        }
+      },
+      {
+        "schema": 1,
+        "id": "exact_computation_checks",
+        "presentation_label": "Exact computation checks",
+        "visible_kind": "holistic",
+        "scope_disposition": "deep_audit_material",
+        "semantic_basis": "This paragraph documents exact and numerical code checks for the example, not an additional mathematical claim selected for formalization.",
+        "discovery_basis": "holistic_full_text_review",
+        "source_anchor": {
+          "path": ".audit_source/paper.tex",
+          "line_start": 224,
+          "line_end": 224,
+          "quoted_text": "Para el ejemplo exacto, las holguras de actividades no usadas son estrictamente positivas. Los productos netos y sus signos se evalúan con racionales; esa comprobación es independiente de redondeos de la solución LP. Los valores de las tablas se verifican y exportan a CSV, y los gráficos se generan desde \\texttt{code/verify.py}; las reglas de tolerancia están en ese único punto de entrada.",
+          "quoted_text_sha256": "1c38b3565394aae22552e4f664afb6b26d9720aeb9c92143607c82fee274e77a"
+        }
+      }
+    ],
+    "discovered_candidate_presentation_sha256": "2d5e0bd2901dd2c0e7027cb290eab6e66bbd1db17f785307a6eada9c50759960",
+    "discovered_named_result_sha256": "670ce2b4346530d2aacef3b7bb0b121155c46c42da2a44f75ab26950c7e0adef",
+    "source_region_partition": {
+      "schema": 1,
+      "complete": true,
+      "validator": "context-isolated source-only reviewer /root/source_only_inventory",
+      "method": "Partitioned the complete canonical TeX into main text and appendix at the explicit appendix command.",
+      "validated_at": "2026-10-28T02:21:44Z",
+      "source_artifact_sha256": "c85ea6817bd1b6ff228ee1156c5dc96fd9a008c0f4858abe36b8f0f4235820b2",
+      "canonical_source_path": ".audit_source/paper.tex",
+      "regions": [
+        {
+          "id": "main_text",
+          "kind": "main_text",
+          "source_anchor": {
+            "path": ".audit_source/paper.tex",
+            "line_start": 1,
+            "line_end": 203,
+            "quoted_text": "\\documentclass[11pt]{article}\n\\usepackage[utf8]{inputenc}\\usepackage[T1]{fontenc}\\usepackage{lmodern}\n\\usepackage[spanish,es-nodecimaldot]{babel}\\usepackage[margin=1in]{geometry}\n\\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,array,xcolor}\n\\usepackage[round]{natbib}\\usepackage[colorlinks=true,allcolors=blue!50!black]{hyperref}\n\\newtheorem{proposition}{Proposición}\\newtheorem{assumption}{Supuesto}\n\\setlength{\\parindent}{0pt}\\setlength{\\parskip}{5pt}\n\\newcommand{\\q}{q}\\newcommand{\\wv}{w^V}\\newcommand{\\vL}{v_L}\\newcommand{\\vM}{v_M}\n\\title{Verificación heterogénea y acceso a la IA\\\\\\large Selección intermedia en una economía de conocimiento}\n\\author{Sofía Belén Vásquez García\\\\\\small Universidad del Pacífico, AI and Economic Modeling\\\\\\small\\url{https://github.com/sbvasquezg-ux/ai-project}}\n\\date{26 de octubre de 2026}\n\\begin{document}\\maketitle\n\\begin{abstract}\\noindent\nEstudio si un gasto real de validación que cae con el conocimiento modifica quién usa una IA no autónoma. Extiendo la actividad humano--IA de Ide y Talamàs (2025), conservando su tecnología de ayuda y agregando $c(z)=\\kappa(1-z)$. Con cómputo ocioso, la libre entrada determina $w^V=a-c$ entre usuarios. El resultado principal caracteriza un equilibrio de tres tipos: bajo desigualdades explícitas sobre ofertas netas y suficiente masa experta, solo el tipo intermedio adopta, mientras la base trabaja con expertos humanos. Una prueba por factibilidad, beneficios y complementariedad establece asignación y salarios únicos en ese régimen. Un ejemplo racional y programas lineales verifican el resultado. Mallas de una distribución uniforme también presentan adopción intermedia, pero no prueban existencia, unicidad ni convergencia del equilibrio continuo. La formalización Lean y sus límites se documentan por separado; la revisión manuscrita de la autora sigue pendiente.\n\\end{abstract}\n\\section{Introducción}\nEl acceso técnico al conocimiento de una IA no implica que todos los trabajadores puedan incorporarla con el mismo costo. Si revisar y documentar su uso exige un gasto mayor a quienes tienen menos conocimiento, la tecnología puede resultar económicamente atractiva para tipos que no están en la base. Esa intuición compite con el costo de oportunidad: los más preparados también disponen de mejores opciones laborales. La pregunta es si esta fricción puede desplazar la adopción directa hacia tipos intermedios cuando salarios y asignaciones se ajustan.\n\nLa Proposición 6 de \\citet{ide2025}, p. 27 de arXiv v11, caracteriza la IA no autónoma sin esta fricción. Con adopción, los usuarios directos están en la base del conocimiento. Aquí el aporte formal es una caracterización suficiente en la especialización de tres tipos prevista en la propuesta inicial, con prueba completa de equilibrio. El continuo uniforme conserva el papel de ejercicio numérico. El resultado no atribuye un error al artículo base ni demuestra que la selección intermedia ocurra para cualquier costo decreciente.\n\nLa contribución consta de una condición salarial local y un resultado de asignación. El segundo requiere comparar todas las actividades, y no solo resolver la FOC. La distinción es esencial: una diferencia positiva frente al salario anterior a la IA puede desaparecer cuando cambian los precios. Las pruebas y los chequeos siguientes mantienen esa separación.\n\\newpage\n\\section{Baseline y literatura relacionada}\n\\textbf{Resultado que se extiende.} \\emph{Artificial Intelligence in the Knowledge Economy} está publicado en \\emph{Journal of Political Economy}, 133(12), 3762--3800. Uso la paginación de arXiv:2312.05481v11: tecnología y beneficios en la sección 3.1, p. 12, e IA no autónoma en la sección 6, con Proposición 6 en p. 27. Escribo $a$ en lugar de $z_{\\mathrm{AI}}$, $w^0$ por el salario inicial $w$ y $w^N$ por el salario $w^\\star$ con copiloto sin costo. Cuando $a>w^0(0)$, el baseline tiene adopción desde la base y $w^N=a$ entre usuarios, con $r=0$; cuando $a\\leq w^0(0)$, no hay adopción.\n\nLa sección 2.6 del apéndice enlazado por el autor demuestra el ordenamiento mediante los Lemas 2.7--2.8 (pp. impresas 21--23). Su argumento utiliza salarios iguales entre usuarios. El gasto por tipo introduce una oferta inclinada y obliga a revisar esa comparación. El capítulo 5 (pp. 64--74) aborda otras consecuencias y cómputo escaso \\citep{appendix}. El registro en \\texttt{proposal/literature-search.md} documenta la revisión de v1--v12: la v7 estudia otra formulación de no autonomía; v8--v10 contienen la selección inferior como Proposición 7; v11--v12 la presentan como Proposición 6. No se intercambian sus pruebas automáticamente.\n\n\\textbf{Verificación y conocimiento.} La idea general de que validar cuesta y depende de la experiencia ya tiene antecedentes. \\citet{catalini}, preprint, relaciona costo de verificación, experiencia y remuneración experta; mayor eficiencia no garantiza menor gasto si aumenta el salario. \\citet{quispe2026}, preprint v2, supone costos de especificación y verificación decrecientes con habilidad y familiaridad. Su banda de activación selecciona lenguajes para un desarrollador. Aquí la selección opera sobre tipos humanos y sus ocupaciones, con salarios que vacían el mercado.\n\n\\textbf{Jerarquías y supervisión.} \\citet{xu2025}, preprint v1, incorpora validación gerencial que consume tiempo y elimina alucinaciones. La v2 de marzo de 2026 amplía el análisis a modos de automatización y aumento de capacidad en distintas capas \\citep{xu2026}. Mi fricción mantiene la probabilidad de éxito y el tiempo de ayuda del baseline; es gasto en bien final. \\citet{turing}, documento de trabajo anunciado como aceptado en \\emph{Journal of Human Capital} por la web del autor, estudia conocimiento multidimensional y sinergias, otro margen de heterogeneidad.\n\nLa búsqueda inicial consultó Scholar, ``Citado por'' y \\texttt{verification} entre citantes, arXiv y apéndices; Semantic Scholar respondió 429. El 26 de octubre se revalidaron las fichas de los antecedentes y se identificó la v2 de Xu y coautores, que no se había discutido en el topic. No se afirma una revisión exhaustiva ni originalidad del concepto de verificación: la contribución propuesta es el régimen competitivo específico caracterizado aquí.\n\\newpage\n\\section{Modelo y alcance de la extensión}\n\\begin{assumption}[Tecnología e información]\\label{ass:tech}\nLos tipos observables son $z\\in[0,1]$, la masa humana total es uno y los problemas tienen dificultad uniforme. Cada trabajador genera una unidad de problemas por período. Un solver con conocimiento $s>z$ permite producto esperado $s$ por trabajador y dedica $b(z)=h(1-z)$ de su tiempo, con $0<h<1$. Solo hay dos niveles, competencia y libre entrada. Para la comparación continua del artículo se conserva $0<h<h_0(G)$ y densidad positiva continua de $G$.\n\\end{assumption}\n\\begin{assumption}[IA y gasto real]\\label{ass:ai}\nLa IA no autónoma solo asesora; tiene capacidad fija $a\\in(0,1)$ y puede ayudar a $z\\leq a$. El gasto obligatorio $c(z)\\geq0$ por trabajador y período se paga en bien final y no consume tiempo ni altera éxito. En el ejercicio principal $c(z)=\\kappa(1-z)$, $\\kappa\\geq0$. El costo constante es una comparación separada.\n\\end{assumption}\n\\begin{assumption}[Cómputo]\\label{ass:compute}\nLa dotación $\\mu>h$ es exógena y el cómputo ocioso tiene renta cero. Como su demanda es $\\int b(z)x(dz)\\leq h$, resulta $r=0$.\n\\end{assumption}\nUna unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomando salarios y renta como dados:\n\\begin{equation}\\label{eq:firm}\n\\max_{0\\leq z\\leq a}\\Pi^V(z)=n(z)[a-\\wv(z)-c(z)]-r.\n\\end{equation}\nDefino la oferta neta $\\q(z)=a-c(z)$. La comparación inicial es $\\Delta^0(z)=\\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.\n\n\\begin{assumption}[Especialización finita]\\label{ass:finite}\nPara el resultado global se reemplaza la distribución continua por la terna $(0,m,H)$, con $0<m<H<1$ con masas positivas $\\alpha,\\beta,\\gamma$, cuya suma es uno. Se conservan tecnología, información, actividades y fricción de los Supuestos 1--3. Para el resultado de tres tipos se exige $m<a$ y las condiciones adicionales de la Proposición 2.\n\\end{assumption}\nEste cambio de distribución es explícito: corresponde al plan B de la propuesta. El teorema finito no se presenta como una prueba del continuo. Las masas son divisibles; una fracción de cada tipo puede trabajar en cada ocupación.\n\nEn una población finita general, $d_i$ es masa independiente, $x_i$ masa de usuarios de IA y $y_{ij}$ trabajadores $i$ asistidos por humanos $j>i$. Un equilibrio requiere recursos factibles, vaciado humano, salarios que impidan beneficios positivos y beneficio cero en actividades utilizadas. La normalización por trabajador deja la desigualdad humano--humano $w_i+b_iw_j\\geq z_j$. Este salario es remuneración por tiempo humano, no una elección unilateral de la firma.\n\\newpage\n\\section{Resultado local y derivación}\n\\begin{proposition}[FOC y salario de una actividad usada]\\label{prop:local}\nBajo los Supuestos 1--3, sean $0<z<a<1$ y $w^V,c$ diferenciables en un entorno de $z$. Si $z$ maximiza localmente el beneficio de \\eqref{eq:firm}, entonces\n\\begin{equation}\\label{eq:foc}\nw^{V\\prime}(z)+c'(z)=\\frac{a-w^V(z)-c(z)}{1-z}.\n\\end{equation}\nSi además la actividad tiene beneficio cero, el cociente es $hr$. Con $r=0$, $w^V(z)=a-c(z)$. Si la actividad es usada en un intervalo abierto y $c(z)=\\kappa(1-z)$, entonces $w^{V\\prime}(z)=\\kappa$ en ese intervalo.\n\\end{proposition}\n\\begin{proof}\nComo $h>0$ y $z<1$, todos los denominadores son positivos. La regla de la cadena y la derivación de un recíproco dan\n\\[\nn'(z)=\\frac{1}{h(1-z)^2},\\qquad\n\\frac{n'(z)}{n(z)}=\\frac{1}{1-z}.\n\\]\nLa regla del producto, manteniendo $a,h,r$ fijos, implica\n\\[\n\\Pi^{V\\prime}(z)=n'(z)[a-w^V(z)-c(z)]-n(z)[w^{V\\prime}(z)+c'(z)].\n\\]\nLa interioridad y el máximo local permiten aplicar la condición de Fermat: $\\Pi^{V\\prime}(z)=0$. Dividir por $n(z)>0$ y sustituir $n'/n$ produce \\eqref{eq:foc}. Por otra parte, beneficio cero significa\n\\[\n n(z)[a-w^V(z)-c(z)]=r\n \\quad\\Longrightarrow\\quad a-w^V(z)-c(z)=rh(1-z).\n\\]\nSustituyendo en \\eqref{eq:foc}, $w^{V\\prime}+c'=hr$. Si $r=0$, la igualdad de beneficio cero entrega la identidad de nivel. Sobre un intervalo usado se puede derivar esa identidad: $w^{V\\prime}=-c'=\\kappa$.\n\\end{proof}\nEl primer término de la derivada valora mayor escala; el segundo recoge el costo de cambiar de tipo. La igualdad salarial procede de beneficio cero, incluso sin optimalidad interior. La pendiente, en cambio, necesita una identidad válida alrededor del punto. No se deduce la derivada de una igualdad que solo valga en un tipo aislado.\n\nLa FOC tampoco es suficiente para un máximo estricto. Sustituir el salario de beneficio cero en el beneficio puede generar indiferencia entre tipos. En un extremo del dominio, las condiciones necesarias son unilaterales: $\\Pi^{V\\prime}(0)\\leq0$ o $\\Pi^{V\\prime}(a)\\geq0$, cuando existen las derivadas correspondientes.\n\nUn detalle útil para interpretar la parametrización es $n(z)c(z)=\\kappa/h$: el gasto por unidad de IA es constante en esta forma lineal. Aun así, la oferta salarial por trabajador es $a-\\kappa+\\kappa z$. La selección requiere comparar esa oferta con las actividades humanas y los recursos, que no son constantes en $z$.\n\\newpage\n\\section{Resultado de equilibrio: adopción intermedia}\nPara la población del Supuesto 4, escribo\n\\[\n b_M=h(1-m),\\quad \\vL=H(1-h),\\quad \\vM=H(1-b_M),\\quad\n q_L=a-\\kappa,\\quad q_M=a-\\kappa(1-m).\n\\]\nSi $H\\leq a$, también $q_H=a-\\kappa(1-H)$. Las cantidades $\\vL,\\vM$ son salarios financiados al combinar cada tipo inferior con expertos de salario $H$.\n\n\\begin{proposition}[Régimen intermedio de tres tipos]\\label{prop:middle}\nBajo los Supuestos 1--4, supóngase\n\\begin{align}\n &\\gamma>h\\alpha+b_M\\beta,\\qquad \\vM>m,\\label{eq:surplus}\\\\\n &q_L<\\vL,\\qquad q_M>\\vM,\\label{eq:offers}\\\\\n &q_H<H\\quad\\text{si }H\\leq a.\\label{eq:high}\n\\end{align}\nSin IA existe un único equilibrio en asignaciones y salarios: los tipos $L,M$ trabajan con expertos $H$, el resto de $H$ produce de forma independiente, y $w^0=(\\vL,\\vM,H)$. Con validación heterogénea existe un único equilibrio en asignaciones y salarios:\n\\begin{equation}\\label{eq:prices3}\n (w^V_L,w^V_M,w^V_H)=(\\vL,q_M,H).\n\\end{equation}\nSolo $M$ usa IA: $x_M=\\beta$, $x_L=x_H=0$. La base trabaja con expertos, $y_{LH}=\\alpha$, y $d_H=\\gamma-h\\alpha$; las demás actividades son nulas. El producto neto aumenta respecto de la economía sin IA en\n\\begin{equation}\\label{eq:gain}\n Y^V-Y^0=\\beta(q_M-\\vM)>0.\n\\end{equation}\n\\end{proposition}\nLas condiciones tienen interpretación económica. La primera deja expertos independientes incluso antes de la IA; así su salario se fija en $H$. La segunda hace rentable emplear al tipo medio como trabajador antes de IA. Las ofertas netas descartan la IA para la base y la prefieren para el tipo intermedio. La última evita que la IA absorba a los expertos necesarios para sostener la alternativa humana.\n\nLa conclusión no supone que los adoptantes ya sean intermedios. Los salarios y las actividades se construyen a partir de primitivas, se comprueba que ningún desvío da beneficio positivo y se demuestra que los mercados se vacían. Las desigualdades estrictas definen un régimen; en sus fronteras puede haber indiferencia y múltiples asignaciones. La proposición no caracteriza todos los regímenes paramétricos.\n\nEn esta especialización se reemplaza el supuesto de densidad continua. El resultado demuestra la posibilidad de selección intermedia en la economía discreta extendida. La propiedad equivalente para todas las distribuciones continuas admisibles permanece abierta; la sección numérica investiga una de ellas.\n\\newpage\n\\subsection{Prueba de la Proposición 2}\n\\begin{proof}\n\\textbf{1. Economía sin IA.} Propongo $y_{LH}=\\alpha$, $y_{MH}=\\beta$ y $d_H=\\gamma-h\\alpha-b_M\\beta>0$. Se utilizan exactamente las masas de cada tipo. A salarios $(\\vL,\\vM,H)$, las actividades $LH,MH$ y la producción independiente de $H$ tienen beneficio cero. Los tipos inferiores no prefieren producción independiente porque $\\vL>0$ y $\\vM>m$. La actividad $LM$ tampoco es rentable:\n\\begin{equation}\\label{eq:slack}\n \\vL+h\\vM-m=(\\vM-m)+Hh(1-h)(1-m)>0.\n\\end{equation}\nSe verifican todas las actividades de dos niveles. Cómputo no usado y $r=0$ satisfacen su mercado.\n\n\\textbf{2. Equilibrio con IA.} Propongo las actividades y salarios de \\eqref{eq:prices3}. La base ocupa masa $\\alpha$ y demanda $h\\alpha$ expertos; $M$ usa masa $\\beta$ en IA; el remanente $\\gamma-h\\alpha>0$ de expertos produce solo. La demanda de cómputo es $b_M\\beta<h<\\mu$, de modo que $r=0$ es compatible con ociosidad.\n\n\\textbf{3. Ausencia de beneficios positivos.} $LH$ tiene costo $\\vL+hH=H$ y beneficio cero. La IA de $M$ tiene producto neto $q_M=w^V_M$ y también beneficio cero. $H$ independiente recibe $H$. La actividad $MH$ tiene holgura $q_M+b_MH-H=q_M-\\vM>0$. La actividad $LM$ tiene holgura $\\vL+hq_M-m>\\vL+h\\vM-m>0$ por \\eqref{eq:slack}. $L,M$ independientes son estrictamente menos rentables que sus salarios. La IA de $L$ no cubre $\\vL$ porque $q_L<\\vL$; si $H$ es elegible, su IA tampoco cubre $H$. Así se han enumerado todas las actividades posibles. Recursos, salarios y beneficio cero prueban existencia competitiva.\n\n\\textbf{4. Unicidad.} Multiplicar cada restricción de no beneficio por su actividad y sumar da, para cualquier asignación factible, producto neto no mayor que la masa salarial del salario candidato. La asignación construida alcanza esa cota. Cualquier otro equilibrio también alcanza el máximo: aplicar sus restricciones salariales a una asignación óptima y usar vaciado y beneficio cero produce las desigualdades opuestas. En un óptimo, ninguna actividad con holgura estricta bajo el salario candidato puede utilizarse. Solo quedan $LH$, IA de $M$ e independientes $H$; los recursos fijan sus masas como arriba. Como las tres tienen masa positiva, sus igualdades de beneficio cero fijan sucesivamente $w_H=H$, $w_L=\\vL$ y $w_M=q_M$. El mismo argumento, con actividades $LH,MH,H$ independientes, prueba unicidad sin IA.\n\n\\textbf{5. Producto.} Las expresiones factibles son\n\\[\nY^0=(\\alpha+\\beta)H+(\\gamma-h\\alpha-b_M\\beta)H,\n\\quad Y^V=\\alpha H+\\beta q_M+(\\gamma-h\\alpha)H.\n\\]\nRestar y usar $\\vM=H(1-b_M)$ da \\eqref{eq:gain}.\n\\end{proof}\n\\newpage\n\\section{Un equilibrio racional que satisface las condiciones}\nFijo los mismos $h,a,\\kappa$ del topic, pero una población explícita de tres tipos:\n\\[\nh=\\tfrac12,\\quad a=\\tfrac{22}{25}=0.88,\\quad\\kappa=\\tfrac{53}{100}=0.53,\n\\]\n\\[\n(z_L,z_M,z_H)=(0,\\tfrac14,\\tfrac{19}{25}),\n\\quad(\\alpha,\\beta,\\gamma)=(\\tfrac14,\\tfrac25,\\tfrac7{20}).\n\\]\nLas necesidades de expertos son $h\\alpha=0.125$ y $b_M\\beta=0.15$, por lo que $0.35>0.275$. Los salarios humanos son $\\vL=0.38$, $\\vM=0.475>m=0.25$. Las ofertas netas son\n\\[\n q_L=0.35<0.38,\\quad q_M=0.4825>0.475,\\quad q_H=0.7528<0.76.\n\\]\nTodas las desigualdades de la proposición son estrictas. El certificado racional que genera \\texttt{code/verify.py} evalúa cada recurso, desigualdad salarial e igualdad en actividades usadas con SymPy; una resolución LP independiente coincide con él.\n\\begin{center}\n\\begin{tabular}{rrrrrr}\\toprule\nTipo $z$ & Masa & $w^0$ & $w^V$ & Usuarios IA & Independientes\\\\\\midrule\n0.00 &0.25 &0.3800 &0.3800 &0.00 &0.000\\\\\n0.25 &0.40 &0.4750 &0.4825 &0.40 &0.000\\\\\n0.76 &0.35 &0.7600 &0.7600 &0.00 &0.225\\\\\\bottomrule\n\\end{tabular}\n\\end{center}\nLa única jerarquía humana utilizada es $LH$, con $0.25$ trabajadores y $0.125$ expertos. La IA atiende al tipo medio y demanda $0.15$ unidades de cómputo. La producción neta pasa de $Y^0=0.551$ a $Y^V=0.554$, con ganancia $0.003=0.4(0.4825-0.475)$. El producto bruto con IA es $0.713$; el gasto de validación es $0.159$, de modo que $0.713-0.159=0.554$. Son cantidades ilustrativas, sin calibración empírica.\n\n\\subsection{Qué cambia frente al topic}\nLa tabla inicial de $\\Delta^0$ usaba distribución uniforme y los tipos de consulta $0,0.25,0.60$. Esa tabla sigue siendo correcta, pero no contenía una asignación de equilibrio. La nueva tabla emplea otra distribución, anunciada explícitamente, y ofrece un certificado completo. No reemplaza en silencio los salarios iniciales de la ilustración por salarios de otro modelo.\n\nEl resultado demuestra una posibilidad, no una pérdida general de la base. En este ejemplo, la base no adopta y conserva su salario; el tipo medio gana y los expertos mantienen $H$ porque existe capacidad humana excedente. Que alguien no use IA directamente no determina por sí solo el signo de su cambio salarial.\n\\newpage\n\\section{Simulaciones: población uniforme y controles}\nPara estudiar el continuo original empleo $G(z)=z$, $h=0.5<h_0(G)=0.75$, $a=0.88$, $\\kappa=0.53$ y $\\mu=1>h$. La malla de $N$ puntos medios asigna masa $1/N$ a $z_i=(i-1/2)/N$. El programa maximiza producto neto sobre independientes, usuarios IA y todas las parejas humanas $i<j$, sujeto al vaciado de cada tipo. Los multiplicadores duales entregan salarios; las variables primales identifican quién usa IA.\n\nComparo ausencia de IA, costo cero, costo heterogéneo y un costo constante con el mismo promedio \\emph{entre tipos elegibles del continuo}: $\\bar c=\\kappa(1-a/2)=0.2968$. Igualar ese promedio no iguala el gasto realizado, porque la adopción es endógena. La figura muestra salarios y fracciones adoptantes con $N=400$.\n\\begin{center}\\includegraphics[width=.97\\linewidth]{../code/figures/equilibrium.pdf}\\end{center}\n\\begin{center}\\small\n\\begin{tabular}{rrrrr}\\toprule\n$N$ & $Y^V$ & Masa con IA & Menor $z$ usuario & Mayor $z$ usuario\\\\\\midrule\n100&0.692416&0.042187&0.23500&0.27500\\\\\n200&0.692471&0.033137&0.23750&0.27250\\\\\n400&0.692483&0.037226&0.23375&0.27125\\\\\\bottomrule\n\\end{tabular}\n\\end{center}\nEn estas mallas, la fricción heterogénea excluye la base y deja usuarios intermedios. Con costo cero la adopción parte de la base; con costo constante también lo hace, pero su masa es menor. La igualdad salarial $w_i=q_i$ no se utiliza para clasificar usuarios: puede haber tipos indiferentes que no reciben masa de IA.\n\nLos residuos de recursos, no beneficio, complementariedad y brecha primal--dual son menores que $10^{-7}$; el código falla si se supera esa tolerancia. Los CSV guardan los valores efectivos. La estabilidad del producto no debe confundirse con convergencia de masas: estas pasan de $0.0422$ a $0.0331$ y $0.0372$. La aproximación confirma el patrón en mallas concretas, no un teorema del continuo.\n\\newpage\n\\section{Discusión, límites y conclusión}\\label{sec:discussion}\n\\subsection{Nivel, pendiente y costo de oportunidad}\nCon $c(z)=\\bar c$, la oferta $a-\\bar c$ es plana. Con $c(z)=\\kappa(1-z)$, su pendiente es $\\kappa$. A salarios iniciales, $\\Delta^{0\\prime}=\\kappa-w^{0\\prime}$, de modo que $\\kappa>w^{0\\prime}$ indica ventaja de entrada creciente localmente. Esa condición no es suficiente para la Proposición 2: también deben sostenerse las alternativas humanas, los salarios y la capacidad experta. Las desigualdades \\eqref{eq:surplus}--\\eqref{eq:high} muestran qué añade el cierre de equilibrio.\n\nEl costo heterogéneo no domina en bienestar al costo constante de igual promedio. Con $N=400$, el producto neto es aproximadamente $0.692483$ con heterogeneidad y $0.729923$ con costo constante; sin IA es $0.692334$ y sin gasto de validación es $0.893418$. Son comparaciones de tecnologías con costos realizados diferentes. El modelo no permite concluir que una regulación de validación mejore eficiencia o distribución: no incluye daños por errores que dicha regulación pudiera evitar.\n\n\\subsection{Fronteras del resultado}\nEl teorema resuelve un régimen discreto con expertos excedentes. Fuera de esas desigualdades pueden cambiar precios, soporte y ocupaciones. En particular, no se ha probado existencia o unicidad del nuevo equilibrio continuo, ni la convergencia de las mallas al mismo. Tampoco se ha establecido selección intermedia para toda distribución o para cualquier $\\kappa>0$. El límite $c=0$ recupera exactamente la tecnología y las restricciones del baseline; las simulaciones muestran su ordenamiento, pero este trabajo no vuelve a demostrar la Proposición 6 del artículo para el continuo.\n\nEl gasto es una representación reducida en bienes. Interpretarlo como tiempo del mismo trabajador o de un gerente exigiría cambiar recursos y, posiblemente, $n(z)$. El conocimiento es observable; no hay selección adversa, aprendizaje ni decisiones de educación. La IA no cambia su capacidad y no hay alucinaciones endógenas. Los antecedentes de supervisión estudian otros mecanismos; esta simplificación permite aislar la fricción de costo.\n\n\\subsection{Conclusión}\nUn costo de validación decreciente puede modificar el acceso efectivo a la IA. El resultado probado construye un equilibrio de tres tipos en el que solo adopta el tipo intermedio, con salarios y recursos determinados dentro del modelo. La base sigue trabajando con expertos humanos. En el continuo uniforme, la resolución sobre tres mallas conserva ese patrón, con residuos verificados y sensibilidad de las masas reconocida.\n\nLa diferencia entre una FOC, una oportunidad a precios iniciales y una asignación competitiva es la principal disciplina del ejercicio. El aporte es propio y acotado; no imputa un error al paper base. Las tareas futuras son caracterizar otros regímenes y cerrar el continuo. La autora debe completar la revisión manuscrita y el juicio humano de la asistencia de IA antes de la entrega definitiva del curso.\n\\label{body:end}\n\\newpage\n\\bibliographystyle{plainnat}\\bibliography{references}",
+            "quoted_text_sha256": "e710da6b1a406e098aad069d281d8596ab9285b684f8ea1e211368312a912e6e"
+          }
+        },
+        {
+          "id": "appendix",
+          "kind": "appendix",
+          "source_anchor": {
+            "path": ".audit_source/paper.tex",
+            "line_start": 204,
+            "line_end": 241,
+            "quoted_text": "\\newpage\\appendix\n\\section{Asignación finita y certificado de optimalidad}\nPara tipos $z_1<\\cdots<z_N$, masas $M_i>0$ y $b_i=h(1-z_i)$, el problema primal es\n\\[\n\\max_{d,x,y\\geq0}\\ \\sum_i z_i d_i+\\sum_{i:z_i\\leq a}(a-c_i)x_i+\\sum_{i<j}z_jy_{ij},\n\\]\n\\[\nd_i+x_i+\\sum_{j>i}y_{ij}+\\sum_{k<i}b_ky_{ki}=M_i,\\qquad\nx_i=0\\text{ si }z_i>a.\n\\]\nCon cómputo abundante su restricción es redundante; se calcula ex post y se exige demanda menor que $\\mu$. La variable $y_{ij}$ mide trabajadores, no número de firmas. Se permiten cantidades divisibles, acordes con una población de masa.\n\nEl dual minimiza $\\sum_iM_iw_i$ sujeto a\n\\[\nw_i\\geq z_i,\\qquad w_i\\geq a-c_i\\ (z_i\\leq a),\\qquad w_i+b_iw_j\\geq z_j\\ (i<j).\n\\]\nLa restricción dual de una actividad es su condición de no beneficio por trabajador. La complementariedad exige igualdad si esa actividad recibe masa positiva. Un primal factible y un dual factible con objetivos iguales certifican optimalidad: multiplicar cada desigualdad dual por la variable primal y sumar utiliza exactamente las restricciones de recursos. Esta es la desigualdad que usa la prueba de unicidad de la Proposición 2; no requiere suponer un equilibrio ya existente.\n\nEl primal finito es no vacío (todos independientes), cerrado y acotado: cada variable consume al menos una unidad de alguna masa humana, por lo que está acotada. La programación lineal finita entrega un óptimo y un dual; la existencia finita no resuelve el paso al continuo. El código usa HiGHS mediante SciPy y verifica el certificado sin tomar el estado de éxito del optimizador como único control.\n\nPara el ejemplo exacto, las holguras de actividades no usadas son estrictamente positivas. Los productos netos y sus signos se evalúan con racionales; esa comprobación es independiente de redondeos de la solución LP. Los valores de las tablas se verifican y exportan a CSV, y los gráficos se generan desde \\texttt{code/verify.py}; las reglas de tolerancia están en ese único punto de entrada.\n\\newpage\n\\section{Formalización Lean y alcance de la verificación}\\label{app:lean}\n\\input{formalization-status.tex}\n\\section{Colaboración con IA y adjudicación humana}\nLa IA asistió en derivación, construcción del certificado, búsqueda bibliográfica, programación y redacción. La autora indicó que el profesor pidió dominar cada derivación. El registro en crudo está en \\texttt{prompts.md}; los siguientes son controles del asistente, no veredictos humanos atribuidos a la autora.\n\\begin{center}\\small\n\\begin{tabular}{p{.30\\linewidth}p{.24\\linewidth}p{.36\\linewidth}}\\toprule\nAfirmación examinada & Estado & Cómo se comprobó\\\\\\midrule\nLa FOC por sí sola da $w=a-c$. & Incompleta: necesita beneficio cero y $r=0$. & Derivación separada y SymPy.\\\\[4pt]\n$\\Delta^0>0$ identifica adoptantes finales. & Incorrecta como regla de equilibrio. & Se resuelve asignación y salarios; se usa masa primal $x_i$.\\\\[4pt]\nLa selección intermedia sobrevive en cualquier continuo. & No demostrada. & Solo tres mallas y un teorema de tres tipos.\\\\[4pt]\nEl ejemplo de tres tipos es equilibrio. & Certificado por el asistente; revisión humana pendiente. & Prueba completa, racionales y LP independiente.\\\\\\bottomrule\n\\end{tabular}\n\\end{center}\n\\section{Derivaciones de la autora}\nEl apéndice manuscrito aún debe ser producido por la autora y almacenado en \\texttt{hand/}. La guía tipográfica incluida explica cada paso, pero no es evidencia manuscrita. Deben revisarse derivadas, condiciones de Fermat, beneficio cero, restricciones de recursos, holguras y la resta de productos. La exposición debe sustituir la indicación de manuscrito pendiente por una fotografía real cuando esté disponible. No se fabrica una aprobación humana ni una fotografía de trabajo no realizado.\n\\end{document}",
+            "quoted_text_sha256": "af151d4afef1744f61bdcc739bbf506a82b57e6508311e6b090f1bbeaef6318e"
+          }
+        }
+      ],
+      "source_item_regions": {
+        "assumption_1_technology_information": "main_text",
+        "assumption_2_ai_validation": "main_text",
+        "assumption_3_compute": "main_text",
+        "assumption_4_finite_specialization": "main_text",
+        "definition_assistance_time": "main_text",
+        "definition_finite_activity_masses": "main_text",
+        "definition_finite_population": "main_text",
+        "definition_firm_activity": "main_text",
+        "definition_net_offer": "main_text",
+        "definition_validation_cost": "main_text",
+        "proposition_1": "main_text",
+        "proposition_2": "main_text"
+      },
+      "candidate_presentation_regions": {
+        "baseline_external_restatement": "main_text",
+        "continuous_simulations": "main_text",
+        "exact_computation_checks": "appendix",
+        "finite_equilibrium_prose": "main_text",
+        "finite_lp_existence_note": "appendix",
+        "finite_lp_primal_dual": "appendix",
+        "firm_offer_model_display": "main_text",
+        "foc_limits": "main_text",
+        "initial_gap_derivative": "main_text",
+        "linear_cost_interpretation": "main_text",
+        "numerical_welfare_comparisons": "main_text",
+        "rational_witness": "main_text",
+        "result_boundaries": "main_text"
+      },
+      "prose_definition_presentation_regions": {
+        "4bea7b93b488d360526b7c761050a5973795d0118050247d0ff089d1f04518b2": "appendix",
+        "16f5053bc15ec71fec401511062a0e7e8011f32322b0ec1e7c4ded15bde03119": "main_text",
+        "fc5bca1c3e928d52d39abc9632fe1454225853d82b592a5ff2d35b331f5c96af": "appendix",
+        "8701b968c07df139b893fe366814123ffb3dbac8ee72a439808e7e858bf616b4": "main_text",
+        "eb991639c7725a0897d0d32b765bf25d91bbfd218bd372904067f6062de5bc62": "main_text",
+        "dc81de9d75c412a3b6d779486b8cecfd37c8becf8d38e77b8c772ba69906b93d": "main_text",
+        "c3e4b0a2294966c92ede68191ae737ed5d004a3599059f79c28ccdd496e324c6": "appendix",
+        "a7cbdcaa8ec4dc86a8efc7bda884689600c28186518a7f1f9dd1c888fb3096b1": "main_text",
+        "2610be0aaded6bb06d966bfd97d8caf69d9d1ba67542b4296115902ffea6f9ab": "main_text",
+        "0e0198cdcad0cf3b762baa312e1238862077eadd1519c88bb6482ecda53591ba": "main_text",
+        "18f56137f45c891901a77b771ae5e7768ef453b2a32853677c079d0dc1f2973a": "main_text",
+        "f6357a7bab4422c718f766356bb283265c4264ea06982b8cde9e99880ca54711": "main_text",
+        "1a941742e2d667187eb696fdec1d4a919c8814ac4a225c16917d23a17b336b9b": "main_text",
+        "18137ec1e0e6c7e900aeebbd0a754532f31f4ed4710ea6ac3070edf9ca4be4a4": "main_text",
+        "7b8a083b7211674b99d3125f5117137cff0e2e2d16c9a57e9598e45a9adcf810": "main_text"
+      },
+      "promoted_source_items": []
+    }
+  }
+}
