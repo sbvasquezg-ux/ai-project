@@ -1,0 +1,3 @@
++ lake build +Vasquez26HeterogeneousVerification.PaperInterface
+Build completed successfully (3300 jobs).
++ git diff --check -- papers/Vasquez26HeterogeneousVerification papers/Vasquez26HeterogeneousVerification.lean lakefile.toml ':(exclude)papers/Vasquez26HeterogeneousVerification/source/'

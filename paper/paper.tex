@@ -8,10 +8,10 @@
 \newcommand{\q}{q}\newcommand{\wv}{w^V}\newcommand{\vL}{v_L}\newcommand{\vM}{v_M}
 \title{Verificación heterogénea y acceso a la IA\\\large Selección intermedia en una economía de conocimiento}
 \author{Sofía Belén Vásquez García\\\small Universidad del Pacífico, AI and Economic Modeling\\\small\url{https://github.com/sbvasquezg-ux/ai-project}}
-\date{26 de octubre de 2026}
+\date{15 de noviembre de 2026}
 \begin{document}\maketitle
 \begin{abstract}\noindent
-Estudio si un gasto real de validación que cae con el conocimiento modifica quién usa una IA no autónoma. Extiendo la actividad humano--IA de Ide y Talamàs (2025), conservando su tecnología de ayuda y agregando $c(z)=\kappa(1-z)$. Con cómputo ocioso, la libre entrada determina $w^V=a-c$ entre usuarios. El resultado principal caracteriza un equilibrio de tres tipos: bajo desigualdades explícitas sobre ofertas netas y suficiente masa experta, solo el tipo intermedio adopta, mientras la base trabaja con expertos humanos. Una prueba por factibilidad, beneficios y complementariedad establece asignación y salarios únicos en ese régimen. Un ejemplo racional y programas lineales verifican el resultado. Mallas de una distribución uniforme también presentan adopción intermedia, pero no prueban existencia, unicidad ni convergencia del equilibrio continuo. Las dos proposiciones se comprueban en Lean, incluida la existencia y unicidad del equilibrio finito; la revisión manuscrita de la autora sigue pendiente.
+Estudio si un gasto real de validación que cae con el conocimiento modifica quién usa una IA no autónoma. Extiendo la actividad humano--IA de Ide y Talamàs (2025), conservando su tecnología de ayuda y agregando $c(z)=\kappa(1-z)$. Con cómputo ocioso, la libre entrada determina $w^V=a-c$ entre usuarios. El resultado principal caracteriza un equilibrio de tres tipos: bajo desigualdades explícitas sobre ofertas netas y suficiente masa experta, solo el tipo intermedio adopta, mientras la base trabaja con expertos humanos. Una prueba por factibilidad, beneficios y complementariedad establece asignación y salarios únicos en ese régimen. Un ejemplo racional y programas lineales verifican el resultado. Mallas de una distribución uniforme también presentan adopción intermedia, pero no prueban existencia, unicidad ni convergencia del equilibrio continuo. Las dos proposiciones se comprueban en Lean, incluida la existencia y unicidad del equilibrio finito.
 \end{abstract}
 \section{Introducción}
 El acceso técnico al conocimiento de una IA no implica que todos los trabajadores puedan incorporarla con el mismo costo. Si revisar y documentar su uso exige un gasto mayor a quienes tienen menos conocimiento, la tecnología puede resultar económicamente atractiva para tipos que no están en la base. Esa intuición compite con el costo de oportunidad: los más preparados también disponen de mejores opciones laborales. La pregunta es si esta fricción puede desplazar la adopción directa hacia tipos intermedios cuando salarios y asignaciones se ajustan.
@@ -45,6 +45,8 @@ Una unidad de IA atiende $n(z)=1/b(z)$. La firma elige el tipo contratado tomand
 \begin{equation}\label{eq:firm}
 \max_{0\leq z\leq a}\Pi^V(z)=n(z)[a-\wv(z)-c(z)]-r.
 \end{equation}
+\textbf{Secuencia del período.} Primero se observan el conocimiento, la capacidad de IA, las dotaciones y el costo obligatorio. Las firmas toman salarios y renta como dados y eligen actividades y tipos; las personas asignan su tiempo a las ocupaciones disponibles. Se generan los problemas, se presta ayuda cuando corresponde y se produce; salarios, renta y gasto real se contabilizan en el mismo período. El equilibrio hace compatibles esas decisiones con los recursos. No se incorpora aprendizaje entre períodos.
+
 Defino la oferta neta $\q(z)=a-c(z)$. La comparación inicial es $\Delta^0(z)=\q(z)-w^0(z)$; no es una condición que determine el nuevo equilibrio.
 
 \begin{assumption}[Especialización finita]\label{ass:finite}
@@ -197,7 +199,7 @@ El gasto es una representación reducida en bienes. Interpretarlo como tiempo de
 \subsection{Conclusión}
 Un costo de validación decreciente puede modificar el acceso efectivo a la IA. El resultado probado construye un equilibrio de tres tipos en el que solo adopta el tipo intermedio, con salarios y recursos determinados dentro del modelo. La base sigue trabajando con expertos humanos. En el continuo uniforme, la resolución sobre tres mallas conserva ese patrón, con residuos verificados y sensibilidad de las masas reconocida.
 
-La diferencia entre una FOC, una oportunidad a precios iniciales y una asignación competitiva es la principal disciplina del ejercicio. El aporte es propio y acotado; no imputa un error al paper base. Las tareas futuras son caracterizar otros regímenes y cerrar el continuo. La autora debe completar la revisión manuscrita y el juicio humano de la asistencia de IA antes de la entrega definitiva del curso.
+La diferencia entre una FOC, una oportunidad a precios iniciales y una asignación competitiva es la principal disciplina del ejercicio. El aporte es propio y acotado; no imputa un error al paper base. Las tareas futuras son caracterizar otros regímenes y cerrar el continuo.
 \label{body:end}
 \newpage
 \bibliographystyle{plainnat}\bibliography{references}
@@ -225,17 +227,26 @@ Para el ejemplo exacto, las holguras de actividades no usadas son estrictamente 
 \newpage
 \section{Formalización Lean y alcance de la verificación}\label{app:lean}
 \input{formalization-status.tex}
+\newpage
 \section{Colaboración con IA y adjudicación humana}
-La IA asistió en derivación, construcción del certificado, búsqueda bibliográfica, programación y redacción. La autora indicó que el profesor pidió dominar cada derivación. El registro en crudo está en \texttt{prompts.md}; la autora aportó su comprobación y veredicto sobre la cota de $\kappa$; las demás filas siguen siendo controles del asistente, no adjudicaciones humanas.
+\textbf{Declaración de la autora, 15 de noviembre de 2026.} La autora declaró que no recibió observaciones en su exposición y que acepta todas las contribuciones de IA incluidas en la versión final. El mensaje literal completo se conserva en \texttt{prompts.md}. Se registra su aceptación de las contribuciones incluidas en la versión final, manteniendo las rectificaciones y límites siguientes. La aceptación declarada no acredita que haya reproducido cada chequeo, leído cada antecedente o escrito derivaciones que no fueron entregadas.
+
+La IA asistió en derivación, certificado, revisión bibliográfica, programación y redacción. Para cada contribución se distingue el juicio adoptado en este manuscrito de la evidencia técnica producida por el asistente. Los informes de revisión automática no se atribuyen a la autora.
+
 \begin{center}\small
-\begin{tabular}{p{.30\linewidth}p{.24\linewidth}p{.36\linewidth}}\toprule
-Afirmación examinada & Estado & Cómo se comprobó\\\midrule
-Un borrador de IA exigía $\kappa<1$. & Autora: innecesaria para $c(z)\geq0$. & Comprobación manuscrita real, contraejemplo $\kappa=2$ y veredicto en \texttt{hand/01-revision-kappa.png}.\\[4pt]
-$\Delta^0>0$ identifica adoptantes finales. & Incorrecta como regla de equilibrio. & Se resuelve asignación y salarios; se usa masa primal $x_i$.\\[4pt]
-La selección intermedia sobrevive en cualquier continuo. & No demostrada. & Solo tres mallas y un teorema de tres tipos.\\[4pt]
-El ejemplo de tres tipos es equilibrio. & Certificado por el asistente; revisión humana pendiente. & Prueba completa, racionales y LP independiente.\\\bottomrule
+\begin{tabular}{p{.23\linewidth}p{.29\linewidth}p{.38\linewidth}}\toprule
+Afirmación o aporte & Veredicto aceptado y razón & Comprobación documentada\\\midrule
+Un borrador exigía $\kappa<1$ para que $c\geq0$. & Se rechaza: $z\in[0,1]$ y $\kappa\geq0$ bastan. & Hoja real de la autora: desigualdades y contraejemplo $\kappa=2$.\\[5pt]
+Derivación de FOC, salario y pendiente. & Se acepta bajo las hipótesis de Prop. 1; salario requiere beneficio cero y pendiente un entorno activo. & Prueba escrita, identidades SymPy y \texttt{proposition\_one}.\\[5pt]
+$\Delta^0>0$ identifica usuarios finales. & Se rechaza como criterio suficiente: cambian salarios y asignaciones. & Se separa la tabla inicial del problema primal--dual de equilibrio.\\[5pt]
+Equilibrio intermedio de tres tipos. & Se acepta bajo todas las condiciones de Prop. 2: recursos y holguras descartan las alternativas. & Prueba completa, certificado racional, LP y \texttt{proposition\_two}.\\[5pt]
+Simulaciones y figuras del continuo. & Se aceptan como evidencia de las mallas, no como prueba del continuo ni de convergencia. & Script único, residuos de recursos, dualidad y complementariedad; tres mallas.\\[5pt]
+Búsqueda y comparación bibliográfica. & Se acepta su alcance localizado; la verificación costosa no es una idea nueva. & Fuentes primarias y registro de búsquedas, versiones y accesos fallidos; estados fechados.\\[5pt]
+Formalización y revisión de pruebas. & Se acepta la cobertura de dos resultados. No se afirma un recibo avanzado AML completo. & Endpoints compilados, chequeo \texttt{--fast}, axiomas estándar y revisión de correspondencia.\\[5pt]
+Redacción, organización y materiales. & Se acepta la ayuda editorial; la responsabilidad por las afirmaciones es de la autora. & Texto y fuentes en el repositorio; registro crudo en \texttt{prompts.md}.\\\bottomrule
 \end{tabular}
 \end{center}
-\section{Derivaciones de la autora}
-La autora proporcionó su comprobación real y su veredicto sobre la no negatividad de $c(z)=\kappa(1-z)$, conservados en \texttt{hand/01-revision-kappa.png} e incorporados en la slide 17. Esta evidencia cubre esa comprobación; no se atribuye a la autora una revisión del resto de los resultados. Las páginas manuscritas sobre derivadas, condición de Fermat, beneficio cero, recursos, holguras y ganancia neta todavía deben incorporarse a \texttt{hand/}. La guía tipográfica ayuda a reconstruirlas, pero no sustituye el trabajo a mano.
+
+\section{Alcance del apéndice manuscrito entregado}
+Se conserva la comprobación real y el veredicto de la autora sobre la no negatividad de $c(z)=\kappa(1-z)$ en \texttt{hand/01-revision-kappa.png}, también mostrados en la slide 17. El 15 de noviembre la autora decidió no añadir más páginas manuscritas. Por ello, \textbf{no se cumple íntegramente el requisito del curso de entregar todas las derivaciones a mano}. No se entregan hojas manuscritas adicionales para la FOC, beneficio cero, recursos, holguras, unicidad o ganancia neta. Las pruebas tipográficas, el código y Lean documentan esos resultados, pero no sustituyen la evidencia manuscrita exigida. La guía de estudio se identifica como material preparado con asistencia de IA.
 \end{document}

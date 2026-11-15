@@ -1,6 +1,6 @@
 La fuente formalizada es el manuscrito propio fijado en el commit
 \href{https://github.com/sbvasquezg-ux/ai-project/commit/3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd}{\texttt{3fb4aab}}.
-Los enunciados y las pruebas matemáticas del cuerpo se conservan; este apéndice actualiza su formalización. La carpeta se desarrolló en AppliedModelingLib, commit \texttt{194edcc}, y se exporta completa a \texttt{lean/}, respetando su \texttt{.gitignore}.
+Los enunciados, las pruebas matemáticas y sus condiciones se conservan en la entrega del 15 de noviembre; solo se actualizan presentación, secuencia del período, declaración de colaboración y alcance manuscrito. Por ello la correspondencia de los dos resultados con la fuente fijada no cambia. Este apéndice informa su formalización. La carpeta se desarrolló en AppliedModelingLib, commit \texttt{194edcc}, y se exporta completa a \texttt{lean/}, respetando su \texttt{.gitignore}.
 \begin{center}\small
 \begin{tabular}{>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.35\linewidth}>{\raggedright\arraybackslash}p{.39\linewidth}}\toprule
 Resultado & Declaración / archivo & Estado y alcance\\\midrule
@@ -17,6 +17,6 @@ Los registros reproducibles se conservan en \texttt{lean/}. El punto de entrada 
 python3 scripts/paper\_contribution.py check\\
 \hspace*{1em}Vasquez26HeterogeneousVerification --fast
 \end{quote}
-Las declaraciones están cerradas sin huecos ni axiomas añadidos. La inspección de ambas pruebas usa únicamente los axiomas estándar \texttt{propext}, \texttt{Classical.choice} y \texttt{Quot.sound}. La revisión manuscrita y el veredicto de la autora siguen pendientes; no se sustituyen por estas comprobaciones.
+Las declaraciones están cerradas sin huecos ni axiomas añadidos. La inspección de ambas pruebas usa únicamente los axiomas estándar \texttt{propext}, \texttt{Classical.choice} y \texttt{Quot.sound}. La autora declaró su aceptación de las contribuciones el 15 de noviembre. Esa declaración no sustituye evidencia manuscrita adicional: solo se entrega la hoja sobre la cota de $\kappa$, como se explicita en el último apéndice.
 
-La corrida se ejecutó con GPT-5.6 Sol/xhigh sobre repositorios públicos. Tras sus ajustes y compilación, se agotó la cuota durante una auditoría adicional. El asistente coordinador ejecutó los chequeos finales, ambos con salida 0, y un revisor independiente comparó el código final con las dos proposiciones. El informe y los límites del registro están en \texttt{lean/docs/COURSE\_VALIDATION\_REPORT.md}. No se reivindica un recibo avanzado de publicación de AppliedModelingLib ni una revisión humana.
+La corrida se ejecutó con GPT-5.6 Sol/xhigh sobre repositorios públicos. Tras sus ajustes y compilación, se agotó la cuota durante una auditoría adicional. El asistente coordinador ejecutó los chequeos finales, ambos con salida 0, y un revisor independiente comparó el código final con las dos proposiciones. El informe y los límites del registro están en \texttt{lean/docs/COURSE\_VALIDATION\_REPORT.md}. No se reivindica un recibo avanzado de publicación de AppliedModelingLib ni una auditoría técnica independiente realizada por la autora. Su aceptación declarada y la comprobación manuscrita aportada se registran por separado en el apéndice de colaboración.
