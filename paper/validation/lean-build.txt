@@ -1,0 +1,9 @@
+✔ [3299/3303] Built Vasquez26HeterogeneousVerification.Assumptions (7.8s)
+ℹ [3302/3303] Replayed Vasquez26HeterogeneousVerification.ProofInterface
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:27:0: 'Vasquez26HeterogeneousVerification.proposition_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:28:0: 'Vasquez26HeterogeneousVerification.proposition_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:29:0: 'Vasquez26HeterogeneousVerification.middle_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: papers/Vasquez26HeterogeneousVerification/ProofInterface.lean:30:0: 'Vasquez26HeterogeneousVerification.exact_three_type_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (3303 jobs).
