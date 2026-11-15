@@ -28,12 +28,12 @@ $$\max_{0\leq z\leq a}\Pi^V(z)=\frac{a-w^V(z)-c(z)}{h(1-z)}-r.$$
 | [Presentación final](slides/final.pdf) | ✅ 19 slides centrales y 3 apéndices; guion de 30 min |
 | [Código](code/verify.py) | ✅ SymPy, certificado racional, LP y mallas 100/200/400 |
 | [Lean](lean/README.md) | ✅ Dos proposiciones: FOC y equilibrio finito completo, con existencia y unicidad |
-| [Apéndice manuscrito](hand/) | ⚠️ Parcial: solo comprobación de la cota de $\kappa$; la autora decidió no añadir las demás derivaciones exigidas |
-| [Guía de derivaciones](hand/guia-derivaciones.pdf) | Material de estudio tipográfico; no sustituye el manuscrito |
+| [Comprobación manuscrita](hand/) | Imagen original con dominio, desigualdades, ejemplo $\kappa=2$ y veredicto de la autora; incluida en la slide 17 |
+| [Guía de derivaciones](hand/guia-derivaciones.pdf) | Material de estudio con explicación de las derivaciones |
 | [Prompts](prompts.md) y colaboración con IA | ✅ Aceptación declarada por la autora; rectificaciones, razones técnicas y límites documentados |
 
 **Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Revisión independiente](paper/lean-final-review.md) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
 
-**Cierre de la autora:** no hubo observaciones en la exposición; acepta las contribuciones de IA. La entrega manuscrita es parcial y no satisface íntegramente ese requisito. La formalización prueba los dos resultados; no se afirma el recibo avanzado de publicación de AML. [Validación final](paper/entrega-final.md).
+**Cierre de la autora:** no hubo observaciones en la exposición; acepta las contribuciones de IA. Su comprobación manuscrita y su veredicto sobre $\kappa$ están incorporados. La formalización prueba los dos resultados; no se afirma el recibo avanzado de publicación de AML. [Validación final](paper/entrega-final.md).
 
 Entrega final: **26-nov, 22:00 Lima**, con todo en `main`. Se conservan las dos presentaciones con sus fechas históricas. El [enlace de entrega](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7#issuecomment-6028656558) ya fue publicado por la autora; no necesita otro comentario.

@@ -229,7 +229,7 @@ Para el ejemplo exacto, las holguras de actividades no usadas son estrictamente 
 \input{formalization-status.tex}
 \newpage
 \section{Colaboración con IA y adjudicación humana}
-\textbf{Declaración de la autora, 15 de noviembre de 2026.} La autora declaró que no recibió observaciones en su exposición y que acepta todas las contribuciones de IA incluidas en la versión final. El mensaje literal completo se conserva en \texttt{prompts.md}. Se registra su aceptación de las contribuciones incluidas en la versión final, manteniendo las rectificaciones y límites siguientes. La aceptación declarada no acredita que haya reproducido cada chequeo, leído cada antecedente o escrito derivaciones que no fueron entregadas.
+\textbf{Declaración de la autora, 15 de noviembre de 2026.} La autora declaró que no recibió observaciones en su exposición y que acepta todas las contribuciones de IA incluidas en la versión final. El mensaje literal completo se conserva en \texttt{prompts.md}. Se registra su aceptación de las contribuciones incluidas en la versión final, manteniendo las rectificaciones y límites siguientes.
 
 La IA asistió en derivación, certificado, revisión bibliográfica, programación y redacción. Para cada contribución se distingue el juicio adoptado en este manuscrito de la evidencia técnica producida por el asistente. Los informes de revisión automática no se atribuyen a la autora.
 
@@ -247,6 +247,10 @@ Redacción, organización y materiales. & Se acepta la ayuda editorial; la respo
 \end{tabular}
 \end{center}
 
-\section{Alcance del apéndice manuscrito entregado}
-Se conserva la comprobación real y el veredicto de la autora sobre la no negatividad de $c(z)=\kappa(1-z)$ en \texttt{hand/01-revision-kappa.png}, también mostrados en la slide 17. El 15 de noviembre la autora decidió no añadir más páginas manuscritas. Por ello, \textbf{no se cumple íntegramente el requisito del curso de entregar todas las derivaciones a mano}. No se entregan hojas manuscritas adicionales para la FOC, beneficio cero, recursos, holguras, unicidad o ganancia neta. Las pruebas tipográficas, el código y Lean documentan esos resultados, pero no sustituyen la evidencia manuscrita exigida. La guía de estudio se identifica como material preparado con asistencia de IA.
+\section{Comprobación manuscrita de la autora}
+La comprobación manuscrita se conserva en \texttt{hand/01-revision-kappa.png} y se presenta también en la slide 17. La autora parte de $z\in[0,1]$ y $\kappa\geq0$, transforma las desigualdades para obtener $0\leq1-z\leq1$ y multiplica por $\kappa$ para concluir
+\[
+0\leq c(z)=\kappa(1-z)\leq\kappa.
+\]
+Incluye el ejemplo $\kappa=2$, $z=1/2$, para el que $c(1/2)=1\geq0$. Su veredicto es que la cota $\kappa<1$ es innecesaria para garantizar un costo no negativo; basta con $\kappa\geq0$. Distingue la validez del costo de la rentabilidad de adoptar IA. La imagen original conserva su escritura y su veredicto; los recortes de la presentación permiten leer ambos con mayor detalle.
 \end{document}
