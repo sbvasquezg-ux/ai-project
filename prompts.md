@@ -367,3 +367,33 @@ La cota κ<1 es innecesaria para garantizar un costo no negativo. Basta con κ�
 Se incluyó la evidencia en la slide 17 usando recortes de visualización de la misma imagen y una transcripción del veredicto para legibilidad. Se actualizaron el guion y los estados de evidencia: esta comprobación está recibida; no se da por completo el resto del apéndice manuscrito ni otras adjudicaciones humanas.
 
 La nota final de la imagen sobre κ≥1 se aclara en el guion: en el modelo a<1, w(z)≥z y q(z)=a−κ(1−z)≤z−(1−a)<z para κ≥1, de modo que no hay adopción. La cota κ<1 puede ser necesaria para adopción positiva sin ser necesaria para la no negatividad del costo. No se modifica el veredicto aportado por la autora ni las proposiciones del paper. La incorporación tiene su fecha real posterior al merge de la entrega anterior; no se retrodata.
+
+
+## Cierre de la entrega — 15 de noviembre de 2026
+
+### Usuario (mensaje literal)
+
+````text
+no hubo observaciones en mi expo, acepto todo de las contrinuciones de ia, termina todo porfa, ya no hare mas parte manuscrita, solo sera lo que hice, ya termina todo mi trabajo
+````
+
+### Asistente (respuesta literal)
+
+````text
+Voy a cerrar la versión final con tu confirmación de que no hubo observaciones y de que aceptas las contribuciones de IA. Conservaré tu comprobación manuscrita y declararé que el resto del apéndice no se entregará; la consigna lo exige completo, así que no podré marcar ese requisito como cumplido. Después verificaré el paper, el código y Lean, y publicaré los cambios mediante PR y merge.
+````
+
+### Registro editorial y de alcance — no es una transcripción ni nueva evidencia manuscrita
+
+- La autora declara que no hubo observaciones en su exposición y acepta las contribuciones de IA de la versión final. No se inventan comentarios del profesor ni comprobaciones personales adicionales.
+- Se conservan los dos enunciados y pruebas, el modelo, la notación y las condiciones. Se explicita la secuencia de un período, sin añadir aprendizaje ni una nueva decisión.
+- Se mantiene la rectificación del requisito κ<1: es innecesario para la no negatividad del costo. Aceptar las contribuciones finales no rehabilita ese borrador ni las interpretaciones incorrectas de Δ0 o del continuo.
+- La tabla de colaboración distingue la aceptación declarada de la autora de los chequeos efectivamente ejecutados por el asistente. Expone por aporte el juicio, la razón técnica y la evidencia; no atribuye una auditoría independiente a la autora.
+- La autora decidió entregar únicamente su hoja sobre κ. El resto del apéndice manuscrito exigido por el issue #7 no se entrega; se declara como requisito incompleto, no como trabajo pendiente que ella haya prometido realizar.
+- Se conservan las presentaciones históricas y la carpeta Lean exportada, sin alterar pruebas, metadatos ni estados administrativos para fingir una nueva corrida o recibo avanzado. La aceptación en este chat no se registra como revisión semántica en el dashboard de AML.
+- La guía privada de estudio solicitada anteriormente no se incorpora al repositorio público.
+- La versión final y sus comprobaciones se documentan en `paper/entrega-final.md` y en `paper/validation/`. La rama de entrega se publica por PR, con el workflow original intacto y sin escritura directa a main.
+
+### Resultado de las comprobaciones del cierre
+
+Las identidades y simulaciones se ejecutaron otra vez con salida 0. Los cuatro documentos compilan con latexmk; el paper tiene 9 páginas de cuerpo y 13 totales. El editor también confirmó la compilación al seleccionar la raíz del repositorio. La compilación explícita de los módulos Lean y el chequeo --fast volvieron a pasar. Los enunciados, pruebas y supuestos numerados permanecen idénticos; tampoco cambian Lean, el workflow ni la imagen original. Se conserva la ausencia de un recibo avanzado AML, con su registro administrativo intacto.

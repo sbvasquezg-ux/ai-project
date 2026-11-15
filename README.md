@@ -21,16 +21,19 @@ $$\max_{0\leq z\leq a}\Pi^V(z)=\frac{a-w^V(z)-c(z)}{h(1-z)}-r.$$
 
 **Proposición propia de tres tipos.** Para tipos $(0,m,H)$, $0<m<H<1$, $m<a$, masas positivas $(\alpha,\beta,\gamma)$ de suma uno, defina $b_M=h(1-m)$, $v_L=H(1-h)$ y $v_M=H(1-b_M)$. Si $\gamma>h\alpha+b_M\beta$, $v_M>m$, $q_L<v_L$, $q_M>v_M$ y $q_H<H$ cuando $H\leq a$, donde $q_i=a-c(z_i)$, hay equilibrio único con salarios $(v_L,q_M,H)$ y solo el tipo medio usa IA. La ganancia neta es $\beta(q_M-v_M)>0$. **La distribución es discreta explícita**; el teorema del continuo queda abierto. En el ejemplo $(h,a,\kappa)=(.5,.88,.53)$, tipos $(0,.25,.76)$ y masas $(.25,.4,.35)$, el producto pasa de $.551$ a $.554$.
 
-| Entregable | Estado al 27-oct |
+| Entregable | Cierre al 15-nov-2026 |
 |---|---|
 | [Topic](slides/topic.pdf) y [propuesta](proposal/proposal.pdf) | ✅ Se conserva la entrega inicial |
-| [Paper](paper/paper.pdf), `.tex` y `.bib` | ✅ 9 páginas de cuerpo, pruebas y apéndices; versión para discusión |
+| [Paper](paper/paper.pdf), `.tex` y `.bib` | ✅ Versión final: 9 páginas de cuerpo, pruebas y apéndices |
 | [Presentación final](slides/final.pdf) | ✅ 19 slides centrales y 3 apéndices; guion de 30 min |
 | [Código](code/verify.py) | ✅ SymPy, certificado racional, LP y mallas 100/200/400 |
 | [Lean](lean/README.md) | ✅ Dos proposiciones: FOC y equilibrio finito completo, con existencia y unicidad |
-| [Guía de derivaciones](hand/guia-derivaciones.pdf) | ✅ 10 páginas para estudiar; **comprobación y veredicto de la slide 17 recibidos; resto del manuscrito pendiente** |
-| [Prompts](prompts.md) | Registro crudo y cambios; no se inventa revisión humana |
+| [Apéndice manuscrito](hand/) | ⚠️ Parcial: solo comprobación de la cota de $\kappa$; la autora decidió no añadir las demás derivaciones exigidas |
+| [Guía de derivaciones](hand/guia-derivaciones.pdf) | Material de estudio tipográfico; no sustituye el manuscrito |
+| [Prompts](prompts.md) y colaboración con IA | ✅ Aceptación declarada por la autora; rectificaciones, razones técnicas y límites documentados |
 
 **Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Revisión independiente](paper/lean-final-review.md) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
 
-Exposición: **28-oct, 08:20–09:05**. Slides mergeadas antes del **27-oct, 22:00 Lima**. Paper completo: **26-nov, 22:00**. El [enlace de entrega](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7#issuecomment-6028656558) ya fue publicado por la autora; no necesita otro comentario.
+**Cierre de la autora:** no hubo observaciones en la exposición; acepta las contribuciones de IA. La entrega manuscrita es parcial y no satisface íntegramente ese requisito. La formalización prueba los dos resultados; no se afirma el recibo avanzado de publicación de AML. [Validación final](paper/entrega-final.md).
+
+Entrega final: **26-nov, 22:00 Lima**, con todo en `main`. Se conservan las dos presentaciones con sus fechas históricas. El [enlace de entrega](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7#issuecomment-6028656558) ya fue publicado por la autora; no necesita otro comentario.

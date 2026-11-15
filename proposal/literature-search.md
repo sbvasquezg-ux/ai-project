@@ -1,6 +1,6 @@
 # Registro de búsqueda de novedad
 
-Fecha: 6 de octubre de 2026. Búsqueda asistida por IA; selección y evaluación humana pendientes. Este registro distingue lectura de secciones, inspección de resultados y acceso fallido. No es una revisión sistemática exhaustiva ni demuestra ausencia de trabajos equivalentes.
+Fecha de búsqueda inicial: 6 de octubre de 2026. Búsqueda asistida por IA. El 15 de noviembre la autora declaró aceptar las contribuciones incluidas en la versión final; esto no se presenta como una nueva búsqueda o lectura personal de cada fuente. Este registro distingue lectura de secciones, inspección de resultados y acceso fallido. No es una revisión sistemática exhaustiva ni demuestra ausencia de trabajos equivalentes.
 
 ## Artículo y apéndice
 
