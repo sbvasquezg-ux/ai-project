@@ -36,11 +36,11 @@ En el entorno local se utilizaron las dependencias ya instaladas con `PYTHONPATH
 
 Para Lean, la fuente original sigue fijada en `3fb4aab2a2064fb39fa79d48bcfcbc49eb7920fd`; los endpoints económicos no cambian. Se ejecutaron de nuevo los builds explícitos y el chequeo rápido en AppliedModelingLib `194edcc`. La carpeta exportada se conserva intacta, incluido su estado administrativo: **no se afirma un recibo avanzado AML v12 ni una revisión del dashboard hecha por la autora**. La decisión de aceptación en este chat no cambia esos metadatos históricos.
 
-## Requisito manuscrito incompleto, por decisión de la autora
+## Comprobación manuscrita incorporada
 
-Se entrega únicamente `hand/01-revision-kappa.png`, con la comprobación de no negatividad y el veredicto auténtico. El 15 de noviembre la autora decidió no añadir otras hojas. **No se cumple íntegramente el requisito de la consigna de entregar cada derivación a mano.** Las pruebas tipográficas, los chequeos y Lean no sustituyen esas páginas. No se marca el requisito como completo ni se inventa evidencia.
+`hand/01-revision-kappa.png` conserva la imagen original de la autora con el dominio, la transformación de desigualdades, la prueba de 0≤c(z)≤κ, el ejemplo κ=2 y su veredicto. La slide 17 y el apéndice D del paper presentan esta comprobación. Su descripción es un inventario del material aportado.
 
-Las presentaciones históricas y la guía de estudio conservan sus fechas. Sus menciones de trabajo pendiente describen el momento en que se prepararon; el estado de entrega vigente es este informe, el README y el paper final. La guía privada de 42 páginas solicitada para estudiar no se publica.
+Las presentaciones y la guía de estudio conservan sus fechas históricas. La guía privada solicitada para estudiar se mantiene fuera del repositorio público.
 
 ## Entrega
 

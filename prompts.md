@@ -397,3 +397,16 @@ Voy a cerrar la versión final con tu confirmación de que no hubo observaciones
 ### Resultado de las comprobaciones del cierre
 
 Las identidades y simulaciones se ejecutaron otra vez con salida 0. Los cuatro documentos compilan con latexmk; el paper tiene 9 páginas de cuerpo y 13 totales. El editor también confirmó la compilación al seleccionar la raíz del repositorio. La compilación explícita de los módulos Lean y el chequeo --fast volvieron a pasar. Los enunciados, pruebas y supuestos numerados permanecen idénticos; tampoco cambian Lean, el workflow ni la imagen original. Se conserva la ausencia de un recibo avanzado AML, con su registro administrativo intacto.
+
+
+## Ajuste editorial de la descripción manuscrita — 15 de noviembre de 2026
+
+### Usuario (extracto literal)
+
+````text
+SOLO PON LO QUE HICE Y YA
+````
+
+### Aplicación del ajuste
+
+Se reemplazaron las valoraciones administrativas del apéndice manuscrito por una descripción concreta de la evidencia aportada: dominio, desigualdades, no negatividad de c(z), ejemplo κ=2 y veredicto de la autora. El paper, el README, el índice de hand/ y el informe de entrega describen ese material. Se conservan la imagen original, las proposiciones, sus pruebas y la declaración de asistencia de IA. Los mensajes históricos en crudo conservan su redacción original.
