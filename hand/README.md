@@ -10,6 +10,10 @@
 4. Presenta el ejemplo κ=2 y z=1/2: c(1/2)=1≥0.
 5. Emite su veredicto: κ<1 no es necesaria para un costo no negativo; basta con κ≥0. Distingue la validez del costo de la rentabilidad de adoptar IA.
 
+## Mi adjudicación de la afirmación de IA
+
+**Rechazo** la afirmación del borrador de que se necesita κ<1 para garantizar un costo no negativo. **Acepto** la formulación corregida con κ≥0, porque mi comprobación da 0≤c(z)≤κ en z∈[0,1]. Mi aceptación de los aportes finales de IA mantiene esa corrección. El costo puede ser válido y, al mismo tiempo, hacer que la adopción deje de ser rentable.
+
 ## Presentación y materiales
 
 La slide 17 muestra ampliaciones de la misma imagen y una transcripción del veredicto. El apéndice D del paper describe esta comprobación.

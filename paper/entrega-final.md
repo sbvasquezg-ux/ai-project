@@ -4,7 +4,7 @@
 
 ## Versión y alcance
 
-La autora declaró que no recibió observaciones en su exposición y aceptó las contribuciones de IA de la versión final. El mensaje literal se conserva en `../prompts.md`; el apéndice C del paper detalla afirmación, veredicto, razón y comprobación. Esa aceptación no se presenta como una nueva auditoría técnica o una reproducción personal de cada chequeo.
+La autora declaró que no recibió observaciones en su exposición y acepta las contribuciones de la versión final corregida. Su veredicto distingue expresamente **rechazar la exigencia inicial de κ<1 para la no negatividad del costo** y **aceptar la formulación corregida con κ≥0**: su hoja demuestra 0≤c(z)≤κ y presenta el ejemplo κ=2, z=1/2, c=1. El mensaje literal se conserva en `../prompts.md`; el apéndice C del paper detalla afirmación, veredicto, razón y comprobación. Esa aceptación no se presenta como una nueva auditoría técnica o una reproducción personal de cada chequeo.
 
 El paper tiene **9 páginas de cuerpo y 13 páginas totales**, con formato de plantilla: 11 puntos, una columna y márgenes de una pulgada. Se conservan las dos proposiciones, sus condiciones, supuestos y pruebas. Se explicita la secuencia de un período y se actualizan fecha, estado, declaración de colaboración y evidencia entregada. El resultado de equilibrio es de tres tipos; el continuo sigue siendo evidencia numérica y una limitación explícita.
 

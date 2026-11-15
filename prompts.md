@@ -410,3 +410,16 @@ SOLO PON LO QUE HICE Y YA
 ### Aplicación del ajuste
 
 Se reemplazaron las valoraciones administrativas del apéndice manuscrito por una descripción concreta de la evidencia aportada: dominio, desigualdades, no negatividad de c(z), ejemplo κ=2 y veredicto de la autora. El paper, el README, el índice de hand/ y el informe de entrega describen ese material. Se conservan la imagen original, las proposiciones, sus pruebas y la declaración de asistencia de IA. Los mensajes históricos en crudo conservan su redacción original.
+
+
+## Aceptación de IA y veredicto basado en el manuscrito — 15 de noviembre de 2026
+
+### Usuario (mensaje literal)
+
+````text
+Y EN MI ACEPTACION DE IA PON QUE ACEPTO TODO PERO TAMBIEN TEN EN CUENTA LA COMPRABACION QUE HICE A MANO Y MI RESULTADO, FIJATE BIEN CUAL ES MI CONCLUSION Y PON SI ACEPTO O RECHAZO O LO QUE SEA LA PARTE DE IA
+````
+
+### Aplicación al documento
+
+Se volvió a leer la imagen original. Su conclusión rechaza la necesidad de κ<1 para que el costo sea no negativo: de z∈[0,1] y κ≥0 obtiene 0≤c(z)≤κ, con el ejemplo κ=2 y z=1/2. Se declara en primera persona: acepto las contribuciones de IA de la versión final corregida y rechazo esa exigencia del borrador; acepto la formulación corregida con κ≥0. Se conserva la distinción de la autora entre un costo válido y la rentabilidad de adoptar IA. La tabla expresa aceptación bajo las condiciones de cada resultado y conserva la trazabilidad de las comprobaciones, sin modificar enunciados, pruebas ni la imagen.
