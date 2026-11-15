@@ -30,10 +30,10 @@ $$\max_{0\leq z\leq a}\Pi^V(z)=\frac{a-w^V(z)-c(z)}{h(1-z)}-r.$$
 | [Lean](lean/README.md) | ✅ Dos proposiciones: FOC y equilibrio finito completo, con existencia y unicidad |
 | [Comprobación manuscrita](hand/) | Imagen original con dominio, desigualdades, ejemplo $\kappa=2$ y veredicto de la autora; incluida en la slide 17 |
 | [Guía de derivaciones](hand/guia-derivaciones.pdf) | Material de estudio con explicación de las derivaciones |
-| [Prompts](prompts.md) y colaboración con IA | ✅ Aceptación declarada por la autora; rectificaciones, razones técnicas y límites documentados |
+| [Prompts](prompts.md) y colaboración con IA | ✅ Acepto la versión final corregida; rechazo la exigencia inicial de $\kappa<1$ para un costo no negativo, según mi comprobación |
 
 **Reproducir:** instalar `code/requirements.txt` y ejecutar `python3 code/verify.py`; compilar los cuatro `.tex` con `latexmk -pdf` en sus carpetas. Workflow de la plantilla intacto. [Lean y logs](lean/) · [Revisión independiente](paper/lean-final-review.md) · [Guion final](slides/guion-final.md) · [Búsqueda de novedad](proposal/literature-search.md).
 
-**Cierre de la autora:** no hubo observaciones en la exposición; acepta las contribuciones de IA. Su comprobación manuscrita y su veredicto sobre $\kappa$ están incorporados. La formalización prueba los dos resultados; no se afirma el recibo avanzado de publicación de AML. [Validación final](paper/entrega-final.md).
+**Cierre de la autora:** no hubo observaciones en la exposición; acepta las contribuciones de la versión final corregida y rechaza la exigencia del borrador de imponer $\kappa<1$ para garantizar $c(z)\geq0$. Su comprobación manuscrita fundamenta esa rectificación. La formalización prueba los dos resultados; no se afirma el recibo avanzado de publicación de AML. [Validación final](paper/entrega-final.md).
 
 Entrega final: **26-nov, 22:00 Lima**, con todo en `main`. Se conservan las dos presentaciones con sus fechas históricas. El [enlace de entrega](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/7#issuecomment-6028656558) ya fue publicado por la autora; no necesita otro comentario.

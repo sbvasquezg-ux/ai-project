@@ -229,21 +229,21 @@ Para el ejemplo exacto, las holguras de actividades no usadas son estrictamente 
 \input{formalization-status.tex}
 \newpage
 \section{Colaboración con IA y adjudicación humana}
-\textbf{Declaración de la autora, 15 de noviembre de 2026.} La autora declaró que no recibió observaciones en su exposición y que acepta todas las contribuciones de IA incluidas en la versión final. El mensaje literal completo se conserva en \texttt{prompts.md}. Se registra su aceptación de las contribuciones incluidas en la versión final, manteniendo las rectificaciones y límites siguientes.
+\textbf{Mi aceptación y mi veredicto, 15 de noviembre de 2026.} Acepto todos los aportes de IA de la versión final corregida, bajo las condiciones de la tabla. \textbf{Rechazo la exigencia del borrador de imponer $\kappa<1$ para garantizar un costo no negativo.} Mi comprobación da $0\leq c(z)\leq\kappa$ para $z\in[0,1]$ y $\kappa\geq0$; por ello, \textbf{acepto la formulación corregida con $\kappa\geq0$}.
 
-La IA asistió en derivación, certificado, revisión bibliográfica, programación y redacción. Para cada contribución se distingue el juicio adoptado en este manuscrito de la evidencia técnica producida por el asistente. Los informes de revisión automática no se atribuyen a la autora.
+Mi conclusión manuscrita es que un costo alto puede impedir que adoptar IA sea rentable, pero no invalida el modelo. La hoja y el veredicto se describen en el Apéndice D; el registro de colaboración está en \texttt{prompts.md}.
 
 \begin{center}\small
 \begin{tabular}{p{.23\linewidth}p{.29\linewidth}p{.38\linewidth}}\toprule
-Afirmación o aporte & Veredicto aceptado y razón & Comprobación documentada\\\midrule
-Un borrador exigía $\kappa<1$ para que $c\geq0$. & Se rechaza: $z\in[0,1]$ y $\kappa\geq0$ bastan. & Hoja real de la autora: desigualdades y contraejemplo $\kappa=2$.\\[5pt]
-Derivación de FOC, salario y pendiente. & Se acepta bajo las hipótesis de Prop. 1; salario requiere beneficio cero y pendiente un entorno activo. & Prueba escrita, identidades SymPy y \texttt{proposition\_one}.\\[5pt]
-$\Delta^0>0$ identifica usuarios finales. & Se rechaza como criterio suficiente: cambian salarios y asignaciones. & Se separa la tabla inicial del problema primal--dual de equilibrio.\\[5pt]
-Equilibrio intermedio de tres tipos. & Se acepta bajo todas las condiciones de Prop. 2: recursos y holguras descartan las alternativas. & Prueba completa, certificado racional, LP y \texttt{proposition\_two}.\\[5pt]
-Simulaciones y figuras del continuo. & Se aceptan como evidencia de las mallas, no como prueba del continuo ni de convergencia. & Script único, residuos de recursos, dualidad y complementariedad; tres mallas.\\[5pt]
-Búsqueda y comparación bibliográfica. & Se acepta su alcance localizado; la verificación costosa no es una idea nueva. & Fuentes primarias y registro de búsquedas, versiones y accesos fallidos; estados fechados.\\[5pt]
-Formalización y revisión de pruebas. & Se acepta la cobertura de dos resultados. No se afirma un recibo avanzado AML completo. & Endpoints compilados, chequeo \texttt{--fast}, axiomas estándar y revisión de correspondencia.\\[5pt]
-Redacción, organización y materiales. & Se acepta la ayuda editorial; la responsabilidad por las afirmaciones es de la autora. & Texto y fuentes en el repositorio; registro crudo en \texttt{prompts.md}.\\\bottomrule
+Afirmación o aporte & Mi veredicto y su razón & Comprobación documentada\\\midrule
+La IA exigía $\kappa<1$ para que $c\geq0$. & Para la no negatividad, \textbf{rechazo $\kappa<1$ y acepto $\kappa\geq0$}. & Mi hoja: $0\leq c(z)\leq\kappa$ y ejemplo $\kappa=2$, $z=1/2$, $c=1$.\\[5pt]
+Derivación de FOC, salario y pendiente. & Acepto bajo Prop. 1: salario requiere beneficio cero y pendiente un entorno activo. & Prueba escrita, identidades SymPy y \texttt{proposition\_one}.\\[5pt]
+$\Delta^0$ como oportunidad de entrada. & Acepto su uso a salarios iniciales; no determina por sí sola los usuarios finales. & Se separa la tabla inicial del problema primal--dual de equilibrio.\\[5pt]
+Equilibrio intermedio de tres tipos. & Acepto bajo todas las condiciones de Prop. 2: se comprueban recursos y alternativas. & Prueba completa, certificado racional, LP y \texttt{proposition\_two}.\\[5pt]
+Simulaciones y figuras del continuo. & Acepto como evidencia de las mallas; su alcance no prueba el continuo ni convergencia. & Script único, residuos de recursos, dualidad y complementariedad; tres mallas.\\[5pt]
+Búsqueda y comparación bibliográfica. & Acepto su alcance localizado; la verificación costosa tiene antecedentes. & Fuentes primarias y registro de búsquedas, versiones y accesos fallidos; estados fechados.\\[5pt]
+Formalización y revisión de pruebas. & Acepto la cobertura de dos resultados; el recibo avanzado AML no se afirma. & Endpoints compilados, chequeo \texttt{--fast}, axiomas estándar y revisión de correspondencia.\\[5pt]
+Redacción, organización y materiales. & Acepto la ayuda editorial y asumo la responsabilidad por las afirmaciones. & Texto y fuentes en el repositorio; registro crudo en \texttt{prompts.md}.\\\bottomrule
 \end{tabular}
 \end{center}
 

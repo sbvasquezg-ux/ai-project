@@ -25,13 +25,18 @@
     ".github/workflows/build.yml": "355acd36b49b4e552ab3b6859e99c81f550c2dfb245ad8c99f4fa1a266cbf9aa",
     "hand/01-revision-kappa.png": "fbfb0e5f39a296327e3b2ec5adf6b7f5ac6dfddc6d069b6f5f9e29594dda38dd"
   },
-  "submitted_paper_pdf_sha256": "8b12c6844be3fde18ccee4206ea5b76fafb3ed864f4db46206a7228e9a65082e",
+  "submitted_paper_pdf_sha256": "1b0565a47785e2de86c2a7a342b4d337df165f3f3392fead44cd43e67e37d788",
   "python_check_exit_code": 0,
   "latexmk_four_documents_exit_code": 0,
   "lean_forced_build_exit_code": 0,
   "lean_fast_exit_code": 0,
   "native_editor_compile": "success (repository root with paper/paper.tex selected)",
-  "human_acceptance": "declared by author; not a technical AML dashboard audit",
+  "human_acceptance": {
+    "accepted": "AI contributions in corrected final version under explicit conditions",
+    "rejected": "Original AI requirement kappa<1 to guarantee c(z)>=0",
+    "handwritten_basis": "0<=c(z)<=kappa for z in [0,1] and kappa>=0; example kappa=2,z=1/2,c=1",
+    "author_conclusion": "A high cost can prevent profitable adoption without invalidating the model."
+  },
   "handwritten_appendix": {
     "path": "hand/01-revision-kappa.png",
     "author": "Sofía Belén Vásquez García",
@@ -47,6 +52,6 @@
     ]
   },
   "advanced_aml_receipt": "not claimed",
-  "editorial_update_base_commit": "33bbd8b3165d16ef439bcb8e3060af3beadc6f77",
-  "editorial_update": "Factual description of handwritten evidence; no mathematical changes."
+  "editorial_update_base_commit": "fcf300e43fe7f9a4ff30f8cd8614ec67834718b7",
+  "editorial_update": "Clarifies author acceptance of corrected final AI contributions and rejection of original kappa<1 necessity for nonnegative validation cost."
 }
